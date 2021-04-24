@@ -1,0 +1,12 @@
+{
+  "name": "solxr",
+  "displayName": "solxr",
+  "expo": {
+    "name": "solxr",
+    "slug": "solxr",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
