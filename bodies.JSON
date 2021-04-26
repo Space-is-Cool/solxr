@@ -245,7 +245,7 @@
         "isPlanet": true,
         "funFacts": [ "The smallest of the Gas Giants", "Most distant plant from the Sun.", "Strongest winds" ],
         "specialChars": ["Neptune has thirteen young and faint rings that often go overlooked"],
-        "moons": [ ],
+        "moons": [ "Naiad", "Thalassa", "Despina", "Galatea", "Larissa", "Hippocamp", "Proteus", "Triton", "Nereid", "Halimede", "Sao", "Laomedeia", "Psamathe", "Neso"],
         "name": "Neptune",
         "AKA": "The Blue Planet",
         "latin": "Neptunus,",
