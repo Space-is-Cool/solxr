@@ -20,7 +20,7 @@ const seedMysql = () => {
     .then(() =>
       console.log(
         '\x1b[36m',
-        '\nDatabase (MySQL): \'User\' table successfully created!'
+        '\nDatabase (MySQL2): \'User\' table successfully created!'
       )
     )
     .then(() =>
