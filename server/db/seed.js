@@ -16,7 +16,7 @@ const seedMysql = () => {
         '\nDatabase (MySQL): \'soldb\' successfully created!'
       )
     )
-    .then(() => User.sync({ force: true }))
+    // .then(() => User.sync({ force: true }))
     .then(() =>
       console.log(
         '\x1b[36m',

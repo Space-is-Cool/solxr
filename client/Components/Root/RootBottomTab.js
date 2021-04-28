@@ -1,26 +1,29 @@
-import React from "react";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import IconA from "react-native-vector-icons/Ionicons";
-import IconB from "react-native-vector-icons/FontAwesome5";
-import IconC from "react-native-vector-icons/FontAwesome";
+/* eslint-disable react/no-children-prop */
+import React from 'react';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import IconA from 'react-native-vector-icons/Ionicons';
+import IconB from 'react-native-vector-icons/FontAwesome5';
+import IconC from 'react-native-vector-icons/FontAwesome';
 
 
-import HomeTopTab from "../Home/HomeTopTab"
-import LearnScreen from "../Learn/LearnScreen";
-import ExpScreen from "../Experience/ExpScreen";
-import SettingsScreen from "../Settings/SettingsScreen";
-import EventsScreen from "../Events/EventsScreen";
+import HomeTopTab from '../Home/HomeTopTab';
+import LearnScreen from '../Learn/LearnScreen';
+import ExpScreen from '../Experience/ExpScreen';
+import SettingsScreen from '../Settings/SettingsScreen';
+import EventsScreen from '../Events/EventsScreen';
 
 
 
 const AppBottomNavigator = createMaterialBottomTabNavigator();
 
-  const BottomTab = () => (
+const BottomTab = () => {
+    
+  return (
     <AppBottomNavigator.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarColor: "#490222"
+        tabBarColor: '#490222'
       }}
     >
       <AppBottomNavigator.Screen
@@ -60,5 +63,6 @@ const AppBottomNavigator = createMaterialBottomTabNavigator();
       />
     </AppBottomNavigator.Navigator>
   );
+};
   
-  export default BottomTab;
+export default BottomTab;
