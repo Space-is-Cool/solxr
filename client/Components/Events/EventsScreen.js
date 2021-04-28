@@ -1,13 +1,13 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import { View, Text } from 'react-native';
 
 
 const ExpScreen = ({navigation, route}) => {
-    return (
-        <View>
-            <Text>Events Screen</Text>
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>Events Screen</Text>
+    </View>
+  );
+};
 
-export default ExpScreen
+export default ExpScreen;

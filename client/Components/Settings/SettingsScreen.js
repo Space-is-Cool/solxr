@@ -1,13 +1,13 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import { View, Text } from 'react-native';
 
 
 const FourthScreen = ({navigation, route}) => {
-    return (
-        <View>
-            <Text>Settings Screen</Text>
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>Settings Screen</Text>
+    </View>
+  );
+};
 
-export default FourthScreen
+export default FourthScreen;
