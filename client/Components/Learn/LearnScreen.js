@@ -16,6 +16,14 @@ const LearnScreen = ({navigation, route}) => {
   const viewSwitcher = (view) => {
     { if (view === '') {
       return (<>
+        <Text>...</Text>
+        <Text>...</Text>
+        <Text>...</Text>
+        <Text>...</Text>
+        <Text>...</Text>
+        <Text>...</Text>
+        <Text>...</Text>
+        <Text>...</Text>
         <Button
           title="Select Planets"
           onPress={() => onPress('planets')}
