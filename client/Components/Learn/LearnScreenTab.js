@@ -3,7 +3,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 // import NasaScreen from "../Components/Home/Nasa/NasaScreen";
 import PlanetSelector from './Planets/PlanetSelector';
-import TechStuff from './Tech/TechStuff.js';
+import Timeline from './Tech/Timeline.js';
 
 
 { /* <AppBottomNavigator.Screen
@@ -35,7 +35,7 @@ const LearnTab = () => (
     />
     <LearnNavigator.Screen
       name="Tech"
-      component={TechStuff}
+      component={Timeline}
     />
   </LearnNavigator.Navigator>
 );
