@@ -1,13 +1,61 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, {useState, useEffect} from 'react';
+import { View, Text, Button } from 'react-native';
+import PlanetSelector from './Planets/PlanetSelector.js';
+// import Timeline from './Tech/Timeline.js';
 
 const LearnScreen = ({navigation, route}) => {
-    return (
-        <View>
-            <Text>Select Planets</Text>
-            <Text>Select Technology</Text>
-        </View>
-    )
-}
+  //need to create a selective render of either the planet screen or tech screen based on what user clicks
+  //need to add onClick property to an image??? 
+  //how do we css the text w/ the image? should we just make an image w/ text baked in?
 
-export default LearnScreen
+  const [view, setView] = useState('');
+  const onPress = (name) => {
+    setView(name);
+  };
+
+  const viewSwitcher = (view) => {
+    { if (view === '') {
+      return (<>
+        <Button
+          title="Select Planets"
+          onPress={() => onPress('planets')}
+        />
+        <Text>...</Text>
+        <Button
+          title="Select Tech"
+          onPress={() => onPress('tech')}
+        />
+      </>);
+    } else if (view === 'planets') {
+      return (
+        <>
+          <Button
+            title="Back to Learn"
+            onPress={() => onPress('')}
+          />
+          <PlanetSelector navigation={navigation} route={route}/>
+        </>
+      );
+
+    } else {
+      return (
+        <>
+          <Button
+            title="Back to Learn"
+            onPress={() => onPress('')}
+          />
+          <Text>tech screen</Text>
+        </>
+      ); 
+    }
+    }
+  };
+
+  return (
+    <View>
+      {viewSwitcher(view)}
+    </View>
+  );
+};
+
+export default LearnScreen;

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const mysql = require('mysql2/promise');
 
 const { User, db } = require('./index.js');
@@ -16,7 +17,7 @@ const seedMysql = () => {
         '\nDatabase (MySQL): \'soldb\' successfully created!'
       )
     )
-    .then(() => User.sync({ force: true }))
+    // .then(() => User.sync({ force: true }))
     .then(() =>
       console.log(
         '\x1b[36m',
