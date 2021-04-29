@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
 
@@ -30,7 +32,8 @@ const SunScreen = ({navigation, route}) => {
       <Text style={styles.text}>Text!!!!</Text>
       <ImageBackground
         style={styles.image}
-        source={require('../assets/sun.png')} />
+        source={require('../assets/sun.png')}
+      />
     </View>
   );
 };

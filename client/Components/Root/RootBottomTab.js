@@ -1,6 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import React from 'react';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import IconA from 'react-native-vector-icons/Ionicons';
 import IconB from 'react-native-vector-icons/FontAwesome5';
@@ -8,7 +8,7 @@ import IconC from 'react-native-vector-icons/FontAwesome';
 
 
 import HomeTopTab from '../Home/HomeTopTab';
-import LearnScreen from '../Learn/LearnScreen';
+import LearnScreenTab from '../Learn/LearnScreenTab';
 import ExpScreen from '../Experience/ExpScreen';
 import SettingsScreen from '../Settings/SettingsScreen';
 import EventsScreen from '../Events/EventsScreen';
@@ -23,7 +23,7 @@ const BottomTab = () => {
     <AppBottomNavigator.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarColor: '#490222'
+        tabBarColor: '#072852'
       }}
     >
       <AppBottomNavigator.Screen
@@ -35,7 +35,7 @@ const BottomTab = () => {
       />
       <AppBottomNavigator.Screen
         name="Learn"
-        component={LearnScreen}
+        children={LearnScreenTab}
         options={{
           tabBarIcon: () => <IconA name="planet" size={25} color="#fff" />
         }}

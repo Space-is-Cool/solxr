@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 
 const MercuryScreen = ({navigation, route}) => {
 
@@ -7,9 +7,78 @@ const MercuryScreen = ({navigation, route}) => {
   //
 
   return (
-    <View>
+    <ScrollView>
       <Text>MERCURY</Text>
-    </View>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>ffff</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>fff</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>fff</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>ffff</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>fff</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>MERCURY</Text>
+      <Text>fff</Text>
+      <Text>MERCURY</Text>
+
+    </ScrollView>
   );
 };
 
