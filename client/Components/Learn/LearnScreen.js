@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, Button } from 'react-native';
-import PlanetsScreen from './Planets/PlanetsScreen.js';
-import Timeline from './Tech/Timeline.js';
+import PlanetSelector from './Planets/PlanetSelector.js';
+// import Timeline from './Tech/Timeline.js';
+
 const LearnScreen = ({navigation, route}) => {
   //need to create a selective render of either the planet screen or tech screen based on what user clicks
   //need to add onClick property to an image???
   //how do we css the text w/ the image? should we just make an image w/ text baked in?
+
   const [view, setView] = useState('');
   const onPress = (name) => {
     setView(name);
@@ -15,7 +17,6 @@ const LearnScreen = ({navigation, route}) => {
       return (<>
         <Button
           title="Select Planets"
-          value={'wow'}
           onPress={() => onPress('planets')}
         />
         <Text>...</Text>
@@ -31,9 +32,10 @@ const LearnScreen = ({navigation, route}) => {
             title="Back to Learn"
             onPress={() => onPress('')}
           />
-          <PlanetsScreen/>
+          <PlanetSelector navigation={navigation} route={route}/>
         </>
       );
+
     } else {
       return (
         <>
@@ -41,12 +43,13 @@ const LearnScreen = ({navigation, route}) => {
             title="Back to Learn"
             onPress={() => onPress('')}
           />
-          <Timeline />
+          <Text>tech screen</Text>
         </>
       );
     }
     }
   };
+
   return (
     <View>
       {viewSwitcher(view)}
