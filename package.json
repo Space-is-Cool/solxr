@@ -38,6 +38,7 @@
     "react-native-screens": "~3.0.0",
     "react-native-swiper": "^1.6.0",
     "react-native-tab-view": "^3.0.1",
+    "react-native-timeline-flatlist": "^0.7.3",
     "react-native-unimodules": "~0.13.3",
     "react-native-web": "~0.13.12",
     "sequelize": "^6.6.2"
