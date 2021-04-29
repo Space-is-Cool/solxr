@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, Button } from 'react-native';
-import PlanetsScreen from './Planets/PlanetsScreen.js';
+import PlanetSelector from './Planets/PlanetSelector.js';
+// import Timeline from './Tech/Timeline.js';
 
 const LearnScreen = ({navigation, route}) => {
   //need to create a selective render of either the planet screen or tech screen based on what user clicks
@@ -17,7 +18,6 @@ const LearnScreen = ({navigation, route}) => {
       return (<>
         <Button
           title="Select Planets"
-          value={'wow'}
           onPress={() => onPress('planets')}
         />
         <Text>...</Text>
@@ -33,7 +33,7 @@ const LearnScreen = ({navigation, route}) => {
             title="Back to Learn"
             onPress={() => onPress('')}
           />
-          <PlanetsScreen/>
+          <PlanetSelector navigation={navigation} route={route}/>
         </>
       );
 
