@@ -11,7 +11,7 @@ import {
 import data from './data/techData.js';
 import Doge from './assets/doge.png';
 import Timeline from 'react-native-timeline-flatlist';
-
+///cahnged
 export default class TechTimeLine extends Component {
   constructor() {
     super();
