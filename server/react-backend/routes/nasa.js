@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const axios = require('axios');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', (req, res) => {
+  console.log('get nasa!');
+  axios.get('https://api.nasa.gov/planetary/apod?api_key=gZClpAd2dIP9dwXkbP5wMsqVMfT1ek5YMnEo7kep')
+    .then(({data}) => {
+      res.send(data);
+    });
 });
 
 // console.log('whats the valu of router right here', router);
@@ -11,3 +16,5 @@ router.get('/', function(req, res, next) {
 // console.log('http://localhost:8000');
 // });
 module.exports = router;
+
+
