@@ -15,7 +15,7 @@ const HomeTopTab = () => (
   <AppTopNavigator.Navigator
     initialRouteName="NASA"
     tabBarOptions={{
-      style: { backgroundColor: '#490222' },
+      style: { backgroundColor: '#072852' },
       labelStyle: { fontSize: 14, fontWeight: 'bold' },
       activeTintColor: '#ffffff',
       indicatorStyle: { height: 3, backgroundColor: '#fff', paddingBottom: 6 },
@@ -23,7 +23,7 @@ const HomeTopTab = () => (
       tabStyle: { height: 100, justifyContent: 'flex-end' }
     }}
   >
-    <AppTopNavigator.Screen component={NasaScreen} name="NASA" />
+    <AppTopNavigator.Screen component={NasaScreen} name="WOW" />
     <AppTopNavigator.Screen component={CommunityScreen} name="COMMUNITY" />
     <AppTopNavigator.Screen component={FavoritesScreen} name="FAVORITES" />
   </AppTopNavigator.Navigator>

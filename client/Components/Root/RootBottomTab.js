@@ -23,7 +23,7 @@ const BottomTab = () => {
     <AppBottomNavigator.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarColor: '#490222'
+        tabBarColor: '#072852'
       }}
     >
       <AppBottomNavigator.Screen

@@ -30,7 +30,8 @@ const SunScreen = ({navigation, route}) => {
       <Text style={styles.text}>Text!!!!</Text>
       <ImageBackground
         style={styles.image}
-        source={require('../assets/sun.png')} />
+        source={require('../assets/sun.png')}
+      />
     </View>
   );
 };
