@@ -2,8 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-
-
+import SaturnInfo from './SaturnInfo.js';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -32,6 +31,7 @@ const SaturnScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/saturn.jpg')}
       />
+      <SaturnInfo/>
     </View>
   );
 };

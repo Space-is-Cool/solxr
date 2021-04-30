@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-
+import MoonInfo from './MoonInfo.js';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,6 +32,7 @@ const MoonScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/moon.jpg')}
       />
+      <MoonInfo/>
     </View>
   );
 };

@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-
+import JupiterInfo from './JupiterInfo.js';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,6 +32,7 @@ const JupiterScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/jupiter.jpg')}
       />
+      <JupiterInfo/>
     </View>
   );
 };

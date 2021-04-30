@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-
+import NeptuneInfo from './NeptuneInfo.js';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,6 +32,7 @@ const NeptuneScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/neptune.jpg')}
       />
+      <NeptuneInfo/>
     </View>
   );
 };

@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-import SunInfo from './sunInfo.js';
+import VenusInfo from './VenusInfo.js';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,7 +32,7 @@ const VenusScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/venus.png')}
       />
-      <SunInfo/>
+      <VenusInfo/>
     </View>
   );
 };

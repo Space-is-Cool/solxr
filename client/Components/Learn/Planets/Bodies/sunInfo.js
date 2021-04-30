@@ -13,13 +13,52 @@ class SunInfo extends Component {
 
   render() {
     return ( 
-      <Text>{bodies.sun.name}</Text>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.text}>{bodies.sun.name}</Text>
+        </View>
+      </ScrollView>
     );
   }
 }
 
 export default SunInfo;
 
+const styles = StyleSheet.create({
+  contentContainerStyle: {
+    paddingTop: 30,
+    paddingBottom: 20,
+    backgroundColor: '#115268'
+  },
+  container: {
+    flex: 1,
+    // backgroundColor: 'blue',
+    // opacity: 0.5
+  },
+  firstHeaderContainer: {
+    backgroundColor: '#115268',
+  },
+  firstHeader: {
+    marginHorizontal: 10,
+    backgroundColor: '#bcb5ff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    height: 50,
+  },
+  customContent: {
+    backgroundColor: '#8ac7db',
+    height: 30
+  },
+  text: {
+    textAlign: 'center',
+    color: 'white',
+    fontFamily: 'Titillium Web',
+  
+  },
+  textTwo: {
+  }
+});
 
 
 // class SunInfo extends Component {
@@ -79,36 +118,4 @@ export default SunInfo;
 //     );
 //   }
 // }
-// const styles = StyleSheet.create({
-//   contentContainerStyle: {
-//     paddingTop: 30,
-//     paddingBottom: 20,
-//     backgroundColor: '#115268'
-//   },
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'black',
-//   },
-//   firstHeaderContainer: {
-//     backgroundColor: '#115268',
-//   },
-//   firstHeader: {
-//     marginHorizontal: 10,
-//     backgroundColor: '#bcb5ff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     borderRadius: 15,
-//     height: 50,
-//   },
-//   customContent: {
-//     backgroundColor: '#8ac7db',
-//     height: 30
-//   },
-//   text: {
-//     textAlign: 'center',
-//     color: 'white'
-//   },
-//   textTwo: {
-//   }
-// });
 // export default SunInfo;
