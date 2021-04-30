@@ -5,15 +5,17 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '11.0'
 
 target 'solxr' do
+  pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
+  pod 'ViroKit_static_lib', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/static_lib'
   use_unimodules!
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  # if !ENV['CI']
-  #   use_flipper!({ 'Flipper' => '0.80.0' })
-  #   post_install do |installer|
-  #     flipper_post_install(installer)
-  #   end
-  # end
+  if !ENV['CI']
+    use_flipper!({ 'Flipper' => '0.80.0' })
+    post_install do |installer|
+      flipper_post_install(installer)
+    end
+  end
 end

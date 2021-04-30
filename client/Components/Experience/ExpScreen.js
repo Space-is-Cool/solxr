@@ -1,13 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ViroARSceneNavigator } from 'react-viro';
 
+import Mercury from './MercuryAR';
 
-const EventsScreen = ({navigation, route}) => {
+const ExpScreen = ({navigation, route}) => {
   return (
-    <View>
-      <Text>Experience Screen</Text>
-    </View>
+    <ViroARSceneNavigator
+      initialScene={{scene: Mercury}} />
   );
 };
 
-export default EventsScreen;
+export default ExpScreen;
