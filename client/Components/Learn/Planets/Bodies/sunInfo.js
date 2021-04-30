@@ -6,8 +6,20 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-import Panel from 'react-native-panel';
 import bodies from '../data/bodiesData.js';
+
+class SunInfo extends Component {
+
+
+  render() {
+    return ( 
+      <Text>{bodies.sun.name}</Text>
+    );
+  }
+}
+
+export default SunInfo;
+
 
 
 // class SunInfo extends Component {

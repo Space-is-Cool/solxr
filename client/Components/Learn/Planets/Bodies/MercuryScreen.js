@@ -1,84 +1,39 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: 'black'
+  },
+  image: {
+    justifyContent: 'center',
+    width: 415,
+    height: 415,
+  },
+  text: {
+    color: 'white',
+    fontSize: 42,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#000000a0'
+  }
+});
 
 const MercuryScreen = ({navigation, route}) => {
 
-  //launches a single planet on render
-  //
-
   return (
-    <ScrollView>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>ffff</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>fff</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>fff</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>ffff</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>fff</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>MERCURY</Text>
-      <Text>fff</Text>
-      <Text>MERCURY</Text>
-
-    </ScrollView>
+    <View style={styles.container}>
+      <ImageBackground
+        style={styles.image}
+        source={require('../assets/mercury.png')}
+      />
+  
+    </View>
   );
 };
 

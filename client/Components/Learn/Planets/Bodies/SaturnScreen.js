@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-import SunInfo from './sunInfo.js';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   },
   image: {
     justifyContent: 'center',
-    width: 415,
-    height: 415,
+    width: 400,
+    height: 400,
   },
   text: {
     color: 'white',
@@ -24,18 +24,16 @@ const styles = StyleSheet.create({
   }
 });
 
-const VenusScreen = ({navigation, route}) => {
+const SaturnScreen = ({navigation, route}) => {
 
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.image}
-        source={require('../assets/venus.png')}
+        source={require('../assets/saturn.jpg')}
       />
-      <SunInfo/>
     </View>
   );
 };
 
-export default VenusScreen;
-
+export default SaturnScreen;

@@ -1,9 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React, {Component, useState} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+
 import SunScreen from './Bodies/SunScreen';
 import MercuryScreen from './Bodies/MercuryScreen';
 import VenusScreen from './Bodies/VenusScreen';
+import EarthScreen from './Bodies/EarthScreen';
+import MoonScreen from './Bodies/MoonScreen';
+import MarsScreen from './Bodies/MarsScreen';
+import JupiterScreen from './Bodies/JupiterScreen';
+import SaturnScreen from './Bodies/SaturnScreen';
+import UranusScreen from './Bodies/UranusScreen';
+import NeptuneScreen from './Bodies/NeptuneScreen';
+
 import Swiper from 'react-native-swiper/src';
 
 
@@ -16,6 +25,19 @@ const PlanetSelector = () => {
       <SunScreen/>
       <MercuryScreen/>
       <VenusScreen/>
+      <EarthScreen/>
+      <MoonScreen/>
+      <MarsScreen/>
+      <JupiterScreen/>
+      <SaturnScreen/>
+      <UranusScreen/>
+
+
+
+      <NeptuneScreen/>
+
+    
+
     </Swiper>
   );
 };
