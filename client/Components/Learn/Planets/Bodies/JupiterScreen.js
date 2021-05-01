@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#000000a0'
   },
-  info:{
+  info: {
     paddingLeft: 34
   }
 });
@@ -36,7 +36,7 @@ const JupiterScreen = ({navigation, route}) => {
         source={require('../assets/jupiter.jpg')}
       />
       <ScrollView style={styles.info}>
-      <JupiterInfo/>
+        <JupiterInfo/>
       </ScrollView>
     </View>
   );
