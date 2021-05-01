@@ -37,16 +37,16 @@ const NasaScreen = ({navigation, route}) => {
     .then(({data}) => {
       console.log(data.url);
       setIoTD(data.url);
-    
+
   });
   };
 
   return (
     <View style={styles.container}>
-      {IoTD && 
+      {IoTD &&
       (<ImageBackground
         style={styles.image}
-        source={{uri: IoTD}} 
+        source={{uri: IoTD}}
       />)
       }
     </View>

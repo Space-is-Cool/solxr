@@ -41,6 +41,7 @@
     "react-native-timeline-flatlist": "^0.7.3",
     "react-native-unimodules": "~0.13.3",
     "react-native-web": "~0.13.12",
+    "react-native-webview": "^11.4.3",
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
