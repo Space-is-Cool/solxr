@@ -11,7 +11,8 @@ import {
   ViroSpotLight,
   ViroMaterials,
   ViroAnimations,
-  ViroSphere
+  ViroSphere,
+  ViroARSceneNavigator
 } from 'react-viro';
 
 // export default class HelloWorldSceneAR extends Component {
@@ -49,7 +50,7 @@ const Mercury = () => {
 ViroMaterials.createMaterials({
   mercury: { shininess: 2.0,
     // lightingModel: "Constant",
-    diffuseTexture: require('./assets/8k_venus_surface.jpeg')
+    diffuseTexture: require('./assets/2k_mercury.jpeg')
   }
 });
 
@@ -57,4 +58,11 @@ ViroAnimations.registerAnimations({
   loopRotate: {properties: {rotateY: '+=45'}, duration: 6000},
 });
 
-module.exports = Mercury;
+const MercuryScene = ({navigation, route}) => {
+  return (
+    <ViroARSceneNavigator
+      initialScene={{scene: Mercury}} />
+  );
+};
+
+module.exports = MercuryScene;

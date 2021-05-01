@@ -8,9 +8,8 @@ import IconC from 'react-native-vector-icons/FontAwesome';
 
 
 import HomeTopTab from '../Home/HomeTopTab';
-import LearnScreen from '../Learn/LearnScreen';
 import LearnScreenTab from '../Learn/LearnScreenTab';
-import ExpScreen from '../Experience/ExpScreen';
+import PlanetDrawer from '../Experience/PlanetDrawer';
 import SettingsScreen from '../Settings/SettingsScreen';
 import EventsScreen from '../Events/EventsScreen';
 
@@ -43,7 +42,7 @@ const BottomTab = () => {
       />
       <AppBottomNavigator.Screen
         name="Experience"
-        component={ExpScreen}
+        children={PlanetDrawer}
         options={{
           tabBarIcon: () => <IconB name="space-shuttle" size={25} color="#fff" />
         }}
