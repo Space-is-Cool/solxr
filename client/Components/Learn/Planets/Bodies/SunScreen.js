@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
+  },
+  info:{
+    paddingLeft: 34
   }
 });
 
@@ -32,7 +35,9 @@ const SunScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/sun.png')}
       />
+      <ScrollView style={styles.info}>
       <SunInfo/>
+      </ScrollView>
     </View>
   );
 };

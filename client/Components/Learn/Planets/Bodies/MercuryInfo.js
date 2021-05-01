@@ -10,10 +10,6 @@ import {
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 
-// const funFacts = bodies.mercury.discoveredBy.map((fact)=>{
-//   <Text>{fact}</Text>
-// })
-
 
 class MercuryInfo extends Component {
   constructor() {
@@ -43,6 +39,10 @@ class MercuryInfo extends Component {
             <Text style={styles.headerThree}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+          <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.text}>
+            Caloris Basin, a crater that spans 1550 km. That's over half the total diameter of the planet!
+            </Text>
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>

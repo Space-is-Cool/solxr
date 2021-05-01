@@ -181,7 +181,7 @@
         "daylength": "9.8 Earth hours",
         "tilt": 3.12,
         "yearlength": "11.9 Earth years", 
-        "diameter": "139,822 km. Holy moly!",
+        "diameter": "139,822 km",
         "images": [],
         "discoveredBy": "It is unkown who first discovered Jupiter, due to it being one of the five planets that are visible from Earth with the naked eye. Most modern sources cite Galileo Galilei as the first to observe it through a telescope. But you probably already knew that.",
         "nameOrigin": "Also known as Jove, Jupiter was the Roman God of the sky and thunder. He was considered to be king of the gods, and is usually thought to have originated as an aerial god. His identifying implement was the thunderbolt and his primary symbolic animal was the eagle."
@@ -193,7 +193,7 @@
         "specialChars": ["Look at those rings!", "Large Hexagonal storm at north pole, we still don't know for sure what causes it!"],
         "moons": ["Pan", "Daphnis", "Atlas", "Prometheus", "Pandora", "Epimetheus", "Janus", "Aegaeon", "Mimas", "Methone", "Anthe", "Pallene", "Enceladus", "Tethys", "Telesto", "Calypso", "Dione", "Helene", "Polydeuces", "Rhea", "Titan", "Hyperion", "Iapetus", "Kiviuq", "Ijiraq", "Phoebe", "Paaliaq", "Skathi", "S/2004S37", "S/2007S2", "Albiorix", "Bebhionn", "S/2004S29", "Skoll", "S/2004S31", "Erriapus", "Tarqeq", "Siarnaq", "Tarvos", "Hyrrokkin", "Greip", "Mundilfari", "S/2004S13", "S/2006S1", "S/2007S3", "Suttungr", "S/2004S20", "Jarnsaxa", "Narvi", "Bergelmir", "Hati", "S/2004S17", "S/2004S12", "S/2004S27", "Farbauti", "Thrymr", "Bestla", "S/2004S7", "Aegir", "S/2004S30", "S/2004S22", "S/2004S25", "S/2004S32", "S/2004S23", "S/2006S3", "S/2004S35", "Kari", "S/2004S28", "Loge", "S/2004S38", "Fenrir", "Ymir", "Surtur", "S/2004S33", "S/2004S24", "S/2004S21", "S/2004S39", "S/2004S36", "Fornjot", "S/2004S34", "S/2004S26", "S/2009S1"],
         "name": "Saturn",
-        "AKA": "The Ringed Planet",
+        "AKA": "the Ringed Planet",
         "latin": "Sāturnus",
         "position": "Sixth",
         "atomosphere": "Mostly hydrogen, some helium",
@@ -264,8 +264,8 @@
         "yearlength": "165 Earth years", 
         "diameter": "49,244 km",
         "images": [],
-        "discoveredBy": "Galileo actually mistook the Neptune for a star, so he doesn't get credit for this one. It was first earnestly sought after when Uranus was discovered in 1781. Astronomers of the time were able to predict, based only on Uranus's orbit, that another planet of Neptune's mass and trajectory must exsist. Over sixty years later, in 1846, a french Astronomer by the name of Urbain Le Verrier was able to actually verify that it did indeed exsist.",
-        "nameOrigin": "Neptune was first the Roman God of fresh water, by 399 b.c he was identified with the Greek Poseidon and thus became a deity of the sea."
+        "discoveredBy": "Galileo actually mistook Neptune for a star, so he doesn't get credit for this one. It was first sought after when Uranus was discovered in 1781. Astronomers of the time were able to predict, based only on Uranus's orbit, that another planet of Neptune's mass and trajectory must exist. Over sixty years later, in 1846, a french Astronomer by the name of Urbain Le Verrier was able to actually verify that Neptune did indeed exist.",
+        "nameOrigin": "Neptune was first the Roman God of fresh water, but he was later re-identified with the Greek Poseidon and thus became a deity of the sea."
     }, 
     "pluto": {
         "isPlanet": false

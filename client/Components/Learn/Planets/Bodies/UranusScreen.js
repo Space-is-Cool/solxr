@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
+  },
+  info:{
+    paddingLeft: 34
   }
 });
 
@@ -32,7 +35,9 @@ const UranusScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/uranus.jpg')}
       />
+      <ScrollView style={styles.info}>
       <UranusInfo/>
+      </ScrollView>
     </View>
   );
 };

@@ -10,12 +10,7 @@ import {
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 
-// const funFacts = bodies.venus.discoveredBy.map((fact)=>{
-//   <Text>{fact}</Text>
-// })
-
-
-class MercuryInfo extends Component {
+class VenusInfo extends Component {
   constructor() {
     super();
 
@@ -43,6 +38,15 @@ class MercuryInfo extends Component {
             <Text style={styles.headerThree}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+          <Text></Text>
+          <Text></Text>
+            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.textX}>
+            Extremely high pressure atmosphere (92 times that of Earth!)
+            </Text>
+            <Text style={styles.textX}>
+            Maat Mons: A massive shield volcano. It is the second-highest mountain and the highest volcano on the planet.
+            </Text>
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
@@ -74,7 +78,7 @@ class MercuryInfo extends Component {
   }
 }
 
-export default MercuryInfo;
+export default VenusInfo;
 
 const styles = StyleSheet.create({
   main:{
