@@ -25,7 +25,6 @@ app.use('/users', usersRouter);
 app.use('/nasa', nasaRouter);
 
 
-<<<<<<< HEAD
 //google oauth
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -81,9 +80,6 @@ app.get(
 );
 
 
-=======
-//endpoints
->>>>>>> 6bb13ffb1bcaea2a83ffbcb240a53efa4506d0ac
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
