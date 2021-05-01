@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const Sequelize = require('sequelize');
 
 // const db = new Sequelize('soldb', 'root');
@@ -26,22 +27,21 @@ const Iotd = db.define('users_iotd', {
 });
 
 const ImageFeed = db.define('image_feed', {
-    picture_id: Sequelize.INTEGER,
-    created_at: Sequelize.STRING,
-    user_id: Sequelize.INTEGER,
-  });
+  picture_id: Sequelize.INTEGER,
+  created_at: Sequelize.STRING,
+  user_id: Sequelize.INTEGER,
+});
 
-  const Emoji = db.define('emoji', {
-    picture_id: Sequelize.INTEGER,
-    emoji_type: Sequelize.STRING,
-    user_id: Sequelize.INTEGER,
-    emoji_type: Sequelize.STRING
-  });
+const Emoji = db.define('emoji', {
+  picture_id: Sequelize.INTEGER,
+  emoji_type: Sequelize.STRING,
+  user_id: Sequelize.INTEGER,
+});
 
 User.sync();
 Iotd.sync();
 ImageFeed.sync();
-Emoji.sync()
+Emoji.sync();
 
 module.exports.db = db;
 module.exports.User = User;

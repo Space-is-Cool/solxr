@@ -1,15 +1,19 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
+import SunInfo from './sunInfo.js';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: 'black'
   },
   image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    width: 420,
+    height: 420,
   },
   text: {
     color: 'white',
@@ -17,21 +21,23 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
+  },
+  info:{
+    paddingLeft: 34
   }
 });
 
 const SunScreen = ({navigation, route}) => {
 
-  //launches a single planet on render
-  //
-
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Text!!!!</Text>
       <ImageBackground
         style={styles.image}
         source={require('../assets/sun.png')}
       />
+      <ScrollView style={styles.info}>
+      <SunInfo/>
+      </ScrollView>
     </View>
   );
 };

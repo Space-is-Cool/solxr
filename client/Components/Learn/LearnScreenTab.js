@@ -30,7 +30,7 @@ const LearnTab = () => (
     }}
   >
     <LearnNavigator.Screen
-      name="Planets"
+      name="Bodies"
       component={PlanetSelector}
     />
     <LearnNavigator.Screen
