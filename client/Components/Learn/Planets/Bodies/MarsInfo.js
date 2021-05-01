@@ -10,9 +10,12 @@ import {
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 
+// const funFacts = bodies.mars.discoveredBy.map((fact)=>{
+//   <Text>{fact}</Text>
+// })
 
 
-class SunInfo extends Component {
+class Mars extends Component {
   constructor() {
     super();
 
@@ -27,42 +30,43 @@ class SunInfo extends Component {
   render() {
     return ( 
       <ScrollView>
+      {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.sun.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.sun.AKA}</Text>
+      <Text style={styles.header}>{bodies.mars.name}</Text>
+      <Text style={styles.headerTwo}>{bodies.mars.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Diameter: 1.4 million km                  Gravity: {bodies.sun.gravity}</Text>
+      <Text style={styles.basicFacts}>  Latin: {bodies.mars.latin}    Diameter: {bodies.mars.diameter}       Moons: 2  </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
             <Text style={styles.headerThree}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+            <Text></Text>
+          <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.textX}>
+            Olympus Mons: The Largest Volcano in the solar system
+            </Text>
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-            Travels through the Galaxy at roughly 220 km per second
+            Mars and Earth have approximately the same landmass
             </Text>
             <Text style={styles.textX}>
-            Will one day consume the Earth
+            Sunsets on Mars are blue
             </Text>
             <Text style={styles.textX}>
-            Accounts for 99.86% of the mass in the solar system
+            Only planet other that Earth on which humans have achieved powered flight
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>
             <Text style={styles.text}>
-              {bodies.sun.discoveredBy}
+              {bodies.mars.discoveredBy}
             </Text>
-            <Text></Text>
-            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
             <Text style={styles.text}>
-            Sun spots: A spot or patch appearing from time to time on the sun's surface, appearing dark by contrast with its surroundings.
-            </Text>
-            <Text></Text>
-            <Text style={styles.text}>
-            Solar Flares: A sudden explosion of energy caused by tangling, crossing or reorganizing of magnetic field lines near sunspots. The surface of the Sun is a very busy place.
+              {bodies.mars.nameOrigin}
             </Text>
           </View>
         </View>
@@ -75,7 +79,7 @@ class SunInfo extends Component {
   }
 }
 
-export default SunInfo;
+export default Mars;
 
 const styles = StyleSheet.create({
   main:{

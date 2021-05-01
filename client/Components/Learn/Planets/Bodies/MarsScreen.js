@@ -2,20 +2,18 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-import MercuryInfo from './MercuryInfo.js';
-import Swiper from 'react-native-swiper/src';
+import MarsInfo from './MarsInfo.js';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black',
-    paddingTop: 20
+    backgroundColor: 'black'
   },
   image: {
-    maxWidth: 375,
-    height: 375,
-
+    justifyContent: 'center',
+    width: 400,
+    height: 400,
   },
   text: {
     color: 'white',
@@ -29,21 +27,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const MercuryScreen = ({navigation, route}) => {
+const MarsScreen = ({navigation, route}) => {
 
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.image}
-        source={require('../assets/mercury.png')}
+        source={require('../assets/mars.jpg')}
       />
       <ScrollView style={styles.info}>
-      <MercuryInfo/>
+      <MarsInfo/>
       </ScrollView>
-
     </View>
   );
 };
 
-export default MercuryScreen;
-
+export default MarsScreen;

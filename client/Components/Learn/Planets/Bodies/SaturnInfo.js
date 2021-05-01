@@ -11,8 +11,7 @@ import {
 import bodies from '../data/bodiesData.js';
 
 
-
-class SunInfo extends Component {
+class SaturnInfo extends Component {
   constructor() {
     super();
 
@@ -27,12 +26,13 @@ class SunInfo extends Component {
   render() {
     return ( 
       <ScrollView>
+      {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.sun.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.sun.AKA}</Text>
+      <Text style={styles.header}>{bodies.saturn.name}</Text>
+      <Text style={styles.headerTwo}>{bodies.saturn.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Diameter: 1.4 million km                  Gravity: {bodies.sun.gravity}</Text>
+      <Text style={styles.basicFacts}>  Latin: {bodies.saturn.latin}    Diameter: {bodies.saturn.diameter}     Moons:{bodies.saturn.moons.length} </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
@@ -40,29 +40,32 @@ class SunInfo extends Component {
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
           <Text></Text>
+          <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.textX}>
+            Look at those rings!   
+            </Text>
+            <Text style={styles.textX}>
+            Large Hexagonal storm at north pole, we still don't know for sure what causes it  
+            </Text>
+          <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-            Travels through the Galaxy at roughly 220 km per second
+            Four spacecraft visiters: Pioneer 11, Voyager 1 and 2, and the Cassini-Huygens
             </Text>
             <Text style={styles.textX}>
-            Will one day consume the Earth
+            The most distant planet that can be seen with the naked eye
             </Text>
             <Text style={styles.textX}>
-            Accounts for 99.86% of the mass in the solar system
+            Most Moons
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>
             <Text style={styles.text}>
-              {bodies.sun.discoveredBy}
+              {bodies.saturn.discoveredBy}
             </Text>
-            <Text></Text>
-            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
             <Text style={styles.text}>
-            Sun spots: A spot or patch appearing from time to time on the sun's surface, appearing dark by contrast with its surroundings.
-            </Text>
-            <Text></Text>
-            <Text style={styles.text}>
-            Solar Flares: A sudden explosion of energy caused by tangling, crossing or reorganizing of magnetic field lines near sunspots. The surface of the Sun is a very busy place.
+              {bodies.saturn.nameOrigin}
             </Text>
           </View>
         </View>
@@ -75,7 +78,7 @@ class SunInfo extends Component {
   }
 }
 
-export default SunInfo;
+export default SaturnInfo;
 
 const styles = StyleSheet.create({
   main:{

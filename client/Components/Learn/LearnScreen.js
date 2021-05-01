@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+/* eslint-disable react/prop-types */
+import React, {useState} from 'react';
 import { View, Text, Button } from 'react-native';
 import PlanetSelector from './Planets/PlanetSelector.js';
 import Timeline from './Tech/Timeline.js';
