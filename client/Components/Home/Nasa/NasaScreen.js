@@ -76,7 +76,9 @@ const NasaScreen = ({navigation, route}) => {
   };
   return (
     <View style={styles.container}>
+      <Text></Text>
       <Text style={styles.header}>Welcome to solXR!</Text>
+      <Text></Text>
       {IoTD && 
       (<ImageBackground
         style={styles.image}
@@ -90,7 +92,7 @@ const NasaScreen = ({navigation, route}) => {
           <Text style={styles.headerTwo}>{title}</Text>
           <Text></Text>
           <Text></Text>
-          <Text style={styles.headerThree}>More Info Below...</Text>
+          <Text style={styles.headerThree}>Swipe for more info</Text>
         </View>
         <ScrollView>
           <Text></Text>

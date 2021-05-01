@@ -4,7 +4,7 @@ export default [
     dtstamp: '20210101T235946Z',
     dtstart: '20210101T235946Z',
     summary: 'M41 is well placed',
-    description: 'The open star cluster M41 (NGC 2287; mag 4.6) in Canis Major is well placed in the sky. https://in-the-sky.org/news.php?id=20210101_17_100',
+    description: 'The open star cluster M41 (NGC 2287  mag 4.6) in Canis Major is well placed in the sky. https://in-the-sky.org/news.php?id=20210101_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210101_17_100'
   },
   {
@@ -36,7 +36,7 @@ export default [
     dtstamp: '20210109T211839Z',
     dtstart: '20210109T211839Z',
     summary: 'Conjunction of Mercury and Saturn',
-    description: 'Mercury and Saturn share the same right ascension, at a separation of 1&deg;40&#39;. https://in-the-sky.org/news.php?id=20210109_20_100',
+    description: 'Mercury and Saturn share the same right ascension, at a separation of 1° 40°39 . https://in-the-sky.org/news.php?id=20210109_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210109_20_100'
   },
   {
@@ -44,7 +44,7 @@ export default [
     dtstamp: '20210110T170103Z',
     dtstart: '20210110T170103Z',
     summary: 'Conjunction of Neptune and Ceres',
-    description: 'Neptune and Ceres share the same right ascension, at a separation of 8&deg;37&#39;. https://in-the-sky.org/news.php?id=20210110_20_100',
+    description: 'Neptune and Ceres share the same right ascension, at a separation of 8° 37°39 . https://in-the-sky.org/news.php?id=20210110_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210110_20_100'
   },
   {
@@ -52,7 +52,7 @@ export default [
     dtstamp: '20210111T110953Z',
     dtstart: '20210111T110953Z',
     summary: 'Conjunction of Jupiter and Mercury',
-    description: 'Jupiter and Mercury share the same right ascension, at a separation of 1&deg;28&#39;. https://in-the-sky.org/news.php?id=20210111_20_100',
+    description: 'Jupiter and Mercury share the same right ascension, at a separation of 1° 28°39 . https://in-the-sky.org/news.php?id=20210111_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210111_20_100'
   },
   {
@@ -60,7 +60,7 @@ export default [
     dtstamp: '20210111T201022Z',
     dtstart: '20210111T201022Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 1&deg;29&#39;. https://in-the-sky.org/news.php?id=20210111_20_101',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 1° 29°39 . https://in-the-sky.org/news.php?id=20210111_20_101',
     url: 'https://in-the-sky.org/news.php?id=20210111_20_101'
   },
   {
@@ -76,7 +76,7 @@ export default [
     dtstamp: '20210114T081419Z',
     dtstart: '20210114T081419Z',
     summary: 'Conjunction of the Moon and Mercury',
-    description: 'The Moon and Mercury share the same right ascension, at a separation of 2&deg;19&#39;. https://in-the-sky.org/news.php?id=20210114_20_100',
+    description: 'The Moon and Mercury share the same right ascension, at a separation of 2° 19°39 . https://in-the-sky.org/news.php?id=20210114_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210114_20_100'
   },
   {
@@ -100,7 +100,7 @@ export default [
     dtstamp: '20210114T235907Z',
     dtstart: '20210114T235907Z',
     summary: 'M47 is well placed',
-    description: 'The open star cluster M47 (NGC 2422; mag 4.5) in Puppis is well placed in the sky. https://in-the-sky.org/news.php?id=20210114_17_100',
+    description: 'The open star cluster M47 (NGC 2422  mag 4.5) in Puppis is well placed in the sky. https://in-the-sky.org/news.php?id=20210114_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210114_17_100'
   },
   {
@@ -148,7 +148,7 @@ export default [
     dtstamp: '20210121T053540Z',
     dtstart: '20210121T053540Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 5&deg;03&#39;. https://in-the-sky.org/news.php?id=20210121_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 5° 03°39 . https://in-the-sky.org/news.php?id=20210121_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210121_20_100'
   },
   {
@@ -156,7 +156,7 @@ export default [
     dtstamp: '20210121T094914Z',
     dtstart: '20210121T094914Z',
     summary: 'Close approach of the Moon, Mars and Uranus',
-    description: 'The Moon, Mars and Uranus pass within 4&deg;38&#39; of each other. https://in-the-sky.org/news.php?id=20210121_15_100',
+    description: 'The Moon, Mars and Uranus pass within 4° 38°39  of each other. https://in-the-sky.org/news.php?id=20210121_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210121_15_100'
   },
   {
@@ -172,7 +172,7 @@ export default [
     dtstamp: '20210121T234131Z',
     dtstart: '20210121T234131Z',
     summary: 'Conjunction of Mars and Uranus',
-    description: 'Mars and Uranus share the same right ascension, at a separation of 1&deg;43&#39;. https://in-the-sky.org/news.php?id=20210121_20_101',
+    description: 'Mars and Uranus share the same right ascension, at a separation of 1°43°39. https://in-the-sky.org/news.php?id=20210121_20_101',
     url: 'https://in-the-sky.org/news.php?id=20210121_20_101'
   },
   {
@@ -244,7 +244,7 @@ export default [
     dtstamp: '20210129T004122Z',
     dtstart: '20210129T004122Z',
     summary: 'Conjunction of Venus and Pluto',
-    description: 'Venus and Pluto share the same right ascension, at a separation of 0&deg;44&#39;. https://in-the-sky.org/news.php?id=20210129_20_100',
+    description: 'Venus and Pluto share the same right ascension, at a separation of 0° 44°39 . https://in-the-sky.org/news.php?id=20210129_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210129_20_100'
   },
   {
@@ -260,7 +260,7 @@ export default [
     dtstamp: '20210130T235949Z',
     dtstart: '20210130T235949Z',
     summary: 'M44 is well placed',
-    description: 'The Beehive open star cluster (M44, NGC 2632, also known as Praesepe; mag 3.7) is well placed in the sky. https://in-the-sky.org/news.php?id=20210130_17_100',
+    description: 'The Beehive open star cluster (M44, NGC 2632, also known as Praesepe  mag 3.7) is well placed in the sky. https://in-the-sky.org/news.php?id=20210130_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210130_17_100'
   },
   {
@@ -268,7 +268,7 @@ export default [
     dtstamp: '20210131T235602Z',
     dtstart: '20210131T235602Z',
     summary: 'IC2391 is well placed',
-    description: 'The omicron Velorum open star cluster (IC 2391; mag 2.5) in Vela is well placed in the sky. https://in-the-sky.org/news.php?id=20210131_17_100',
+    description: 'The omicron Velorum open star cluster (IC 2391  mag 2.5) in Vela is well placed in the sky. https://in-the-sky.org/news.php?id=20210131_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210131_17_100'
   },
   {
@@ -324,7 +324,7 @@ export default [
     dtstamp: '20210210T111109Z',
     dtstart: '20210210T111109Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 3&deg;24&#39;. https://in-the-sky.org/news.php?id=20210210_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 3° 24°39 . https://in-the-sky.org/news.php?id=20210210_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210210_20_100'
   },
   {
@@ -340,7 +340,7 @@ export default [
     dtstamp: '20210218T224516Z',
     dtstart: '20210218T224516Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 3&deg;41&#39;. https://in-the-sky.org/news.php?id=20210218_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 3° 41°39 . https://in-the-sky.org/news.php?id=20210218_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210218_20_100'
   },
   {
@@ -348,7 +348,7 @@ export default [
     dtstamp: '20210219T012524Z',
     dtstart: '20210219T012524Z',
     summary: 'Close approach of the Moon and Mars',
-    description: 'The Moon and Mars pass within 3&deg;28&#39; of each other. https://in-the-sky.org/news.php?id=20210219_15_100',
+    description: 'The Moon and Mars pass within 3° 28°39  of each other. https://in-the-sky.org/news.php?id=20210219_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210219_15_100'
   },
   {
@@ -364,7 +364,7 @@ export default [
     dtstamp: '20210219T235610Z',
     dtstart: '20210219T235610Z',
     summary: 'M81 is well placed',
-    description: 'Bode\'s galaxy (M81, NGC 3031; mag 7.9) in Ursa Major is well placed in the sky. https://in-the-sky.org/news.php?id=20210219_17_100',
+    description: 'Bode\'s galaxy (M81, NGC 3031  mag 7.9) in Ursa Major is well placed in the sky. https://in-the-sky.org/news.php?id=20210219_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210219_17_100'
   },
   {
@@ -420,7 +420,7 @@ export default [
     dtstamp: '20210303T235615Z',
     dtstart: '20210303T235615Z',
     summary: 'IC2602 is well placed',
-    description: 'The theta Carinae open star cluster (IC 2602, also known as the southern Pleiades; mag 1.9) is well placed in the sky. https://in-the-sky.org/news.php?id=20210303_17_100',
+    description: 'The theta Carinae open star cluster (IC 2602, also known as the southern Pleiades  mag 1.9) is well placed in the sky. https://in-the-sky.org/news.php?id=20210303_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210303_17_100'
   },
   {
@@ -436,7 +436,7 @@ export default [
     dtstamp: '20210305T055426Z',
     dtstart: '20210305T055426Z',
     summary: 'Close approach of Jupiter and Mercury',
-    description: 'Jupiter and Mercury pass within 0&deg;19&#39; of each other. https://in-the-sky.org/news.php?id=20210305_15_100',
+    description: 'Jupiter and Mercury pass within 0° 19°39  of each other. https://in-the-sky.org/news.php?id=20210305_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210305_15_100'
   },
   {
@@ -444,7 +444,7 @@ export default [
     dtstamp: '20210305T064530Z',
     dtstart: '20210305T064530Z',
     summary: 'Conjunction of Jupiter and Mercury',
-    description: 'Jupiter and Mercury share the same right ascension, at a separation of 0&deg;19&#39;. https://in-the-sky.org/news.php?id=20210305_20_100',
+    description: 'Jupiter and Mercury share the same right ascension, at a separation of 0° 19°39 . https://in-the-sky.org/news.php?id=20210305_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210305_20_100'
   },
   {
@@ -476,7 +476,7 @@ export default [
     dtstamp: '20210308T235923Z',
     dtstart: '20210308T235923Z',
     summary: 'NGC 3532 is well placed',
-    description: 'The wishing well open star cluster (NGC 3532; mag 3.0) in Carina is well placed in the sky. https://in-the-sky.org/news.php?id=20210308_17_100',
+    description: 'The wishing well open star cluster (NGC 3532  mag 3.0) in Carina is well placed in the sky. https://in-the-sky.org/news.php?id=20210308_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210308_17_100'
   },
   {
@@ -484,7 +484,7 @@ export default [
     dtstamp: '20210309T225801Z',
     dtstart: '20210309T225801Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 3&deg;40&#39;. https://in-the-sky.org/news.php?id=20210309_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 3° 40°39 . https://in-the-sky.org/news.php?id=20210309_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210309_20_100'
   },
   {
@@ -492,7 +492,7 @@ export default [
     dtstamp: '20210310T002459Z',
     dtstart: '20210310T002459Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 3&deg;35&#39; of each other. https://in-the-sky.org/news.php?id=20210310_15_100',
+    description: 'The Moon and Saturn pass within 3° 35°39  of each other. https://in-the-sky.org/news.php?id=20210310_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210310_15_100'
   },
   {
@@ -500,7 +500,7 @@ export default [
     dtstamp: '20210310T153704Z',
     dtstart: '20210310T153704Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;02&#39;. https://in-the-sky.org/news.php?id=20210310_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 02°39 . https://in-the-sky.org/news.php?id=20210310_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210310_20_100'
   },
   {
@@ -516,7 +516,7 @@ export default [
     dtstamp: '20210311T010228Z',
     dtstart: '20210311T010228Z',
     summary: 'Conjunction of the Moon and Mercury',
-    description: 'The Moon and Mercury share the same right ascension, at a separation of 3&deg;41&#39;. https://in-the-sky.org/news.php?id=20210311_20_100',
+    description: 'The Moon and Mercury share the same right ascension, at a separation of 3° 41°39 . https://in-the-sky.org/news.php?id=20210311_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210311_20_100'
   },
   {
@@ -540,7 +540,7 @@ export default [
     dtstamp: '20210319T174642Z',
     dtstart: '20210319T174642Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 1&deg;55&#39;. https://in-the-sky.org/news.php?id=20210319_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 1° 55°39 . https://in-the-sky.org/news.php?id=20210319_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210319_20_100'
   },
   {
@@ -548,7 +548,7 @@ export default [
     dtstamp: '20210319T184726Z',
     dtstart: '20210319T184726Z',
     summary: 'Close approach of the Moon and Mars',
-    description: 'The Moon and Mars pass within 1&deg;51&#39; of each other. https://in-the-sky.org/news.php?id=20210319_15_100',
+    description: 'The Moon and Mars pass within 1° 51°39  of each other. https://in-the-sky.org/news.php?id=20210319_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210319_15_100'
   },
   {
@@ -604,7 +604,7 @@ export default [
     dtstamp: '20210329T191515Z',
     dtstart: '20210329T191515Z',
     summary: 'Conjunction of Mercury and Neptune',
-    description: 'Mercury and Neptune share the same right ascension, at a separation of 1&deg;23&#39;. https://in-the-sky.org/news.php?id=20210329_20_100',
+    description: 'Mercury and Neptune share the same right ascension, at a separation of 1° 23°39 . https://in-the-sky.org/news.php?id=20210329_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210329_20_100'
   },
   {
@@ -612,7 +612,7 @@ export default [
     dtstamp: '20210401T235856Z',
     dtstart: '20210401T235856Z',
     summary: 'M104 is well placed',
-    description: 'The sombrero galaxy (M104, NGC 4594; mag 9.0) is well placed in the sky. https://in-the-sky.org/news.php?id=20210401_17_100',
+    description: 'The sombrero galaxy (M104, NGC 4594  mag 9.0) is well placed in the sky. https://in-the-sky.org/news.php?id=20210401_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210401_17_100'
   },
   {
@@ -644,7 +644,7 @@ export default [
     dtstamp: '20210405T235647Z',
     dtstart: '20210405T235647Z',
     summary: 'NGC 4755 is well placed',
-    description: 'The jewel box open star cluster (NGC 4755, also known as the Kappa Crucis cluster; mag 4.2) in Crux is well placed in the sky. https://in-the-sky.org/news.php?id=20210405_17_100',
+    description: 'The jewel box open star cluster (NGC 4755, also known as the Kappa Crucis cluster  mag 4.2) in Crux is well placed in the sky. https://in-the-sky.org/news.php?id=20210405_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210405_17_100'
   },
   {
@@ -652,7 +652,7 @@ export default [
     dtstamp: '20210406T083024Z',
     dtstart: '20210406T083024Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 3&deg;57&#39;. https://in-the-sky.org/news.php?id=20210406_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 3° 57°39 . https://in-the-sky.org/news.php?id=20210406_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210406_20_100'
   },
   {
@@ -660,7 +660,7 @@ export default [
     dtstamp: '20210406T101250Z',
     dtstart: '20210406T101250Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 3&deg;51&#39; of each other. https://in-the-sky.org/news.php?id=20210406_15_100',
+    description: 'The Moon and Saturn pass within 3° 51°39  of each other. https://in-the-sky.org/news.php?id=20210406_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210406_15_100'
   },
   {
@@ -668,7 +668,7 @@ export default [
     dtstamp: '20210407T071817Z',
     dtstart: '20210407T071817Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;23&#39;. https://in-the-sky.org/news.php?id=20210407_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 23°39 . https://in-the-sky.org/news.php?id=20210407_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210407_20_100'
   },
   {
@@ -676,7 +676,7 @@ export default [
     dtstamp: '20210407T095150Z',
     dtstart: '20210407T095150Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 4&deg;10&#39; of each other. https://in-the-sky.org/news.php?id=20210407_15_100',
+    description: 'The Moon and Jupiter pass within 4° 10°39  of each other. https://in-the-sky.org/news.php?id=20210407_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210407_15_100'
   },
   {
@@ -700,7 +700,7 @@ export default [
     dtstamp: '20210413T235705Z',
     dtstart: '20210413T235705Z',
     summary: 'NGC 5128 is well placed',
-    description: 'Centaurus A (NGC 5128; mag 7.8) is well placed in the sky. https://in-the-sky.org/news.php?id=20210413_17_100',
+    description: 'Centaurus A (NGC 5128  mag 7.8) is well placed in the sky. https://in-the-sky.org/news.php?id=20210413_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210413_17_100'
   },
   {
@@ -724,7 +724,7 @@ export default [
     dtstamp: '20210414T235734Z',
     dtstart: '20210414T235734Z',
     summary: 'M51 is well placed',
-    description: 'The whirlpool galaxy (M51, NGC 5194; mag 9.0) is well placed in the sky. https://in-the-sky.org/news.php?id=20210414_17_100',
+    description: 'The whirlpool galaxy (M51, NGC 5194  mag 9.0) is well placed in the sky. https://in-the-sky.org/news.php?id=20210414_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210414_17_100'
   },
   {
@@ -732,7 +732,7 @@ export default [
     dtstamp: '20210416T235650Z',
     dtstart: '20210416T235650Z',
     summary: 'M83 is well placed',
-    description: 'The southern pinwheel galaxy (M83, NGC 5236; mag 8.2), a face-on spiral galaxy in Hydra is well placed in the sky. https://in-the-sky.org/news.php?id=20210416_17_100',
+    description: 'The southern pinwheel galaxy (M83, NGC 5236  mag 8.2), a face-on spiral galaxy in Hydra is well placed in the sky. https://in-the-sky.org/news.php?id=20210416_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210416_17_100'
   },
   {
@@ -740,7 +740,7 @@ export default [
     dtstamp: '20210417T120801Z',
     dtstart: '20210417T120801Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 0&deg;07&#39;. https://in-the-sky.org/news.php?id=20210417_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 0° 07°39 . https://in-the-sky.org/news.php?id=20210417_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210417_20_100'
   },
   {
@@ -748,7 +748,7 @@ export default [
     dtstamp: '20210417T121005Z',
     dtstart: '20210417T121005Z',
     summary: 'Close approach of the Moon and Mars',
-    description: 'The Moon and Mars pass within 0&deg;07&#39; of each other. https://in-the-sky.org/news.php?id=20210417_15_100',
+    description: 'The Moon and Mars pass within 0° 07°39  of each other. https://in-the-sky.org/news.php?id=20210417_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210417_15_100'
   },
   {
@@ -764,7 +764,7 @@ export default [
     dtstamp: '20210417T235803Z',
     dtstart: '20210417T235803Z',
     summary: 'M3 is well placed',
-    description: 'The globular cluster M3 (NGC 5272; mag 6.2) in Canes Venatici is well placed in the sky. https://in-the-sky.org/news.php?id=20210417_17_100',
+    description: 'The globular cluster M3 (NGC 5272  mag 6.2) in Canes Venatici is well placed in the sky. https://in-the-sky.org/news.php?id=20210417_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210417_17_100'
   },
   {
@@ -804,7 +804,7 @@ export default [
     dtstamp: '20210422T235923Z',
     dtstart: '20210422T235923Z',
     summary: 'M101 is well placed',
-    description: 'The pinwheel galaxy (M101, NGC 5457; mag 8.3) is well placed in the sky. https://in-the-sky.org/news.php?id=20210422_17_100',
+    description: 'The pinwheel galaxy (M101, NGC 5457  mag 8.3) is well placed in the sky. https://in-the-sky.org/news.php?id=20210422_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210422_17_100'
   },
   {
@@ -828,7 +828,7 @@ export default [
     dtstamp: '20210428T200833Z',
     dtstart: '20210428T200833Z',
     summary: 'Conjunction of Ceres and Eris',
-    description: 'Ceres and Eris share the same right ascension, at a separation of 4&deg;54&#39;. https://in-the-sky.org/news.php?id=20210428_20_100',
+    description: 'Ceres and Eris share the same right ascension, at a separation of 4° 54°39 . https://in-the-sky.org/news.php?id=20210428_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210428_20_100'
   },
   {
@@ -844,7 +844,7 @@ export default [
     dtstamp: '20210503T165859Z',
     dtstart: '20210503T165859Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 4&deg;09&#39;. https://in-the-sky.org/news.php?id=20210503_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 4° 09°39 . https://in-the-sky.org/news.php?id=20210503_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210503_20_100'
   },
   {
@@ -852,7 +852,7 @@ export default [
     dtstamp: '20210503T184919Z',
     dtstart: '20210503T184919Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 4&deg;02&#39; of each other. https://in-the-sky.org/news.php?id=20210503_15_100',
+    description: 'The Moon and Saturn pass within 4° 02°39  of each other. https://in-the-sky.org/news.php?id=20210503_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210503_15_100'
   },
   {
@@ -868,7 +868,7 @@ export default [
     dtstamp: '20210504T210258Z',
     dtstart: '20210504T210258Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;36&#39;. https://in-the-sky.org/news.php?id=20210504_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 36°39 . https://in-the-sky.org/news.php?id=20210504_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210504_20_100'
   },
   {
@@ -876,7 +876,7 @@ export default [
     dtstamp: '20210504T235558Z',
     dtstart: '20210504T235558Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 4&deg;21&#39; of each other. https://in-the-sky.org/news.php?id=20210504_15_100',
+    description: 'The Moon and Jupiter pass within 4° 21°39  of each other. https://in-the-sky.org/news.php?id=20210504_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210504_15_100'
   },
   {
@@ -908,7 +908,7 @@ export default [
     dtstamp: '20210511T235949Z',
     dtstart: '20210511T235949Z',
     summary: 'M5 is well placed',
-    description: 'The globular cluster M5 (NGC 5904; mag 5.7) in Serpens is well placed in the sky. https://in-the-sky.org/news.php?id=20210511_17_100',
+    description: 'The globular cluster M5 (NGC 5904  mag 5.7) in Serpens is well placed in the sky. https://in-the-sky.org/news.php?id=20210511_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210511_17_100'
   },
   {
@@ -924,7 +924,7 @@ export default [
     dtstamp: '20210512T220320Z',
     dtstart: '20210512T220320Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 0&deg;42&#39;. https://in-the-sky.org/news.php?id=20210512_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 0° 42°39 . https://in-the-sky.org/news.php?id=20210512_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210512_20_100'
   },
   {
@@ -932,7 +932,7 @@ export default [
     dtstamp: '20210513T175845Z',
     dtstart: '20210513T175845Z',
     summary: 'Conjunction of the Moon and Mercury',
-    description: 'The Moon and Mercury share the same right ascension, at a separation of 2&deg;08&#39;. https://in-the-sky.org/news.php?id=20210513_20_100',
+    description: 'The Moon and Mercury share the same right ascension, at a separation of 2° 08°39 . https://in-the-sky.org/news.php?id=20210513_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210513_20_100'
   },
   {
@@ -940,7 +940,7 @@ export default [
     dtstamp: '20210516T044730Z',
     dtstart: '20210516T044730Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 1&deg;28&#39;. https://in-the-sky.org/news.php?id=20210516_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 1° 28°39 . https://in-the-sky.org/news.php?id=20210516_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210516_20_100'
   },
   {
@@ -948,7 +948,7 @@ export default [
     dtstamp: '20210516T045117Z',
     dtstart: '20210516T045117Z',
     summary: 'Close approach of the Moon and Mars',
-    description: 'The Moon and Mars pass within 1&deg;28&#39; of each other. https://in-the-sky.org/news.php?id=20210516_15_100',
+    description: 'The Moon and Mars pass within 1° 28°39  of each other. https://in-the-sky.org/news.php?id=20210516_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210516_15_100'
   },
   {
@@ -1004,7 +1004,7 @@ export default [
     dtstamp: '20210528T235750Z',
     dtstart: '20210528T235750Z',
     summary: 'M4 is well placed',
-    description: 'The globular cluster M4 (NGC 6121; mag 5.6) in Scorpius is well placed in the sky. https://in-the-sky.org/news.php?id=20210528_17_100',
+    description: 'The globular cluster M4 (NGC 6121  mag 5.6) in Scorpius is well placed in the sky. https://in-the-sky.org/news.php?id=20210528_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210528_17_100'
   },
   {
@@ -1012,7 +1012,7 @@ export default [
     dtstamp: '20210529T053442Z',
     dtstart: '20210529T053442Z',
     summary: 'Conjunction of Venus and Mercury',
-    description: 'Venus and Mercury share the same right ascension, at a separation of 0&deg;25&#39;. https://in-the-sky.org/news.php?id=20210529_20_100',
+    description: 'Venus and Mercury share the same right ascension, at a separation of 0° 25°39 . https://in-the-sky.org/news.php?id=20210529_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210529_20_100'
   },
   {
@@ -1020,7 +1020,7 @@ export default [
     dtstamp: '20210531T011838Z',
     dtstart: '20210531T011838Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 4&deg;10&#39;. https://in-the-sky.org/news.php?id=20210531_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 4° 10°39 . https://in-the-sky.org/news.php?id=20210531_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210531_20_100'
   },
   {
@@ -1028,7 +1028,7 @@ export default [
     dtstamp: '20210531T030639Z',
     dtstart: '20210531T030639Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 4&deg;03&#39; of each other. https://in-the-sky.org/news.php?id=20210531_15_100',
+    description: 'The Moon and Saturn pass within 4° 03°39  of each other. https://in-the-sky.org/news.php?id=20210531_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210531_15_100'
   },
   {
@@ -1036,7 +1036,7 @@ export default [
     dtstamp: '20210601T090027Z',
     dtstart: '20210601T090027Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;37&#39;. https://in-the-sky.org/news.php?id=20210601_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 37°39 . https://in-the-sky.org/news.php?id=20210601_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210601_20_100'
   },
   {
@@ -1044,7 +1044,7 @@ export default [
     dtstamp: '20210601T115654Z',
     dtstart: '20210601T115654Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 4&deg;21&#39; of each other. https://in-the-sky.org/news.php?id=20210601_15_100',
+    description: 'The Moon and Jupiter pass within 4° 21°39  of each other. https://in-the-sky.org/news.php?id=20210601_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210601_15_100'
   },
   {
@@ -1060,7 +1060,7 @@ export default [
     dtstamp: '20210602T235613Z',
     dtstart: '20210602T235613Z',
     summary: 'M13 is well placed',
-    description: 'The Hercules globular cluster (M13, NGC 6205; mag 5.8) is well placed in the sky. https://in-the-sky.org/news.php?id=20210602_17_100',
+    description: 'The Hercules globular cluster (M13, NGC 6205  mag 5.8) is well placed in the sky. https://in-the-sky.org/news.php?id=20210602_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210602_17_100'
   },
   {
@@ -1068,7 +1068,7 @@ export default [
     dtstamp: '20210603T235748Z',
     dtstart: '20210603T235748Z',
     summary: 'M12 is well placed',
-    description: 'The globular cluster M12 (NGC 6218; mag 6.7) in Ophiuchus is well placed in the sky. https://in-the-sky.org/news.php?id=20210603_17_100',
+    description: 'The globular cluster M12 (NGC 6218  mag 6.7) in Ophiuchus is well placed in the sky. https://in-the-sky.org/news.php?id=20210603_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210603_17_100'
   },
   {
@@ -1084,7 +1084,7 @@ export default [
     dtstamp: '20210604T180840Z',
     dtstart: '20210604T180840Z',
     summary: 'Conjunction of Uranus and Ceres',
-    description: 'Uranus and Ceres share the same right ascension, at a separation of 6&deg;25&#39;. https://in-the-sky.org/news.php?id=20210604_20_100',
+    description: 'Uranus and Ceres share the same right ascension, at a separation of 6° 25°39 . https://in-the-sky.org/news.php?id=20210604_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210604_20_100'
   },
   {
@@ -1092,7 +1092,7 @@ export default [
     dtstamp: '20210605T235949Z',
     dtstart: '20210605T235949Z',
     summary: 'M10 is well placed',
-    description: 'The globular cluster M10 (NGC 6254; mag 6.6) in Ophiuchus is well placed in the sky. https://in-the-sky.org/news.php?id=20210605_17_100',
+    description: 'The globular cluster M10 (NGC 6254  mag 6.6) in Ophiuchus is well placed in the sky. https://in-the-sky.org/news.php?id=20210605_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210605_17_100'
   },
   {
@@ -1100,7 +1100,7 @@ export default [
     dtstamp: '20210606T235957Z',
     dtstart: '20210606T235957Z',
     summary: 'M62 is well placed',
-    description: 'The globular cluster M62 (NGC 6266; mag 6.5) in Ophiuchus is well placed in the sky. https://in-the-sky.org/news.php?id=20210606_17_100',
+    description: 'The globular cluster M62 (NGC 6266  mag 6.5) in Ophiuchus is well placed in the sky. https://in-the-sky.org/news.php?id=20210606_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210606_17_100'
   },
   {
@@ -1140,7 +1140,7 @@ export default [
     dtstamp: '20210611T235610Z',
     dtstart: '20210611T235610Z',
     summary: 'M92 is well placed',
-    description: 'The globular cluster M92 (NGC 6341; mag 6.4) in Hercules is well placed in the sky. https://in-the-sky.org/news.php?id=20210611_17_100',
+    description: 'The globular cluster M92 (NGC 6341  mag 6.4) in Hercules is well placed in the sky. https://in-the-sky.org/news.php?id=20210611_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210611_17_100'
   },
   {
@@ -1148,7 +1148,7 @@ export default [
     dtstamp: '20210612T064249Z',
     dtstart: '20210612T064249Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 1&deg;28&#39;. https://in-the-sky.org/news.php?id=20210612_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 1° 28°39 . https://in-the-sky.org/news.php?id=20210612_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210612_20_100'
   },
   {
@@ -1156,7 +1156,7 @@ export default [
     dtstamp: '20210613T195239Z',
     dtstart: '20210613T195239Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 2&deg;48&#39;. https://in-the-sky.org/news.php?id=20210613_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 2° 48°39 . https://in-the-sky.org/news.php?id=20210613_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210613_20_100'
   },
   {
@@ -1164,7 +1164,7 @@ export default [
     dtstamp: '20210613T204714Z',
     dtstart: '20210613T204714Z',
     summary: 'Close approach of the Moon and Mars',
-    description: 'The Moon and Mars pass within 2&deg;46&#39; of each other. https://in-the-sky.org/news.php?id=20210613_15_100',
+    description: 'The Moon and Mars pass within 2° 46°39  of each other. https://in-the-sky.org/news.php?id=20210613_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210613_15_100'
   },
   {
@@ -1180,7 +1180,7 @@ export default [
     dtstamp: '20210616T235938Z',
     dtstart: '20210616T235938Z',
     summary: 'M6 is well placed',
-    description: 'The butterfly open star cluster (M6, NGC 6405; mag 4.2) in Scorpius is well placed in the sky. https://in-the-sky.org/news.php?id=20210616_17_100',
+    description: 'The butterfly open star cluster (M6, NGC 6405  mag 4.2) in Scorpius is well placed in the sky. https://in-the-sky.org/news.php?id=20210616_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210616_17_100'
   },
   {
@@ -1228,7 +1228,7 @@ export default [
     dtstamp: '20210620T235724Z',
     dtstart: '20210620T235724Z',
     summary: 'M7 is well placed',
-    description: 'The Ptolemy cluster (M7, NGC 6475; mag 4.1) in Scorpius is well placed in the sky. https://in-the-sky.org/news.php?id=20210620_17_100',
+    description: 'The Ptolemy cluster (M7, NGC 6475  mag 4.1) in Scorpius is well placed in the sky. https://in-the-sky.org/news.php?id=20210620_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210620_17_100'
   },
   {
@@ -1244,7 +1244,7 @@ export default [
     dtstamp: '20210623T223520Z',
     dtstart: '20210623T223520Z',
     summary: 'Close approach of Mars and M44',
-    description: 'Mars and M44 pass within 0&deg;00&#39; of each other. https://in-the-sky.org/news.php?id=20210623_15_100',
+    description: 'Mars and M44 pass within 0° 00°39  of each other. https://in-the-sky.org/news.php?id=20210623_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210623_15_100'
   },
   {
@@ -1284,7 +1284,7 @@ export default [
     dtstamp: '20210627T092647Z',
     dtstart: '20210627T092647Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 4&deg;01&#39;. https://in-the-sky.org/news.php?id=20210627_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 4° 01°39 . https://in-the-sky.org/news.php?id=20210627_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210627_20_100'
   },
   {
@@ -1300,7 +1300,7 @@ export default [
     dtstamp: '20210627T110542Z',
     dtstart: '20210627T110542Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 3&deg;54&#39; of each other. https://in-the-sky.org/news.php?id=20210627_15_100',
+    description: 'The Moon and Saturn pass within 3° 54°39  of each other. https://in-the-sky.org/news.php?id=20210627_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210627_15_100'
   },
   {
@@ -1308,7 +1308,7 @@ export default [
     dtstamp: '20210628T184141Z',
     dtstart: '20210628T184141Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;27&#39;. https://in-the-sky.org/news.php?id=20210628_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 27°39 . https://in-the-sky.org/news.php?id=20210628_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210628_20_100'
   },
   {
@@ -1316,7 +1316,7 @@ export default [
     dtstamp: '20210628T212705Z',
     dtstart: '20210628T212705Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 4&deg;10&#39; of each other. https://in-the-sky.org/news.php?id=20210628_15_100',
+    description: 'The Moon and Jupiter pass within 4° 10°39  of each other. https://in-the-sky.org/news.php?id=20210628_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210628_15_100'
   },
   {
@@ -1356,7 +1356,7 @@ export default [
     dtstamp: '20210703T114123Z',
     dtstart: '20210703T114123Z',
     summary: 'Close approach of Venus and M44',
-    description: 'Venus and M44 pass within 0&deg;22&#39; of each other. https://in-the-sky.org/news.php?id=20210703_15_100',
+    description: 'Venus and M44 pass within 0° 22°39  of each other. https://in-the-sky.org/news.php?id=20210703_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210703_15_100'
   },
   {
@@ -1396,7 +1396,7 @@ export default [
     dtstamp: '20210708T043917Z',
     dtstart: '20210708T043917Z',
     summary: 'Conjunction of the Moon and Mercury',
-    description: 'The Moon and Mercury share the same right ascension, at a separation of 3&deg;45&#39;. https://in-the-sky.org/news.php?id=20210708_20_100',
+    description: 'The Moon and Mercury share the same right ascension, at a separation of 3° 45°39 . https://in-the-sky.org/news.php?id=20210708_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210708_20_100'
   },
   {
@@ -1436,7 +1436,7 @@ export default [
     dtstamp: '20210712T090930Z',
     dtstart: '20210712T090930Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 3&deg;15&#39;. https://in-the-sky.org/news.php?id=20210712_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 3° 15°39 . https://in-the-sky.org/news.php?id=20210712_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210712_20_100'
   },
   {
@@ -1444,7 +1444,7 @@ export default [
     dtstamp: '20210712T101046Z',
     dtstart: '20210712T101046Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 3&deg;46&#39;. https://in-the-sky.org/news.php?id=20210712_20_101',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 3° 46°39 . https://in-the-sky.org/news.php?id=20210712_20_101',
     url: 'https://in-the-sky.org/news.php?id=20210712_20_101'
   },
   {
@@ -1452,7 +1452,7 @@ export default [
     dtstamp: '20210713T070858Z',
     dtstart: '20210713T070858Z',
     summary: 'Conjunction of Venus and Mars',
-    description: 'Venus and Mars share the same right ascension, at a separation of 0&deg;29&#39;. https://in-the-sky.org/news.php?id=20210713_20_100',
+    description: 'Venus and Mars share the same right ascension, at a separation of 0° 29°39 . https://in-the-sky.org/news.php?id=20210713_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210713_20_100'
   },
   {
@@ -1460,7 +1460,7 @@ export default [
     dtstamp: '20210713T133459Z',
     dtstart: '20210713T133459Z',
     summary: 'Close approach of Venus and Mars',
-    description: 'Venus and Mars pass within 0&deg;28&#39; of each other. https://in-the-sky.org/news.php?id=20210713_15_100',
+    description: 'Venus and Mars pass within 0° 28°39  of each other. https://in-the-sky.org/news.php?id=20210713_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210713_15_100'
   },
   {
@@ -1484,7 +1484,7 @@ export default [
     dtstamp: '20210717T235705Z',
     dtstart: '20210717T235705Z',
     summary: 'M55 is well placed',
-    description: 'The globular cluster M55 (NGC 6809l; mag 6.3) in Sagittarius is well placed in the sky. https://in-the-sky.org/news.php?id=20210717_17_100',
+    description: 'The globular cluster M55 (NGC 6809l  mag 6.3) in Sagittarius is well placed in the sky. https://in-the-sky.org/news.php?id=20210717_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210717_17_100'
   },
   {
@@ -1516,7 +1516,7 @@ export default [
     dtstamp: '20210724T163838Z',
     dtstart: '20210724T163838Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 3&deg;48&#39;. https://in-the-sky.org/news.php?id=20210724_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 3° 48°39 . https://in-the-sky.org/news.php?id=20210724_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210724_20_100'
   },
   {
@@ -1524,7 +1524,7 @@ export default [
     dtstamp: '20210724T180801Z',
     dtstart: '20210724T180801Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 3&deg;42&#39; of each other. https://in-the-sky.org/news.php?id=20210724_15_100',
+    description: 'The Moon and Saturn pass within 3° 42°39  of each other. https://in-the-sky.org/news.php?id=20210724_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210724_15_100'
   },
   {
@@ -1532,7 +1532,7 @@ export default [
     dtstamp: '20210726T012116Z',
     dtstart: '20210726T012116Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;10&#39;. https://in-the-sky.org/news.php?id=20210726_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 10°39 . https://in-the-sky.org/news.php?id=20210726_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210726_20_100'
   },
   {
@@ -1540,7 +1540,7 @@ export default [
     dtstamp: '20210726T034943Z',
     dtstart: '20210726T034943Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 3&deg;55&#39; of each other. https://in-the-sky.org/news.php?id=20210726_15_100',
+    description: 'The Moon and Jupiter pass within 3° 55°39  of each other. https://in-the-sky.org/news.php?id=20210726_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210726_15_100'
   },
   {
@@ -1612,7 +1612,7 @@ export default [
     dtstamp: '20210810T004223Z',
     dtstart: '20210810T004223Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 4&deg;17&#39;. https://in-the-sky.org/news.php?id=20210810_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 4° 17°39 . https://in-the-sky.org/news.php?id=20210810_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210810_20_100'
   },
   {
@@ -1620,7 +1620,7 @@ export default [
     dtstamp: '20210811T065910Z',
     dtstart: '20210811T065910Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 4&deg;17&#39;. https://in-the-sky.org/news.php?id=20210811_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 4° 17°39 . https://in-the-sky.org/news.php?id=20210811_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210811_20_100'
   },
   {
@@ -1628,7 +1628,7 @@ export default [
     dtstamp: '20210811T102640Z',
     dtstart: '20210811T102640Z',
     summary: 'Close approach of the Moon and Venus',
-    description: 'The Moon and Venus pass within 3&deg;53&#39; of each other. https://in-the-sky.org/news.php?id=20210811_15_100',
+    description: 'The Moon and Venus pass within 3° 53°39  of each other. https://in-the-sky.org/news.php?id=20210811_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210811_15_100'
   },
   {
@@ -1652,7 +1652,7 @@ export default [
     dtstamp: '20210814T235642Z',
     dtstart: '20210814T235642Z',
     summary: 'M15 is well placed',
-    description: 'The globular cluster M15 (NGC 7078; mag 6.2) in Pegasus is well placed in the sky. https://in-the-sky.org/news.php?id=20210814_17_100',
+    description: 'The globular cluster M15 (NGC 7078  mag 6.2) in Pegasus is well placed in the sky. https://in-the-sky.org/news.php?id=20210814_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210814_17_100'
   },
   {
@@ -1668,7 +1668,7 @@ export default [
     dtstamp: '20210815T235613Z',
     dtstart: '20210815T235613Z',
     summary: 'M2 is well placed',
-    description: 'The globular cluster M2 (NGC 7089; mag 6.5) in Aquarius is well placed in the sky. https://in-the-sky.org/news.php?id=20210815_17_100',
+    description: 'The globular cluster M2 (NGC 7089  mag 6.5) in Aquarius is well placed in the sky. https://in-the-sky.org/news.php?id=20210815_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210815_17_100'
   },
   {
@@ -1684,7 +1684,7 @@ export default [
     dtstamp: '20210819T040951Z',
     dtstart: '20210819T040951Z',
     summary: 'Conjunction of Mercury and Mars',
-    description: 'Mercury and Mars share the same right ascension, at a separation of 0&deg;04&#39;. https://in-the-sky.org/news.php?id=20210819_20_100',
+    description: 'Mercury and Mars share the same right ascension, at a separation of 0° 04°39 . https://in-the-sky.org/news.php?id=20210819_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210819_20_100'
   },
   {
@@ -1716,7 +1716,7 @@ export default [
     dtstamp: '20210820T221515Z',
     dtstart: '20210820T221515Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 3&deg;42&#39;. https://in-the-sky.org/news.php?id=20210820_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 3° 42°39 . https://in-the-sky.org/news.php?id=20210820_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210820_20_100'
   },
   {
@@ -1724,7 +1724,7 @@ export default [
     dtstamp: '20210820T233929Z',
     dtstart: '20210820T233929Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 3&deg;36&#39; of each other. https://in-the-sky.org/news.php?id=20210820_15_100',
+    description: 'The Moon and Saturn pass within 3° 36°39  of each other. https://in-the-sky.org/news.php?id=20210820_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210820_15_100'
   },
   {
@@ -1732,7 +1732,7 @@ export default [
     dtstamp: '20210822T045615Z',
     dtstart: '20210822T045615Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 3&deg;57&#39;. https://in-the-sky.org/news.php?id=20210822_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 3° 57°39 . https://in-the-sky.org/news.php?id=20210822_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210822_20_100'
   },
   {
@@ -1740,7 +1740,7 @@ export default [
     dtstamp: '20210822T071157Z',
     dtstart: '20210822T071157Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 3&deg;44&#39; of each other. https://in-the-sky.org/news.php?id=20210822_15_100',
+    description: 'The Moon and Jupiter pass within 3° 44°39  of each other. https://in-the-sky.org/news.php?id=20210822_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210822_15_100'
   },
   {
@@ -1788,7 +1788,7 @@ export default [
     dtstamp: '20210908T201845Z',
     dtstart: '20210908T201845Z',
     summary: 'Conjunction of the Moon and Mercury',
-    description: 'The Moon and Mercury share the same right ascension, at a separation of 6&deg;31&#39;. https://in-the-sky.org/news.php?id=20210908_20_100',
+    description: 'The Moon and Mercury share the same right ascension, at a separation of 6° 31°39 . https://in-the-sky.org/news.php?id=20210908_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210908_20_100'
   },
   {
@@ -1804,7 +1804,7 @@ export default [
     dtstamp: '20210910T020836Z',
     dtstart: '20210910T020836Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 4&deg;04&#39;. https://in-the-sky.org/news.php?id=20210910_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 4° 04°39 . https://in-the-sky.org/news.php?id=20210910_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210910_20_100'
   },
   {
@@ -1812,7 +1812,7 @@ export default [
     dtstamp: '20210910T051750Z',
     dtstart: '20210910T051750Z',
     summary: 'Close approach of the Moon and Venus',
-    description: 'The Moon and Venus pass within 3&deg;42&#39; of each other. https://in-the-sky.org/news.php?id=20210910_15_100',
+    description: 'The Moon and Venus pass within 3° 42°39  of each other. https://in-the-sky.org/news.php?id=20210910_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210910_15_100'
   },
   {
@@ -1868,7 +1868,7 @@ export default [
     dtstamp: '20210917T023302Z',
     dtstart: '20210917T023302Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 3&deg;45&#39;. https://in-the-sky.org/news.php?id=20210917_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 3° 45°39 . https://in-the-sky.org/news.php?id=20210917_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210917_20_100'
   },
   {
@@ -1876,7 +1876,7 @@ export default [
     dtstamp: '20210917T035753Z',
     dtstart: '20210917T035753Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 3&deg;40&#39; of each other. https://in-the-sky.org/news.php?id=20210917_15_100',
+    description: 'The Moon and Saturn pass within 3° 40°39  of each other. https://in-the-sky.org/news.php?id=20210917_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210917_15_100'
   },
   {
@@ -1892,7 +1892,7 @@ export default [
     dtstamp: '20210918T065425Z',
     dtstart: '20210918T065425Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 3&deg;57&#39;. https://in-the-sky.org/news.php?id=20210918_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 3° 57°39 . https://in-the-sky.org/news.php?id=20210918_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210918_20_100'
   },
   {
@@ -1900,7 +1900,7 @@ export default [
     dtstamp: '20210918T090716Z',
     dtstart: '20210918T090716Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 3&deg;45&#39; of each other. https://in-the-sky.org/news.php?id=20210918_15_100',
+    description: 'The Moon and Jupiter pass within 3° 45°39  of each other. https://in-the-sky.org/news.php?id=20210918_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210918_15_100'
   },
   {
@@ -1924,7 +1924,7 @@ export default [
     dtstamp: '20210924T170802Z',
     dtstart: '20210924T170802Z',
     summary: 'Close approach of the Moon and Uranus',
-    description: 'The Moon and Uranus pass within 1&deg;14&#39; of each other. https://in-the-sky.org/news.php?id=20210924_15_100',
+    description: 'The Moon and Uranus pass within 1° 14°39  of each other. https://in-the-sky.org/news.php?id=20210924_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210924_15_100'
   },
   {
@@ -1948,7 +1948,7 @@ export default [
     dtstamp: '20210927T235719Z',
     dtstart: '20210927T235719Z',
     summary: '47-Tuc is well placed',
-    description: 'The second brightest globular cluster in the sky, 47 Tuc (NGC 104; mag 4.0), in Tucana is well placed in the sky. https://in-the-sky.org/news.php?id=20210927_17_100',
+    description: 'The second brightest globular cluster in the sky, 47 Tuc (NGC 104  mag 4.0), in Tucana is well placed in the sky. https://in-the-sky.org/news.php?id=20210927_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210927_17_100'
   },
   {
@@ -1996,7 +1996,7 @@ export default [
     dtstamp: '20211002T235615Z',
     dtstart: '20211002T235615Z',
     summary: 'M31 is well placed',
-    description: 'The Andromeda galaxy (M31; mag 4.4) is well placed in the sky. https://in-the-sky.org/news.php?id=20211002_17_101',
+    description: 'The Andromeda galaxy (M31  mag 4.4) is well placed in the sky. https://in-the-sky.org/news.php?id=20211002_17_101',
     url: 'https://in-the-sky.org/news.php?id=20211002_17_101'
   },
   {
@@ -2004,7 +2004,7 @@ export default [
     dtstamp: '20211003T235708Z',
     dtstart: '20211003T235708Z',
     summary: 'NGC 253 is well placed',
-    description: 'The Sculptor galaxy (NGC 253; mag 8.0) is well placed in the sky. https://in-the-sky.org/news.php?id=20211003_17_100',
+    description: 'The Sculptor galaxy (NGC 253  mag 8.0) is well placed in the sky. https://in-the-sky.org/news.php?id=20211003_17_100',
     url: 'https://in-the-sky.org/news.php?id=20211003_17_100'
   },
   {
@@ -2012,7 +2012,7 @@ export default [
     dtstamp: '20211004T235814Z',
     dtstart: '20211004T235814Z',
     summary: 'SMC is well placed',
-    description: 'The Milky Way\'s dwarf companion, the Small Magellanic Cloud (SMC; mag 2.7), in Tucana is well placed in the sky. https://in-the-sky.org/news.php?id=20211004_17_100',
+    description: 'The Milky Way\'s dwarf companion, the Small Magellanic Cloud (SMC  mag 2.7), in Tucana is well placed in the sky. https://in-the-sky.org/news.php?id=20211004_17_100',
     url: 'https://in-the-sky.org/news.php?id=20211004_17_100'
   },
   {
@@ -2076,7 +2076,7 @@ export default [
     dtstamp: '20211009T183531Z',
     dtstart: '20211009T183531Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 2&deg;51&#39;. https://in-the-sky.org/news.php?id=20211009_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 2° 51°39 . https://in-the-sky.org/news.php?id=20211009_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211009_20_100'
   },
   {
@@ -2084,7 +2084,7 @@ export default [
     dtstamp: '20211009T200404Z',
     dtstart: '20211009T200404Z',
     summary: 'Close approach of the Moon and Venus',
-    description: 'The Moon and Venus pass within 2&deg;44&#39; of each other. https://in-the-sky.org/news.php?id=20211009_15_100',
+    description: 'The Moon and Venus pass within 2° 44°39  of each other. https://in-the-sky.org/news.php?id=20211009_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211009_15_100'
   },
   {
@@ -2124,7 +2124,7 @@ export default [
     dtstamp: '20211014T070852Z',
     dtstart: '20211014T070852Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 3&deg;56&#39;. https://in-the-sky.org/news.php?id=20211014_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 3° 56°39 . https://in-the-sky.org/news.php?id=20211014_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211014_20_100'
   },
   {
@@ -2132,7 +2132,7 @@ export default [
     dtstamp: '20211014T083757Z',
     dtstart: '20211014T083757Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 3&deg;50&#39; of each other. https://in-the-sky.org/news.php?id=20211014_15_100',
+    description: 'The Moon and Saturn pass within 3° 50°39  of each other. https://in-the-sky.org/news.php?id=20211014_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211014_15_100'
   },
   {
@@ -2140,7 +2140,7 @@ export default [
     dtstamp: '20211015T100254Z',
     dtstart: '20211015T100254Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;08&#39;. https://in-the-sky.org/news.php?id=20211015_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 08°39 . https://in-the-sky.org/news.php?id=20211015_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211015_20_100'
   },
   {
@@ -2148,7 +2148,7 @@ export default [
     dtstamp: '20211015T122154Z',
     dtstart: '20211015T122154Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 3&deg;56&#39; of each other. https://in-the-sky.org/news.php?id=20211015_15_100',
+    description: 'The Moon and Jupiter pass within 3° 56°39  of each other. https://in-the-sky.org/news.php?id=20211015_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211015_15_100'
   },
   {
@@ -2156,7 +2156,7 @@ export default [
     dtstamp: '20211015T235607Z',
     dtstart: '20211015T235607Z',
     summary: 'M33 is well placed',
-    description: 'The Triangulum galaxy (M33; mag 6.3) is well placed in the sky. https://in-the-sky.org/news.php?id=20211015_17_100',
+    description: 'The Triangulum galaxy (M33  mag 6.3) is well placed in the sky. https://in-the-sky.org/news.php?id=20211015_17_100',
     url: 'https://in-the-sky.org/news.php?id=20211015_17_100'
   },
   {
@@ -2212,7 +2212,7 @@ export default [
     dtstamp: '20211021T223936Z',
     dtstart: '20211021T223936Z',
     summary: 'Close approach of the Moon and Uranus',
-    description: 'The Moon and Uranus pass within 1&deg;14&#39; of each other. https://in-the-sky.org/news.php?id=20211021_15_100',
+    description: 'The Moon and Uranus pass within 1° 14°39  of each other. https://in-the-sky.org/news.php?id=20211021_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211021_15_100'
   },
   {
@@ -2316,7 +2316,7 @@ export default [
     dtstamp: '20211103T183923Z',
     dtstart: '20211103T183923Z',
     summary: 'Conjunction of the Moon and Mercury',
-    description: 'The Moon and Mercury share the same right ascension, at a separation of 1&deg;13&#39;. https://in-the-sky.org/news.php?id=20211103_20_100',
+    description: 'The Moon and Mercury share the same right ascension, at a separation of 1° 13°39 . https://in-the-sky.org/news.php?id=20211103_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211103_20_100'
   },
   {
@@ -2348,7 +2348,7 @@ export default [
     dtstamp: '20211108T052057Z',
     dtstart: '20211108T052057Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 1&deg;06&#39;. https://in-the-sky.org/news.php?id=20211108_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 1° 06°39 . https://in-the-sky.org/news.php?id=20211108_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211108_20_100'
   },
   {
@@ -2356,7 +2356,7 @@ export default [
     dtstamp: '20211108T052833Z',
     dtstart: '20211108T052833Z',
     summary: 'Close approach of the Moon and Venus',
-    description: 'The Moon and Venus pass within 1&deg;06&#39; of each other. https://in-the-sky.org/news.php?id=20211108_15_100',
+    description: 'The Moon and Venus pass within 1° 06°39  of each other. https://in-the-sky.org/news.php?id=20211108_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211108_15_100'
   },
   {
@@ -2372,7 +2372,7 @@ export default [
     dtstamp: '20211110T142441Z',
     dtstart: '20211110T142441Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 4&deg;06&#39;. https://in-the-sky.org/news.php?id=20211110_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 4° 06°39 . https://in-the-sky.org/news.php?id=20211110_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211110_20_100'
   },
   {
@@ -2380,7 +2380,7 @@ export default [
     dtstamp: '20211110T155838Z',
     dtstart: '20211110T155838Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 4&deg;00&#39; of each other. https://in-the-sky.org/news.php?id=20211110_15_100',
+    description: 'The Moon and Saturn pass within 4° 00°39  of each other. https://in-the-sky.org/news.php?id=20211110_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211110_15_100'
   },
   {
@@ -2396,7 +2396,7 @@ export default [
     dtstamp: '20211111T171657Z',
     dtstart: '20211111T171657Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;21&#39;. https://in-the-sky.org/news.php?id=20211111_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 21°39 . https://in-the-sky.org/news.php?id=20211111_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211111_20_100'
   },
   {
@@ -2404,7 +2404,7 @@ export default [
     dtstamp: '20211111T194555Z',
     dtstart: '20211111T194555Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 4&deg;08&#39; of each other. https://in-the-sky.org/news.php?id=20211111_15_100',
+    description: 'The Moon and Jupiter pass within 4° 08°39  of each other. https://in-the-sky.org/news.php?id=20211111_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211111_15_100'
   },
   {
@@ -2436,7 +2436,7 @@ export default [
     dtstamp: '20211117T235938Z',
     dtstart: '20211117T235938Z',
     summary: 'M45 is well placed',
-    description: 'The Pleiades open star cluster (M45; mag 1.6) in Taurus is well placed in the sky. https://in-the-sky.org/news.php?id=20211117_17_100',
+    description: 'The Pleiades open star cluster (M45  mag 1.6) in Taurus is well placed in the sky. https://in-the-sky.org/news.php?id=20211117_17_100',
     url: 'https://in-the-sky.org/news.php?id=20211117_17_100'
   },
   {
@@ -2516,7 +2516,7 @@ export default [
     dtstamp: '20211203T002758Z',
     dtstart: '20211203T002758Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 0&deg;41&#39;. https://in-the-sky.org/news.php?id=20211203_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 0° 41°39 . https://in-the-sky.org/news.php?id=20211203_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211203_20_100'
   },
   {
@@ -2548,7 +2548,7 @@ export default [
     dtstamp: '20211207T004901Z',
     dtstart: '20211207T004901Z',
     summary: 'Conjunction of the Moon and Venus',
-    description: 'The Moon and Venus share the same right ascension, at a separation of 1&deg;52&#39;. https://in-the-sky.org/news.php?id=20211207_20_100',
+    description: 'The Moon and Venus share the same right ascension, at a separation of 1° 52°39 . https://in-the-sky.org/news.php?id=20211207_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211207_20_100'
   },
   {
@@ -2556,7 +2556,7 @@ export default [
     dtstamp: '20211207T010855Z',
     dtstart: '20211207T010855Z',
     summary: 'Close approach of the Moon and Venus',
-    description: 'The Moon and Venus pass within 1&deg;51&#39; of each other. https://in-the-sky.org/news.php?id=20211207_15_100',
+    description: 'The Moon and Venus pass within 1° 51°39  of each other. https://in-the-sky.org/news.php?id=20211207_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211207_15_100'
   },
   {
@@ -2580,7 +2580,7 @@ export default [
     dtstamp: '20211208T014955Z',
     dtstart: '20211208T014955Z',
     summary: 'Conjunction of the Moon and Saturn',
-    description: 'The Moon and Saturn share the same right ascension, at a separation of 4&deg;11&#39;. https://in-the-sky.org/news.php?id=20211208_20_100',
+    description: 'The Moon and Saturn share the same right ascension, at a separation of 4° 11°39 . https://in-the-sky.org/news.php?id=20211208_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211208_20_100'
   },
   {
@@ -2588,7 +2588,7 @@ export default [
     dtstamp: '20211208T032832Z',
     dtstart: '20211208T032832Z',
     summary: 'Close approach of the Moon and Saturn',
-    description: 'The Moon and Saturn pass within 4&deg;04&#39; of each other. https://in-the-sky.org/news.php?id=20211208_15_100',
+    description: 'The Moon and Saturn pass within 4° 04°39  of each other. https://in-the-sky.org/news.php?id=20211208_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211208_15_100'
   },
   {
@@ -2604,7 +2604,7 @@ export default [
     dtstamp: '20211209T061057Z',
     dtstart: '20211209T061057Z',
     summary: 'Conjunction of the Moon and Jupiter',
-    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4&deg;28&#39;. https://in-the-sky.org/news.php?id=20211209_20_100',
+    description: 'The Moon and Jupiter share the same right ascension, at a separation of 4° 28°39 . https://in-the-sky.org/news.php?id=20211209_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211209_20_100'
   },
   {
@@ -2612,7 +2612,7 @@ export default [
     dtstamp: '20211209T084917Z',
     dtstart: '20211209T084917Z',
     summary: 'Close approach of the Moon and Jupiter',
-    description: 'The Moon and Jupiter pass within 4&deg;13&#39; of each other. https://in-the-sky.org/news.php?id=20211209_15_100',
+    description: 'The Moon and Jupiter pass within 4° 13°39  of each other. https://in-the-sky.org/news.php?id=20211209_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211209_15_100'
   },
   {
@@ -2644,7 +2644,7 @@ export default [
     dtstamp: '20211212T235713Z',
     dtstart: '20211212T235713Z',
     summary: 'LMC is well placed',
-    description: 'The Milky Way\'s dwarf companion, the Large Magellanic Cloud (LMC; mag 0.9), in Dorado is well placed in the sky. https://in-the-sky.org/news.php?id=20211212_17_100',
+    description: 'The Milky Way\'s dwarf companion, the Large Magellanic Cloud (LMC  mag 0.9), in Dorado is well placed in the sky. https://in-the-sky.org/news.php?id=20211212_17_100',
     url: 'https://in-the-sky.org/news.php?id=20211212_17_100'
   },
   {
@@ -2652,7 +2652,7 @@ export default [
     dtstamp: '20211213T055855Z',
     dtstart: '20211213T055855Z',
     summary: 'Conjunction of Venus and Pluto',
-    description: 'Venus and Pluto share the same right ascension, at a separation of 0&deg;20&#39;. https://in-the-sky.org/news.php?id=20211213_20_100',
+    description: 'Venus and Pluto share the same right ascension, at a separation of 0° 20°39 . https://in-the-sky.org/news.php?id=20211213_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211213_20_100'
   },
   {
@@ -2708,7 +2708,7 @@ export default [
     dtstamp: '20211222T034135Z',
     dtstart: '20211222T034135Z',
     summary: 'Conjunction of Venus and Pluto',
-    description: 'Venus and Pluto share the same right ascension, at a separation of 2&deg;09&#39;. https://in-the-sky.org/news.php?id=20211222_20_100',
+    description: 'Venus and Pluto share the same right ascension, at a separation of 2° 09°39 . https://in-the-sky.org/news.php?id=20211222_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211222_20_100'
   },
   {
@@ -2740,7 +2740,7 @@ export default [
     dtstamp: '20211229T011019Z',
     dtstart: '20211229T011019Z',
     summary: 'Conjunction of Venus and Mercury',
-    description: 'Venus and Mercury share the same right ascension, at a separation of 4&deg;13&#39;. https://in-the-sky.org/news.php?id=20211229_20_100',
+    description: 'Venus and Mercury share the same right ascension, at a separation of 4° 13°39 . https://in-the-sky.org/news.php?id=20211229_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211229_20_100'
   },
   {
@@ -2756,7 +2756,7 @@ export default [
     dtstamp: '20211230T142144Z',
     dtstart: '20211230T142144Z',
     summary: 'Conjunction of Mercury and Pluto',
-    description: 'Mercury and Pluto share the same right ascension, at a separation of 0&deg;13&#39;. https://in-the-sky.org/news.php?id=20211230_20_100',
+    description: 'Mercury and Pluto share the same right ascension, at a separation of 0° 13°39 . https://in-the-sky.org/news.php?id=20211230_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211230_20_100'
   },
   {
@@ -2764,7 +2764,7 @@ export default [
     dtstamp: '20211231T195241Z',
     dtstart: '20211231T195241Z',
     summary: 'Close approach of the Moon and Mars',
-    description: 'The Moon and Mars pass within 0&deg;55&#39; of each other. https://in-the-sky.org/news.php?id=20211231_15_100',
+    description: 'The Moon and Mars pass within 0° 55°39  of each other. https://in-the-sky.org/news.php?id=20211231_15_100',
     url: 'https://in-the-sky.org/news.php?id=20211231_15_100'
   },
   {
@@ -2780,7 +2780,7 @@ export default [
     dtstamp: '20211231T201328Z',
     dtstart: '20211231T201328Z',
     summary: 'Conjunction of the Moon and Mars',
-    description: 'The Moon and Mars share the same right ascension, at a separation of 0&deg;56&#39;. https://in-the-sky.org/news.php?id=20211231_20_100',
+    description: 'The Moon and Mars share the same right ascension, at a separation of 0° 56°39 . https://in-the-sky.org/news.php?id=20211231_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211231_20_100'
   },
   {
@@ -2796,7 +2796,7 @@ export default [
     dtstamp: '20220102T235650Z',
     dtstart: '20220102T235650Z',
     summary: 'M41 is well placed',
-    description: 'The open star cluster M41 (NGC 2287; mag 4.6) in Canis Major is well placed in the sky. https://in-the-sky.org/news.php?id=20220102_17_100',
+    description: 'The open star cluster M41 (NGC 2287  mag 4.6) in Canis Major is well placed in the sky. https://in-the-sky.org/news.php?id=20220102_17_100',
     url: 'https://in-the-sky.org/news.php?id=20220102_17_100'
   }
-];
+] 
