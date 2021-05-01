@@ -11,8 +11,7 @@ import {
 import bodies from '../data/bodiesData.js';
 
 
-
-class SunInfo extends Component {
+class MercuryInfo extends Component {
   constructor() {
     super();
 
@@ -27,42 +26,43 @@ class SunInfo extends Component {
   render() {
     return ( 
       <ScrollView>
+      {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.sun.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.sun.AKA}</Text>
+      <Text style={styles.header}>{bodies.mercury.name}</Text>
+      <Text style={styles.headerTwo}>{bodies.mercury.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Diameter: 1.4 million km                  Gravity: {bodies.sun.gravity}</Text>
+      <Text style={styles.basicFacts}>  Latin: {bodies.mercury.latin}    Diameter: {bodies.mercury.diameter}       Moons: 0  </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
             <Text style={styles.headerThree}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+            <Text></Text>
+          <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.text}>
+            Caloris Basin, a crater that spans 1550 km. That's over half the total diameter of the planet!
+            </Text>
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-            Travels through the Galaxy at roughly 220 km per second
+             Closest planet to the sun
             </Text>
             <Text style={styles.textX}>
-            Will one day consume the Earth
+            Shortest year
             </Text>
             <Text style={styles.textX}>
-            Accounts for 99.86% of the mass in the solar system
+            Smallest planet
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>
             <Text style={styles.text}>
-              {bodies.sun.discoveredBy}
+              {bodies.mercury.discoveredBy}
             </Text>
-            <Text></Text>
-            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
             <Text style={styles.text}>
-            Sun spots: A spot or patch appearing from time to time on the sun's surface, appearing dark by contrast with its surroundings.
-            </Text>
-            <Text></Text>
-            <Text style={styles.text}>
-            Solar Flares: A sudden explosion of energy caused by tangling, crossing or reorganizing of magnetic field lines near sunspots. The surface of the Sun is a very busy place.
+              {bodies.mercury.nameOrigin}
             </Text>
           </View>
         </View>
@@ -75,7 +75,7 @@ class SunInfo extends Component {
   }
 }
 
-export default SunInfo;
+export default MercuryInfo;
 
 const styles = StyleSheet.create({
   main:{

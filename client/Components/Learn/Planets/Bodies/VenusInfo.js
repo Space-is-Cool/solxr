@@ -10,9 +10,7 @@ import {
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 
-
-
-class SunInfo extends Component {
+class VenusInfo extends Component {
   constructor() {
     super();
 
@@ -27,12 +25,13 @@ class SunInfo extends Component {
   render() {
     return ( 
       <ScrollView>
+      {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.sun.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.sun.AKA}</Text>
+      <Text style={styles.header}>{bodies.venus.name}</Text>
+      <Text style={styles.headerTwo}>{bodies.venus.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Diameter: 1.4 million km                  Gravity: {bodies.sun.gravity}</Text>
+      <Text style={styles.basicFacts}>  Latin: {bodies.venus.latin}    Diameter: {bodies.venus.diameter}       Moons: 0  </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
@@ -40,29 +39,33 @@ class SunInfo extends Component {
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
           <Text></Text>
+          <Text></Text>
+            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.textX}>
+            Extremely high pressure atmosphere (92 times that of Earth!)
+            </Text>
+            <Text style={styles.textX}>
+            Maat Mons: A massive shield volcano. It is the second-highest mountain and the highest volcano on the planet
+            </Text>
+          <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-            Travels through the Galaxy at roughly 220 km per second
+            Second most spherical object in the solar system, just after the Sun
             </Text>
             <Text style={styles.textX}>
-            Will one day consume the Earth
+            Only planet that rotates clockwise
             </Text>
             <Text style={styles.textX}>
-            Accounts for 99.86% of the mass in the solar system
+            Orbital path is almost a perfect circle
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>
             <Text style={styles.text}>
-              {bodies.sun.discoveredBy}
+              {bodies.venus.discoveredBy}
             </Text>
-            <Text></Text>
-            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
             <Text style={styles.text}>
-            Sun spots: A spot or patch appearing from time to time on the sun's surface, appearing dark by contrast with its surroundings.
-            </Text>
-            <Text></Text>
-            <Text style={styles.text}>
-            Solar Flares: A sudden explosion of energy caused by tangling, crossing or reorganizing of magnetic field lines near sunspots. The surface of the Sun is a very busy place.
+              {bodies.venus.nameOrigin}
             </Text>
           </View>
         </View>
@@ -75,7 +78,7 @@ class SunInfo extends Component {
   }
 }
 
-export default SunInfo;
+export default VenusInfo;
 
 const styles = StyleSheet.create({
   main:{

@@ -11,8 +11,7 @@ import {
 import bodies from '../data/bodiesData.js';
 
 
-
-class SunInfo extends Component {
+class EarthInfo extends Component {
   constructor() {
     super();
 
@@ -27,12 +26,13 @@ class SunInfo extends Component {
   render() {
     return ( 
       <ScrollView>
+      {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.sun.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.sun.AKA}</Text>
+      <Text style={styles.header}>{bodies.earth.name}</Text>
+      <Text style={styles.headerTwo}>{bodies.earth.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Diameter: 1.4 million km                  Gravity: {bodies.sun.gravity}</Text>
+      <Text style={styles.basicFacts}>  Latin: {bodies.earth.latin}    Diameter: {bodies.earth.diameter}       Moons: 1  </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
@@ -42,27 +42,19 @@ class SunInfo extends Component {
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-            Travels through the Galaxy at roughly 220 km per second
+            Only planet known to host life
             </Text>
             <Text style={styles.textX}>
-            Will one day consume the Earth
-            </Text>
-            <Text style={styles.textX}>
-            Accounts for 99.86% of the mass in the solar system
+           Only planet known to have produced Totino™ brand Pizza Rolls
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>
             <Text style={styles.text}>
-              {bodies.sun.discoveredBy}
+              {bodies.earth.discoveredBy}
             </Text>
-            <Text></Text>
-            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
             <Text style={styles.text}>
-            Sun spots: A spot or patch appearing from time to time on the sun's surface, appearing dark by contrast with its surroundings.
-            </Text>
-            <Text></Text>
-            <Text style={styles.text}>
-            Solar Flares: A sudden explosion of energy caused by tangling, crossing or reorganizing of magnetic field lines near sunspots. The surface of the Sun is a very busy place.
+              {bodies.earth.nameOrigin}
             </Text>
           </View>
         </View>
@@ -75,7 +67,7 @@ class SunInfo extends Component {
   }
 }
 
-export default SunInfo;
+export default EarthInfo;
 
 const styles = StyleSheet.create({
   main:{

@@ -10,9 +10,12 @@ import {
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 
+// const funFacts = bodies.moon.discoveredBy.map((fact)=>{
+//   <Text>{fact}</Text>
+// })
 
 
-class SunInfo extends Component {
+class MoonInfo extends Component {
   constructor() {
     super();
 
@@ -27,12 +30,13 @@ class SunInfo extends Component {
   render() {
     return ( 
       <ScrollView>
+      {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.sun.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.sun.AKA}</Text>
+      <Text style={styles.header}>The Moon</Text>
+      <Text style={styles.headerTwo}>Luna</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Diameter: 1.4 million km                  Gravity: {bodies.sun.gravity}</Text>
+      <Text style={styles.basicFacts}>  Latin: {bodies.moon.latin}    Diameter: {bodies.moon.diameter}       Moon: Yes  </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
@@ -40,29 +44,29 @@ class SunInfo extends Component {
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
           <Text></Text>
+            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.textX}>
+            Moonquakes: A phenomonon that is exactly what it sounds like, caused by the Earth's gravitational pull
+            </Text>
+          <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-            Travels through the Galaxy at roughly 220 km per second
+            Always faces Earth from the same direction
             </Text>
             <Text style={styles.textX}>
-            Will one day consume the Earth
+            Controls the tides on Earth
             </Text>
             <Text style={styles.textX}>
-            Accounts for 99.86% of the mass in the solar system
+            Slowly drifting away from Earth
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>
             <Text style={styles.text}>
-              {bodies.sun.discoveredBy}
+              {bodies.moon.discoveredBy}
             </Text>
-            <Text></Text>
-            <Text style={styles.headerThree}>Special Characteristics:</Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
             <Text style={styles.text}>
-            Sun spots: A spot or patch appearing from time to time on the sun's surface, appearing dark by contrast with its surroundings.
-            </Text>
-            <Text></Text>
-            <Text style={styles.text}>
-            Solar Flares: A sudden explosion of energy caused by tangling, crossing or reorganizing of magnetic field lines near sunspots. The surface of the Sun is a very busy place.
+              {bodies.moon.nameOrigin}
             </Text>
           </View>
         </View>
@@ -75,7 +79,7 @@ class SunInfo extends Component {
   }
 }
 
-export default SunInfo;
+export default MoonInfo;
 
 const styles = StyleSheet.create({
   main:{

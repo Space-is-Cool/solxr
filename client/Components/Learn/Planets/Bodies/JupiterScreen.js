@@ -2,20 +2,18 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
-import MercuryInfo from './MercuryInfo.js';
-import Swiper from 'react-native-swiper/src';
+import JupiterInfo from './JupiterInfo.js';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black',
-    paddingTop: 20
+    backgroundColor: 'black'
   },
   image: {
-    maxWidth: 375,
-    height: 375,
-
+    justifyContent: 'center',
+    width: 415,
+    height: 415,
   },
   text: {
     color: 'white',
@@ -29,21 +27,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const MercuryScreen = ({navigation, route}) => {
+const JupiterScreen = ({navigation, route}) => {
 
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.image}
-        source={require('../assets/mercury.png')}
+        source={require('../assets/jupiter.jpg')}
       />
       <ScrollView style={styles.info}>
-      <MercuryInfo/>
+      <JupiterInfo/>
       </ScrollView>
-
     </View>
   );
 };
 
-export default MercuryScreen;
-
+export default JupiterScreen;
