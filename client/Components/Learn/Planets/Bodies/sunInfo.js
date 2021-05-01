@@ -48,7 +48,7 @@ class SunInfo extends Component {
             Will one day consume the Earth
             </Text>
             <Text style={styles.textX}>
-            Accounts for 99.86% of the mass in the solar system.
+            Accounts for 99.86% of the mass in the solar system
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>

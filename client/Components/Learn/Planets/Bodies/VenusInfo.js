@@ -45,7 +45,7 @@ class VenusInfo extends Component {
             Extremely high pressure atmosphere (92 times that of Earth!)
             </Text>
             <Text style={styles.textX}>
-            Maat Mons: A massive shield volcano. It is the second-highest mountain and the highest volcano on the planet.
+            Maat Mons: A massive shield volcano. It is the second-highest mountain and the highest volcano on the planet
             </Text>
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>

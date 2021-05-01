@@ -51,7 +51,7 @@ export default {
     diameter: '2,439km',
     images: [],
     discoveredBy: 'It is unkown who first discovered Mercury, due to it being one of the five planets that are visible from Earth with the naked eye. Most modern sources cite Galileo Galilei and Thomas Harriot as the first to observe it through a telescope.',
-    nameOrigin: 'Mercury was the Roman God of commerce, eloquence, messages, communication (including divination), travelers, boundaries, luck, trickery and thieves; he also serves as the guide of souls to the underworld.'
+    nameOrigin: 'Mercury was the Roman God of commerce, eloquence, messages, communication, divination, travelers, boundaries, luck, trickery and thieves. He also served as the guide of souls to the underworld.'
   },
   venus: {
     bodyId: 2,
@@ -238,7 +238,7 @@ export default {
     yearlength: '84 Earth Years', 
     diameter: '50,700 km',
     images: [],
-    discoveredBy: 'Discovered in 1781 by William Herschel. Uranus was the first planet found using a telescope.',
+    discoveredBy: 'Discovered in 1781 by William Herschel. Uranus was technically the first planet found using a telescope.',
     nameOrigin: 'Uranus was the Greek god of the sky. According to myth, he was the father of Saturn and the grandfather of Jupiter.'
   },
   neptune: {
@@ -265,8 +265,8 @@ export default {
     yearlength: '165 Earth years', 
     diameter: '49,244 km',
     images: [],
-    discoveredBy: 'Galileo actually mistook the Neptune for a star, so he doesn\'t get credit for this one. It was first earnestly sought after when Uranus was discovered in 1781. Astronomers of the time were able to predict, based only on Uranus\'s orbit, that another planet of Neptune\'s mass and trajectory must exsist. Over sixty years later, in 1846, a french Astronomer by the name of Urbain Le Verrier was able to actually verify that it did indeed exsist.',
-    nameOrigin: 'Neptune was first the Roman God of fresh water, by 399 b.c he was identified with the Greek Poseidon and thus became a deity of the sea.'
+    discoveredBy: 'Galileo actually mistook Neptune for a star, so he doesn\'t get credit for this one. It was first sought after by the scientific community when Uranus was discovered in 1781. Astronomers of the time were able to predict, based only on Uranus\'s orbit, that another planet of Neptune\'s mass and trajectory must exist. Over sixty years later, in 1846, a french Astronomer by the name of Urbain Le Verrier was able to actually verify that it did indeed exist.',
+    nameOrigin: 'Neptune was the Roman God of fresh water, but was later re-identified with the Greek God Poseidon and thus became a deity of the sea.'
   }, 
   pluto: {
     isPlanet: false

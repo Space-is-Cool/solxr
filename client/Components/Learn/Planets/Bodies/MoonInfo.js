@@ -46,7 +46,7 @@ class MoonInfo extends Component {
           <Text></Text>
             <Text style={styles.headerThree}>Special Characteristics:</Text>
             <Text style={styles.textX}>
-            Moonquakes: A phenomonon that is exactly what it sounds like, caused by the Earth's gravitational pull.
+            Moonquakes: A phenomonon that is exactly what it sounds like, caused by the Earth's gravitational pull
             </Text>
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>

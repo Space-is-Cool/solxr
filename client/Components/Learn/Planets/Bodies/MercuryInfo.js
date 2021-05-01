@@ -39,6 +39,7 @@ class MercuryInfo extends Component {
             <Text style={styles.headerThree}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+            <Text></Text>
           <Text style={styles.headerThree}>Special Characteristics:</Text>
             <Text style={styles.text}>
             Caloris Basin, a crater that spans 1550 km. That's over half the total diameter of the planet!
@@ -46,13 +47,13 @@ class MercuryInfo extends Component {
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-             Closest planet to the sun.
+             Closest planet to the sun
             </Text>
             <Text style={styles.textX}>
-            Shortest year.
+            Shortest year
             </Text>
             <Text style={styles.textX}>
-            Smallest planet.
+            Smallest planet
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>

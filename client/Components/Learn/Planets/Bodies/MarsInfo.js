@@ -46,18 +46,18 @@ class Mars extends Component {
             <Text></Text>
           <Text style={styles.headerThree}>Special Characteristics:</Text>
             <Text style={styles.textX}>
-            Olympus Mons: The Largest Volcano in the solar system.
+            Olympus Mons: The Largest Volcano in the solar system
             </Text>
           <Text></Text>
             <Text style={styles.headerThree}>Fun Facts:</Text>
             <Text style={styles.textX}>
-            Mars and Earth have approximately the same landmass.
+            Mars and Earth have approximately the same landmass
             </Text>
             <Text style={styles.textX}>
-            Sunsets on Mars are blue.
+            Sunsets on Mars are blue
             </Text>
             <Text style={styles.textX}>
-            Only planet other that Earth on which humans have achieved powered flight. 
+            Only planet other that Earth on which humans have achieved powered flight
             </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>

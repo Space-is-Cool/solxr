@@ -55,9 +55,6 @@ class NeptuneInfo extends Component {
             <Text style={styles.textX}>
             Strongest winds
             </Text>
-            <Text style={styles.textX}>
-            Funniest name
-            </Text>
             <Text></Text>
             <Text style={styles.headerThree}>Discovered By:</Text>
             <Text style={styles.text}>
