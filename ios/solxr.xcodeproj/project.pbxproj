@@ -152,11 +152,7 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-<<<<<<< HEAD
 						DevelopmentTeam = 9MR7F4R8C3;
-=======
-						DevelopmentTeam = V37X8J7662;
->>>>>>> 1e6d62702734a277cd8d96252023dfd4dbfb1058
 						LastSwiftMigration = 1120;
 					};
 				};
@@ -301,11 +297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 9MR7F4R8C3;
-=======
-				DEVELOPMENT_TEAM = V37X8J7662;
->>>>>>> 1e6d62702734a277cd8d96252023dfd4dbfb1058
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -320,11 +312,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = org.name.solxr4;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.solxr1;
->>>>>>> 1e6d62702734a277cd8d96252023dfd4dbfb1058
 				PRODUCT_NAME = solxr;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -339,11 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 9MR7F4R8C3;
-=======
-				DEVELOPMENT_TEAM = V37X8J7662;
->>>>>>> 1e6d62702734a277cd8d96252023dfd4dbfb1058
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = solxr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -353,11 +337,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = org.name.solxr4;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.solxr1;
->>>>>>> 1e6d62702734a277cd8d96252023dfd4dbfb1058
 				PRODUCT_NAME = solxr;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
