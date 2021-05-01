@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     fontSize: 42,
     fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor: '#000000a0' 
+    backgroundColor: '#000000a0'
   },
   header: {
     textAlign: 'center',
@@ -79,13 +79,13 @@ const NasaScreen = ({navigation, route}) => {
       <Text></Text>
       <Text style={styles.header}>Welcome to solXR!</Text>
       <Text></Text>
-      {IoTD && 
+      {IoTD &&
       (<ImageBackground
         style={styles.image}
-        source={{uri: IoTD}} 
+        source={{uri: IoTD}}
       />)
       }
- 
+
       <Swiper horizontal={false}>
         <View>
           <Text></Text>
