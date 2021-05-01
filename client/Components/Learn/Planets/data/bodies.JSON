@@ -20,7 +20,7 @@
         "daylength": "N/A",
         "tilt": 0,
         "yearlength": "N/A", 
-        "diameter": "2,439km",
+        "diameter": "1.3927 million km",
         "images": [],
         "discoveredBy": "The first ape to be blinded by staring directly at it for too long, despite his mother telling him not to.",
         "nameOrigin":  "Mercury was the Roman God of commerce, eloquence, messages, communication (including divination), travelers, boundaries, luck, trickery and thieves; he also serves as the guide of souls to the underworld."
@@ -130,7 +130,7 @@
         "diameter": "3,474.2 km",
         "images": [],
         "discoveredBy": "I can gauruntee that Galileo probably looked at it through his telescope at some point.",
-        "nameOrigin": "The word moon can be traced to the word mōna, an Old English word from medieval times. Mōna shares its origins with the Latin words metri, which means to measure, and mensis, which means month. So, we see that the moon is called the moon because it is used to measure the months."
+        "nameOrigin": "The word moon can be traced to the Old English word mōna, from the midieval era. Mōna shares its origins with the Latin words metri, which means to measure, and mensis, which means month. So, we see that the moon is called The Moon because it is used to measure the months."
     }, 
     "mars": {
         "bodyId": 4,

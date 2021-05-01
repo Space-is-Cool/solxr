@@ -3,17 +3,19 @@
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
 import MercuryInfo from './MercuryInfo.js';
+import Swiper from 'react-native-swiper/src';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    paddingTop: 20
   },
   image: {
-    justifyContent: 'center',
-    width: 375,
+    maxWidth: 375,
     height: 375,
+
   },
   text: {
     color: 'white',
@@ -21,6 +23,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
+  },
+  info:{
+    paddingLeft: 34
   }
 });
 
@@ -32,9 +37,13 @@ const MercuryScreen = ({navigation, route}) => {
         style={styles.image}
         source={require('../assets/mercury.png')}
       />
+      <ScrollView style={styles.info}>
       <MercuryInfo/>
+      </ScrollView>
+
     </View>
   );
 };
 
 export default MercuryScreen;
+

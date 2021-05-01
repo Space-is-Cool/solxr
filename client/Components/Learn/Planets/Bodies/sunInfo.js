@@ -5,117 +5,146 @@ import {
   Text,
   View,
   ScrollView,
+  Button,
+  LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 
-class SunInfo extends Component {
 
+
+class SunInfo extends Component {
+  constructor() {
+    super();
+
+    this.state = { expanded: false }
+  }
+
+  changeLayout = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    this.setState({ expanded: !this.state.expanded });
+  }
 
   render() {
     return ( 
       <ScrollView>
-        <View style={styles.container}>
-          <Text style={styles.text}>{bodies.sun.name}</Text>
+      <View style={styles.main}>
+      <View style={styles.hud}>
+      <Text style={styles.header}>{bodies.sun.name}</Text>
+      <Text style={styles.headerTwo}>{bodies.sun.AKA}</Text>
+      <Text/>
+      <Text style={styles.basicFacts}>  Latin: {bodies.sun.latin}    Diameter: {bodies.sun.diameter}       Moons: 0  </Text>
+      <View style={styles.container}>
+        <View style={styles.btnTextHolder}>
+          <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
+            <Text style={styles.headerThree}>More Info...</Text>
+          </TouchableOpacity>
+          <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+          <Text></Text>
+            <Text style={styles.headerThree}>Fun Facts:</Text>
+            <Text style={styles.textX}>
+            Travels through the Galaxy at roughly 220 km per second
+            </Text>
+            <Text style={styles.textX}>
+            Will one day consume the Earth
+            </Text>
+            <Text style={styles.textX}>
+            Accounts for 99.86% of the mass in the solar system.
+            </Text>
+            <Text></Text>
+            <Text style={styles.headerThree}>Discovered By:</Text>
+            <Text style={styles.text}>
+              {bodies.sun.discoveredBy}
+            </Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
+            <Text style={styles.text}>
+              {bodies.sun.nameOrigin}
+            </Text>
+          </View>
         </View>
+      </View>
+      </View>
+      </View>
+      
       </ScrollView>
-    );
+    )
   }
 }
 
 export default SunInfo;
 
 const styles = StyleSheet.create({
-  contentContainerStyle: {
+  main:{
+    width: 350,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderTopWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: "#0047ba",
+  },
+  hud: {
     paddingTop: 30,
-    paddingBottom: 20,
-    backgroundColor: '#115268'
+    paddingBottom: 35,
+    backgroundColor: '#00374a'
+
+  },
+  header: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
+  headerTwo: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 15,
+    fontStyle: 'italic'
+  },
+  headerThree: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 15,
+    fontWeight: 'bold'
+  },
+  basicFacts: {
+    color: '#9ee7ff',
+  },
+  image: {
+    width: 35,
+    height: 35
   },
   container: {
     flex: 1,
-    // backgroundColor: 'blue',
-    // opacity: 0.5
-  },
-  firstHeaderContainer: {
-    backgroundColor: '#115268',
-  },
-  firstHeader: {
-    marginHorizontal: 10,
-    backgroundColor: '#bcb5ff',
-    alignItems: 'center',
+    paddingHorizontal: 10,
     justifyContent: 'center',
-    borderRadius: 15,
-    height: 50,
+    paddingTop: (Platform.OS === 'ios') ? 20 : 0
   },
-  customContent: {
-    backgroundColor: '#8ac7db',
-    height: 30
-  },
+
   text: {
+    fontSize: 17,
+    color: 'white',
+    padding: 10
+  },
+  textX: {
+    fontSize: 17,
+    color: 'white',
+    padding: 10,
+    textAlign: 'center',
+    
+  },
+
+  btnText: {
     textAlign: 'center',
     color: 'white',
-    fontFamily: 'Titillium Web',
-  
+    fontSize: 20
   },
-  textTwo: {
+
+  btnTextHolder: {
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.5)'
+  },
+
+  Btn: {
+    padding: 10,
+    backgroundColor: 'rgba(0,0,0,0.5)'
   }
 });
-
-
-// class SunInfo extends Component {
-//   renderFirstHeader() {
-//     return (
-//       <View style={styles.firstHeader}>
-//         <Text>{bodies.sun.name}</Text>
-//       </View>
-//     );
-//   }
-//   renderSecondHeader() {
-//     return (
-//       <View style={styles.customContent}>
-//         <Text>Fun Facts!</Text>
-//       </View>
-//     );
-//   }
-//   render() {
-//     return (
-//       <ScrollView
-//         style={styles.container}
-//         contentContainerStyle={styles.contentContainerStyle}
-//       >
-//         <Panel
-//           style={styles.firstHeaderContainer}
-//           header={this.renderFirstHeader}
-//         >
-//           <Text style={styles.text}>
-//           AKA: {bodies.sun.AKA}       Gravity: {bodies.sun.gravity}     Latin: {bodies.sun.latin}      Diamter: {bodies.sun.diameter}
-//           </Text>
-//         </Panel>
-//         <Panel
-//           backgroundColor="#8ac7db"
-//           header="General"
-//           onPress={() => console.log('hi from on press')}
-//         >
-//           Composition: {bodies.sun.composition}      
-//           Surface Temperature: {bodies.sun.surfaceTemp}
-//           Special Characteristics: {bodies.sun.specialChars.map((char)=>{
-//             return char;
-//           })}
-//         </Panel>
-//         <Panel
-//           header="Fun Facts!"
-//           onPress={() => console.log('hi from on press')}
-//         >
-//           {bodies.sun.funFacts.map((fact)=>{
-//             return fact;
-//           })}
-//         </Panel>
-//         <Panel header="Name Origin">
-//           <View>
-//             {bodies.sun.nameOrigin}
-//           </View>
-//         </Panel>
-//       </ScrollView>
-//     );
-//   }
-// }
-// export default SunInfo;

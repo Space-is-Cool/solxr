@@ -21,18 +21,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
+  },
+  info:{
+    paddingLeft: 34
   }
 });
 
 const VenusScreen = ({navigation, route}) => {
-
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.image}
         source={require('../assets/venus.png')}
       />
+      <ScrollView style={styles.info}>
       <VenusInfo/>
+      </ScrollView>
     </View>
   );
 };

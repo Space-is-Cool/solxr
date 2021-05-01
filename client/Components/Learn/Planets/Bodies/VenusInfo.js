@@ -5,50 +5,150 @@ import {
   Text,
   View,
   ScrollView,
+  Button,
+  LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 
-class VenusInfo extends Component {
+// const funFacts = bodies.venus.discoveredBy.map((fact)=>{
+//   <Text>{fact}</Text>
+// })
 
+
+class MercuryInfo extends Component {
+  constructor() {
+    super();
+
+    this.state = { expanded: false }
+  }
+
+  changeLayout = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    this.setState({ expanded: !this.state.expanded });
+  }
 
   render() {
     return ( 
-      <Text style={styles.text}>{bodies.venus.name}</Text>
-    );
+      <ScrollView>
+      {/* <View style={styles.line}/> */}
+      <View style={styles.main}>
+      <View style={styles.hud}>
+      <Text style={styles.header}>{bodies.venus.name}</Text>
+      <Text style={styles.headerTwo}>{bodies.venus.AKA}</Text>
+      <Text/>
+      <Text style={styles.basicFacts}>  Latin: {bodies.venus.latin}    Diameter: {bodies.venus.diameter}       Moons: 0  </Text>
+      <View style={styles.container}>
+        <View style={styles.btnTextHolder}>
+          <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
+            <Text style={styles.headerThree}>More Info...</Text>
+          </TouchableOpacity>
+          <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+          <Text></Text>
+            <Text style={styles.headerThree}>Fun Facts:</Text>
+            <Text style={styles.textX}>
+            Second most spherical object in the solar system, just after the Sun
+            </Text>
+            <Text style={styles.textX}>
+            Only planet that rotates clockwise
+            </Text>
+            <Text style={styles.textX}>
+            Orbital path is almost a perfect circle
+            </Text>
+            <Text></Text>
+            <Text style={styles.headerThree}>Discovered By:</Text>
+            <Text style={styles.text}>
+              {bodies.venus.discoveredBy}
+            </Text>
+            <Text style={styles.headerThree}>Name Origin:</Text>
+            <Text style={styles.text}>
+              {bodies.venus.nameOrigin}
+            </Text>
+          </View>
+        </View>
+      </View>
+      </View>
+      </View>
+      
+      </ScrollView>
+    )
   }
 }
 
-export default VenusInfo;
+export default MercuryInfo;
 
 const styles = StyleSheet.create({
-  contentContainerStyle: {
+  main:{
+    width: 350,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderTopWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: "#0047ba",
+  },
+  hud: {
     paddingTop: 30,
-    paddingBottom: 20,
-    backgroundColor: '#115268'
+    paddingBottom: 35,
+    backgroundColor: '#00374a'
+
+  },
+  header: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
+  headerTwo: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 15,
+    fontStyle: 'italic'
+  },
+  headerThree: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 15,
+    fontWeight: 'bold'
+  },
+  basicFacts: {
+    color: '#9ee7ff',
+  },
+  image: {
+    width: 35,
+    height: 35
   },
   container: {
     flex: 1,
-    backgroundColor: 'black',
-  },
-  firstHeaderContainer: {
-    backgroundColor: '#115268',
-  },
-  firstHeader: {
-    marginHorizontal: 10,
-    backgroundColor: '#bcb5ff',
-    alignItems: 'center',
+    paddingHorizontal: 10,
     justifyContent: 'center',
-    borderRadius: 15,
-    height: 50,
+    paddingTop: (Platform.OS === 'ios') ? 20 : 0
   },
-  customContent: {
-    backgroundColor: '#8ac7db',
-    height: 30
-  },
+
   text: {
-    textAlign: 'center',
-    color: 'white'
+    fontSize: 17,
+    color: 'white',
+    padding: 10
   },
-  textTwo: {
+  textX: {
+    fontSize: 17,
+    color: 'white',
+    padding: 10,
+    textAlign: 'center',
+    
+  },
+
+  btnText: {
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 20
+  },
+
+  btnTextHolder: {
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.5)'
+  },
+
+  Btn: {
+    padding: 10,
+    backgroundColor: 'rgba(0,0,0,0.5)'
   }
 });

@@ -3,5 +3,5 @@ module.exports = {
         ios: {},
         android: {},
     },
-    assets: ['.client/components/learn/planets/assets/fonts']
+    assets: ['https://fonts.googleapis.com/css?family=Titillium Web']
     };

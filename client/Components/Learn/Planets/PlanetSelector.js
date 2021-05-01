@@ -12,6 +12,7 @@ import JupiterScreen from './Bodies/JupiterScreen';
 import SaturnScreen from './Bodies/SaturnScreen';
 import UranusScreen from './Bodies/UranusScreen';
 import NeptuneScreen from './Bodies/NeptuneScreen';
+import Test from './Bodies/test.js';
 
 import Swiper from 'react-native-swiper/src';
 
@@ -19,9 +20,11 @@ import Swiper from 'react-native-swiper/src';
 
 const PlanetSelector = () => {
   return (
-    <Swiper
+    <Swiper 
+      style={styles.main}
       loop={false}
     >
+      <Test/>
       <SunScreen/>
       <MercuryScreen/>
       <VenusScreen/>
@@ -49,6 +52,13 @@ const PlanetSelector = () => {
 // };
 
 export default PlanetSelector;
+
+const styles = StyleSheet.create({
+  main: {
+    backgroundColor: 'black'
+  },
+
+});
 
 
 // import React, { Component } from 'react';
