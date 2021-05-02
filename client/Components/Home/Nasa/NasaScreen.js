@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#072852'
+    backgroundColor: 'rgb(7, 40, 82)'
   },
   image: {
     flex: 5,
@@ -28,26 +28,31 @@ const styles = StyleSheet.create({
     color: '#9ee7ff',
     fontSize: 20,
     fontWeight: 'bold',
-    backgroundColor: '#072852'
+    padding: '2%',
+    backgroundColor: 'rgba(7, 40, 82, 0.4)'
+
   },
   headerTwo: {
     textAlign: 'center',
     color: '#9ee7ff',
     fontSize: 20,
     fontStyle: 'italic',
-    backgroundColor: '#072852'
+    paddingTop: '2%',
+    backgroundColor: 'rgba(7, 40, 82, 0.4)'
   },
   headerThree: {
     textAlign: 'center',
     color: '#9ee7ff',
     fontSize: 14,
-    backgroundColor: '#072852'
+    backgroundColor: 'rgba(7, 40, 82, 0.4)',
+    paddingBottom: '2%',
+
   },
   textTwo: {
     fontSize: 17,
     color: 'white',
     padding: 10,
-    backgroundColor: '#072852'
+    backgroundColor: 'rgba(7, 40, 82, 0.6)'
   },
 });
 
@@ -56,6 +61,7 @@ const NasaScreen = ({navigation, route}) => {
   const [IoTD, setIoTD] = useState(null);
   const [title, setTitle] = useState(null);
   const [descript, setDescript] = useState(null);
+  const [infoCard, setInfoCard] = useState(false);
   // const [expanded, setExpanded] = useState(false);
 
 
@@ -68,40 +74,38 @@ const NasaScreen = ({navigation, route}) => {
   const getNasa = () => {
     axios.get('https://api.nasa.gov/planetary/apod?api_key=gZClpAd2dIP9dwXkbP5wMsqVMfT1ek5YMnEo7kep')
       .then(({data}) => {
-        console.log(data.url);
         setIoTD(data.url);
         setTitle(data.title);
         setDescript(data.explanation);
       });
   };
+
+
+  
   return (
     <View style={styles.container}>
-      <Text></Text>
-      <Text style={styles.header}>Welcome to solXR!</Text>
-      <Text></Text>
-      {IoTD &&
-      (<ImageBackground
+      <ImageBackground
         style={styles.image}
-        source={{uri: IoTD}}
-      />)
-      }
-
-      <Swiper horizontal={false}>
-        <View>
-          <Text></Text>
-          <Text style={styles.headerTwo}>{title}</Text>
-          <Text></Text>
-          <Text></Text>
-          <Text style={styles.headerThree}>Swipe for more info</Text>
-        </View>
-        <ScrollView>
-          <Text></Text>
-          <Text style={styles.textTwo}>
-            {descript}
-          </Text>
-          <Text></Text>
-        </ScrollView>
-      </Swiper>
+        source={{uri: IoTD}}>
+        <Text style={styles.header}>Welcome to solXR!</Text>
+        <Swiper
+          horizontal={false}
+          loop={false}
+          showsPagination={false}
+        >
+          <View>
+            <Text style={styles.headerTwo}>{title}</Text>
+            <Text style={styles.headerThree}>Swipe up for more info</Text>
+          </View>
+          <ScrollView>
+            <Text></Text>
+            <Text style={styles.textTwo}>
+              {descript}
+            </Text>
+            <Text></Text>
+          </ScrollView>
+        </Swiper>
+      </ImageBackground>
     </View>
 
 
