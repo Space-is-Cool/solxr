@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#000000a0'
   },
-  info:{
+  info: {
     paddingLeft: 34
   }
 });
@@ -36,7 +36,7 @@ const EarthScreen = ({navigation, route}) => {
         source={require('../assets/earth.jpg')}
       />
       <ScrollView style={styles.info}>
-      <EarthInfo/>
+        <EarthInfo/>
       </ScrollView>
     </View>
   );
