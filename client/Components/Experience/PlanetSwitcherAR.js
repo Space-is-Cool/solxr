@@ -2,58 +2,48 @@
 
 import React, { Component, useState } from 'react';
 
-import { StyleSheet, Text, View } from 'react-native';
-
 import {
   ViroARScene,
-  ViroConstants,
   ViroAmbientLight,
   ViroSpotLight,
   ViroMaterials,
   ViroAnimations,
   ViroSphere,
   ViroARSceneNavigator,
-  ViroARPlane,
   ViroARPlaneSelector
 } from 'react-viro';
-
-import PlanetMenu from './PlanetMenu';
-
-    
 
 
 const PlanetSelector = ({navigation, route}) => {
 
-  const [planet, setPlanet] = useState('mercury');
+  const PlanetSwitcher = () => {
 
-  const selectPlanet = (newPlanet) => {
-    console.log('select planet!', planet, newPlanet);
-    setPlanet(newPlanet);
-  };
+    const bodies = [
+      {position: 0, name: 'sun', radius: 1},
+      {position: 1, name: 'mercury', radius: 0.45},
+      {position: 2, name: 'venus', radius: 0.48},
+      {position: 3, name: 'earth', radius: 0.5},
+      {position: 4, name: 'moon', radius: 0.25},
+      {position: 5, name: 'mars', radius: 0.387},
+      {position: 6, name: 'jupiter', radius: 1.6},
+      {position: 7, name: 'saturn', radius: 1.4},
+      {position: 8, name: 'uranus', radius: 0.862},
+      {position: 9, name: 'neptune', radius: 0.8},
+    ];
+
+    const [planet, setPlanet] = useState({position: 0, name: 'sun', radius: 1});
 
 
-  const activePlanet = () => {
-    const [material, setMaterial] = useState('sun');
-    // const [radius, setRadius] = useState(0.2);
     const changePlanet = () => {
-      const bodyArray = ['sun', 'mercury', 'venus', 'earth', 'moon', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
-      const current = bodyArray.indexOf(material);
-      console.log(current, material);
-      setMaterial(bodyArray[current === 9
-        ? 0
-        : current + 1]);
-
-      console.log('clack!');
-
-
-      // material === 'mercury'
-      //   ? setRadius(0.534)
-      //   : setRadius(0.221);
+      console.log('change the planet', planet);
+      
+      setPlanet(planet.position === 9
+        ? bodies[0]
+        : bodies[planet.position + 1]);
     };
   
     return (
       <ViroARScene
-        // onFuse={() => console.log('fusing')}
         onClick={(p, s) => console.log('click click clickx', p[0], s)}
         onSwipe={((p, s) => console.log(p, s))}
       >
@@ -63,14 +53,16 @@ const PlanetSelector = ({navigation, route}) => {
         <ViroAmbientLight color={'#aaaaaa'} />
         <ViroSpotLight innerAngle={5} outerAngle={90} direction={[0, -1, -.2]} position={[0, 3, 1]} color="#ffffff" castsShadow={true} />
         <ViroARPlaneSelector
+          onSwipe={() => console.log('the swipe the swipe')}
         >
           <ViroSphere
+            onSwipe={value => console.log('theres been a swipe!!!!', value)}
             heightSegmentCount={50}
             widthSegmentCount={50}
-            radius={0.5}
+            radius={planet.radius * 1}
             animation={{name: 'loopRotate', run: true, loop: true}} 
-            position={[0, 1, 0]}
-            materials={[material]}
+            position={[0, 2, 0]}
+            materials={planet.name}
             onClick={changePlanet}
           />
         </ViroARPlaneSelector>
@@ -129,8 +121,7 @@ const PlanetSelector = ({navigation, route}) => {
   return (
     <>
       <ViroARSceneNavigator
-
-        initialScene={{scene: activePlanet}} />
+        initialScene={{scene: PlanetSwitcher}} />
     </>
   );
 };

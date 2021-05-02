@@ -24,7 +24,7 @@ const HomeTopTab = () => (
     }}
   >
     <AppTopNavigator.Screen component={NasaScreen} name="HELLO" />
-    <AppTopNavigator.Screen component={CommunityScreen} name="COMMUNITY" />
+    {/* <AppTopNavigator.Screen component={CommunityScreen} name="COMMUNITY" /> */}
     <AppTopNavigator.Screen component={FavoritesScreen} name="FAVORITES" />
   </AppTopNavigator.Navigator>
 );
