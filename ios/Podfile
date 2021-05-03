@@ -10,10 +10,13 @@ target 'solxr' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   # if !ENV['CI']
   #   use_flipper!({ 'Flipper' => '0.80.0' })
   #   post_install do |installer|
   #     flipper_post_install(installer)
   #   end
   # end
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
 end
