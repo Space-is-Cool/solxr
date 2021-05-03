@@ -43,6 +43,8 @@
 	<string>Allow access to camera for AR</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>UIAccessibilityTraits</key>
+	<string>key</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
