@@ -6,19 +6,16 @@ import IconA from 'react-native-vector-icons/Ionicons';
 import IconB from 'react-native-vector-icons/FontAwesome5';
 import IconC from 'react-native-vector-icons/FontAwesome';
 
-
 import HomeTopTab from '../Home/HomeTopTab';
 import LearnScreenTab from '../Learn/LearnScreenTab';
-import ExpScreen from '../Experience/ExpScreen';
+import ARScreen from '../Experience/SplashAR';
 import SettingsScreen from '../Settings/SettingsScreen';
 import EventsScreen from '../Events/EventsScreen';
-
-
 
 const AppBottomNavigator = createMaterialBottomTabNavigator();
 
 const BottomTab = () => {
-    
+
   return (
     <AppBottomNavigator.Navigator
       initialRouteName="Home"
@@ -42,7 +39,7 @@ const BottomTab = () => {
       />
       <AppBottomNavigator.Screen
         name="Experience"
-        component={ExpScreen}
+        children={ARScreen}
         options={{
           tabBarIcon: () => <IconB name="space-shuttle" size={25} color="#fff" />
         }}
@@ -58,7 +55,7 @@ const BottomTab = () => {
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarIcon: () => <IconB name="user-astronaut" size={25} color="#fff" />
+          tabBarIcon: () => <IconB name="user-astronaut" size={25} color="#fff" />,
         }}
       />
     </AppBottomNavigator.Navigator>

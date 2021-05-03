@@ -23,9 +23,9 @@ const LearnTab = () => (
     tabBarOptions={{
       style: { backgroundColor: '#072852' },
       labelStyle: { fontSize: 14, fontWeight: 'bold' },
-      activeTintColor: '#ffffff',
-      indicatorStyle: { height: 3, backgroundColor: '#fff', paddingBottom: 6 },
-      inactiveTintColor: '#adadad',
+      activeTintColor: '#9ee7ff',
+      indicatorStyle: { height: 3, backgroundColor: '#9ee7ff', paddingBottom: 6 },
+      inactiveTintColor: '#9ee7ff',
       tabStyle: { height: 100, justifyContent: 'flex-end' }
     }}
   >

@@ -5,6 +5,8 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '11.0'
 
 target 'solxr' do
+  pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
+  pod 'ViroKit_static_lib', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/static_lib'
   use_unimodules!
   config = use_native_modules!
 
@@ -17,6 +19,5 @@ target 'solxr' do
   #     flipper_post_install(installer)
   #   end
   # end
-  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
 end
