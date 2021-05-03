@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, ImageBackground, Image } from 'react-native';
 import moment from 'moment';
+import Context from '../Root/Context';
 
 import eventsData from './eventsData.js';
 
@@ -25,58 +26,40 @@ const list = () => {
 };
 const ExpScreen = ({navigation, route}) => {
   return (
-    <View style={styles.main}>
-      <Text></Text>
-      <Text></Text>
-      <Text></Text>
-      <Text></Text>
-      <View>
-        <Text style={styles.header}>Upcoming Astral Events!</Text>
-      </View>
-      <Text></Text>
-      <ScrollView>
-        <Text></Text>
-        {list()}
-        <Text></Text>
-      </ScrollView>
-    </View>
+    <Context.Consumer>
+      {({url}) => {
+        return <View style={styles.container}>
+          <ImageBackground
+            style={styles.image}
+            source={{uri: url}}>
+            <Text style={styles.header}>      Upcoming Astral Events!      </Text>
+            <ScrollView
+              style={styles.scrollview}
+            >
+              {list()}
+              <Text></Text>
+            </ScrollView>
+          </ImageBackground>
+        </View>;
+      }
+      }
+    </Context.Consumer>
   );
 };
 
 export default ExpScreen;
 
 const styles = StyleSheet.create({
-  main: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#072852',
-  },
   mainTwo: {
-    width: 325,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderTopWidth: .5,
-    borderBottomWidth: 1,
-    borderColor: '#0047ba',
-    backgroundColor: '#00374a',
-  },
-  mainThree: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#072852',
-  },
-  hud: {
-    paddingTop: 30,
-    paddingBottom: 35,
-    backgroundColor: '#00374a'
-
+    backgroundColor: 'rgba(0, 0, 0, 0.7)'
   },
   header: {
-    textAlign: 'center',
+    paddingTop: '10%',
+    paddingBottom: '2%',
     color: '#9ee7ff',
     fontSize: 30,
     fontWeight: 'bold',
-    backgroundColor: '#072852',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)'
   },
   headerTwo: {
     textAlign: 'center',
@@ -93,16 +76,9 @@ const styles = StyleSheet.create({
   basicFacts: {
     color: '#9ee7ff',
   },
-  image: {
-    width: 35,
-    height: 35
-  },
   container: {
     flex: 1,
-    paddingHorizontal: 10,
-    justifyContent: 'center',
   },
-
   text: {
     fontSize: 14,
     color: 'white',
@@ -117,20 +93,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontStyle: 'italic'
   },
-
-  btnText: {
+  image: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  scrollview: {
     textAlign: 'center',
-    color: 'white',
-    fontSize: 20
-  },
+    alignContent: 'center',
 
-  btnTextHolder: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.5)'
-  },
-
-  Btn: {
-    padding: 10,
-    backgroundColor: 'rgba(0,0,0,0.5)'
   }
 });
