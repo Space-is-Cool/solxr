@@ -114,7 +114,7 @@ export default class TechTimeLine extends Component {
     if (this.state.selected) { return  <WebView  mediaPlaybackRequiresUserAction={true}
     style={styles.containerVideo}
     source={{uri: this.state.selected.uri }} /> } else if (this.state.selected){
-      return <Text>hello</Text>;
+      return <Text></Text>;
     }
 
   }
