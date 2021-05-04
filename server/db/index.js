@@ -15,15 +15,17 @@ db.authenticate()
 const User = db.define('user', {
   username: Sequelize.STRING,
   email: Sequelize.STRING,
-  user_id: Sequelize.INTEGER,
+  hash: Sequelize.STRING,
+  music: Sequelize.BOOLEAN,
+  theme: Sequelize.BOOLEAN,
   accessibility: Sequelize.BOOLEAN,
   subscribed: Sequelize.BOOLEAN
 });
 
 const Iotd = db.define('users_iotd', {
   user_id: Sequelize.INTEGER,
-  date_taken: Sequelize.STRING,
-  roomname: Sequelize.STRING,
+  date: Sequelize.STRING,
+  url: Sequelize.STRING,
 });
 
 const ImageFeed = db.define('image_feed', {

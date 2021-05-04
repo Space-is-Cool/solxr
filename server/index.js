@@ -1,18 +1,13 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
+const app = require('./app');
+// const debug = require('debug')('react-backend:server');
+// const http = require('http');
 
-const app = require('../app');
-const debug = require('debug')('react-backend:server');
-const http = require('http');
+const PORT = process.env.PORT || 3001;
 
-const PORT = process.env.PORT || 3000;
-
-const hostname = '192.168.0.8';
-app.listen(PORT, hostname, () => {
-  console.log(`http://127.0.0.1:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}`);
 });
 /**
  * Get port from environment and store in Express.
