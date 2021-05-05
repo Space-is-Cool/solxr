@@ -5,6 +5,7 @@ export default [
   {
     timeId: 0,
     isTech: true,
+    decade: '1950',
     time: '1957',
     title: 'Sputnik 1',
     description: ['Was the first artificial Earth satellite. The Soviet Union launched it into an elliptical low Earth orbit on 4 October 1957. It orbited for three weeks before its batteries died and then orbited silently for two months before it fell back into the atmosphere on the 4th January 1958.'],
@@ -110,6 +111,97 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://cropper.watch.aetnd.com/public-content-aetn.video.aetnd.com/video-thumbnails/AETN-History_Prod/84/932/History_Speeches_5023_Apollo_1_Tragedy_SF_still_624x352.jpg',
     uri: 'https://www.youtube.com/embed/phTNJro7tHw'
-  }
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2000',
+    title: 'NEAR Shoemaker',
+    description: ['It was the first spacecraft to successfully orbit an asteroid and also land on an asteroid. In February 2000, the mission succeeded in closing in with the asteroid and afterwards orbited it several times. On February 12, 2001, the mission succeeded in touching down on the asteroid '],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://lh3.googleusercontent.com/proxy/EOlInAA39cP4JJFq5OGEV5au2IOgvbvzhbt8rL5SnQ3NR_5JQ5UQr7ObFNJqst0wQ17CaDAv57aZJDAfWO3h5BVJG4T2Jg',
+    uri: 'https://www.youtube.com/embed/gxIG6w3NZg4%22'
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2003',
+    title: 'Hayabusa',
+    description: ['was a robotic spacecraft developed by the Japan Aerospace Exploration Agency (JAXA) to return a sample of material from a small near-Earth asteroid named 25143 Itokawa to Earth for further analysis. Hayabusa, formerly known as MUSES-C for Mu Space Engineering Spacecraft C, was launched on 9 May 2003 and rendezvoused with Itokawa in mid-September 2005. After arriving at Itokawa, Hayabusa studied the asteroids shape, spin, topography, color, composition, density, and history. In November 2005, it landed on the asteroid and collected samples in the form of tiny grains of asteroidal material, which were returned to Earth aboard the spacecraft on 13 June 2010.'],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://solarsystem.nasa.gov/system/content_pages/main_images/1194_hayabusa2_835.jpg',
+    uri: 'https://www.youtube.com/embed/0nHxCQYA2PU'
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2004',
+    title: 'Flight 15P',
+    description: ['was the first privately funded human spaceflight. It took place on June 21, 2004. It was the fourth powered test flight of the Tier One program, the previous three test flights having reached much lower altitudes. The flight carried only its pilot, Mike Melvill, who thus became the first non-governmental astronaut. This flight was a full-altitude test, but not itself a competitive flight for the Ansari X Prize, the prize for the first non-governmental reusable crewed spacecraft. Problems were encountered during the flight, but later corrected, paving the way for SpaceShipOne to make competitive flights later in 2004.'],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/SpaceShipOne_Flight_15P_photo_D_Ramey_Logan.jpg/220px-SpaceShipOne_Flight_15P_photo_D_Ramey_Logan.jpg',
+    uri: 'https://www.youtube.com/embed/29uQ6fjEozI'
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2005',
+    title: 'Cassini–Huygens',
+    description: ["First soft landing on Titan. The Huygens probe, supplied by the European Space Agency (ESA) and named after the 17th century Dutch astronomer who first discovered Titan, Christiaan Huygens, scrutinized the clouds, atmosphere, and surface of Saturn's moon Titan in its descent on January 15, 2005. It was designed to enter and brake in Titan's atmosphere and parachute a fully instrumented robotic laboratory down to the surface."],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://i.ytimg.com/vi/gPdgsPTNhac/maxresdefault.jpg',
+    uri: 'https://www.youtube.com/embed/tyMbktsAScE'
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2009',
+    title: 'Ares I-X',
+    description: ['was the first-stage prototype and design concept demonstrator of Ares I, a launch system for human spaceflight developed by the National Aeronautics and Space Administration (NASA). Ares I-X was successfully launched on October 28, '],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://live.staticflickr.com/2483/4052827578_ab20d63991_b.jpg',
+    uri: 'https://www.youtube.com/embed/H0ZHzAvFuYc'
+  },
+
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2015',
+    title: 'Orion',
+    description: ['First crewed flight of Orion: Before any journeys to the Moon, the new Orion crew capsule will be used to ferry crew members and supplies to the International Space Station.'],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://www.nasa.gov/specials/orionfirstflight/images/1.jpg',
+    uri: 'https://www.youtube.com/embed/UEuOpxOrA_0'
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2017',
+    title: 'Hayabusa2',
+    description: ['is an asteroid sample-return mission operated by the Japanese state space agency JAXA. First operational rover on asteroid (162173 Ryugu)'],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Hayabusa2_Ion_thruster.jpg',
+    uri: '"https://www.youtube.com/embed/8H4aZX_8hMA'
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2019',
+    title: 'New Horizons',
+    description: ['1 January 2019	First contact binary explored by spacecraft (486958 Arrokoth)'],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://cdn.mos.cms.futurecdn.net/z2yCEFAKayMdtMymKmfiLn.jpg',
+    uri: 'https://www.youtube.com/embed/xKBi2NhmO_4'
+  },
+  {
+    timeId: 0,
+    istitle: true,
+    time: '2020',
+    title: 'Event Horizon Telescope',
+    description: ['is a large telescope array consisting of a global network of radio telescopes. The EHT project combines data from several very-long-baseline interferometry (VLBI) stations around Earth, which form a combined array with an angular resolution sufficient to observe objects the size of a supermassive black holes event horizon. First direct photograph of a black hole and its vicinity.'],
+    icon: require('../assets/doge.png'),
+    imageUrl: 'https://www.sciencenews.org/wp-content/uploads/2019/04/040419_mt_eht-array_feat_free.jpg',
+    uri: 'https://www.youtube.com/embed/rzWFHFMToZA'
+  },
 
 ];
