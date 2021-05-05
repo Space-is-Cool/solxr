@@ -1,10 +1,12 @@
 /* eslint-disable react/no-children-prop */
-import React, {createContext, useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import BottomTab from './RootBottomTab';
-import Context from './Context';
+import {IotdContext} from './Context';
 import axios from 'axios';
+import BottomTab from './RootBottomTab';
+import LoginModal from './Login';
+
 
 const AppNavigation = createStackNavigator();
 
@@ -25,20 +27,23 @@ const RootNavigator = () => {
   };
 
   return (
-    <Context.Provider value={IoTD}>
+    <IotdContext.Provider value={IoTD}>
       {IoTD && 
         <NavigationContainer>
           <AppNavigation.Navigator
-            initialRouteName="drawer"
+            mode="modal"
+            initialRouteName="login"
             screenOptions={{
               header: () => null
             }}
           >
             <AppNavigation.Screen name="index" children={BottomTab} />
+            <AppNavigation.Screen name="login" component={LoginModal} />
           </AppNavigation.Navigator>
         </NavigationContainer>
       }
-    </Context.Provider>
+    </IotdContext.Provider>
+
   );
 };
 export default RootNavigator;
