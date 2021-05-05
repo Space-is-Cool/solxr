@@ -58,5 +58,5 @@ web-build/
 
 *.env
 
-
+*.pbxproj
 
