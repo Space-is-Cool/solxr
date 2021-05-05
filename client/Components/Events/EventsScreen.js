@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, ImageBackground, Image } from 'react-native';
 import moment from 'moment';
-import Context from '../Root/Context';
+import {IotdContext} from '../Root/Context';
 
 import eventsData from './eventsData.js';
 
@@ -26,7 +26,7 @@ const list = () => {
 };
 const ExpScreen = ({navigation, route}) => {
   return (
-    <Context.Consumer>
+    <IotdContext.Consumer>
       {({url}) => {
         return <View style={styles.container}>
           <ImageBackground
@@ -43,7 +43,7 @@ const ExpScreen = ({navigation, route}) => {
         </View>;
       }
       }
-    </Context.Consumer>
+    </IotdContext.Consumer>
   );
 };
 

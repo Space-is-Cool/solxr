@@ -4,11 +4,6 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const { User, Iotd } = require ('../db');
 
-// router.get('/hey', (req, res) => {
-//   console.log('someone says hey!', req.body);
-//   res.send('hey hey hey');
-// });
-
 router.post('/create', async (req, res) => {
   const {username, password} = req.body;
   const salt = await bcrypt.genSalt();
@@ -75,38 +70,13 @@ router.put('/iotd', (req, res) => {
   });
 });
 
-
-
-
-
-// router.post('/iotd', (req, res) => {
-//   Iotd.create({
-//     user_id: 1,
-//     date: '2015-01-03',
-//     url: 'https://apod.nasa.gov/apod/image/2105/EarthMoonSpaceship_Apollo11Ord_960.jpg'
-//   }).then(() => {
-//     Iotd.create({
-//       user_id: 2,
-//       date: '2016-03-04',
-//       url: 'https://apod.nasa.gov/apod/image/2105/EarthMoonSpaceship_Apollo11Ord_960.jpg'
-//     }).then(() => {
-//       Iotd.create({
-//         user_id: 1,
-//         date: '2020-05-04',
-//         url: 'https://apod.nasa.gov/apod/image/2105/EarthMoonSpaceship_Apollo11Ord_960.jpg'
-//       }).then(() => {
-//         Iotd.create({
-//           user_id: 3,
-//           date: '2018-01-04',
-//           url: 'https://apod.nasa.gov/apod/image/2105/EarthMoonSpaceship_Apollo11Ord_960.jpg'
-//         }).then(() => {
-//           res.send('yep');
-//         });
-//       });
-//     });
-//   });
-// });
-
-
+router.put('/update', (req, res) => {
+  const {accessibility, email, music, subscribed, theme, id} = req.body;
+  User.update({accessibility, email, music, subscribed, theme},
+    {where: {
+      id: id
+    }})
+    .then(() => res.sendStatus(201));
+});
 
 module.exports = router;

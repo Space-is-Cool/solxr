@@ -6,7 +6,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import axios from 'axios';
 import Swiper from 'react-native-swiper/src';
-import Context from '../../Root/Context';
+import {IotdContext} from '../../Root/Context';
 
 const styles = StyleSheet.create({
   container: {
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 const NasaScreen = ({navigation, route}) => {
 
   return (
-    <Context.Consumer>
+    <IotdContext.Consumer>
       {({url, title, explanation}) => (
         <View style={styles.container}>
           <ImageBackground
@@ -89,7 +89,7 @@ const NasaScreen = ({navigation, route}) => {
           </ImageBackground>
         </View>
       )}
-    </Context.Consumer>
+    </IotdContext.Consumer>
 
 
   );
