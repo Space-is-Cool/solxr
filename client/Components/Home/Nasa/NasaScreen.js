@@ -6,7 +6,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import axios from 'axios';
 import Swiper from 'react-native-swiper/src';
-import Context from '../../Root/Context';
+import {IotdContext} from '../../Root/Context';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,6 +18,11 @@ const styles = StyleSheet.create({
     flex: 5,
     resizeMode: 'cover',
     justifyContent: 'center'
+  },
+  img: {
+    position: 'absolute',
+    right: 10,
+    bottom: 10
   },
   text: {
     color: 'white',
@@ -57,12 +62,31 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'rgba(7, 40, 82, 0.6)'
   },
+  absoluteView: {
+    flex: 1,
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent'
+  },
+  button: {
+    width: 35,
+    height: 35,
+  },
 });
+
+const saveToFave = (title, explanation, url) => {
+
+  // axios call to backend, with an updated stringified array of this user's favorites
+
+  //
+  alert(`Saved ${title} to your favorites.`);
+};
 
 const NasaScreen = ({navigation, route}) => {
 
   return (
-    <Context.Consumer>
+    <IotdContext.Consumer>
       {({url, title, explanation}) => (
         <View style={styles.container}>
           <ImageBackground
@@ -85,11 +109,17 @@ const NasaScreen = ({navigation, route}) => {
                 </Text>
                 <Text></Text>
               </ScrollView>
-            </Swiper>
+            </Swiper> 
+            <TouchableOpacity style={styles.img} onPress={()=> saveToFave(title, explanation, url)}>
+              <Image
+                style={styles.button}
+                source={require('./assets/star.png')}
+              />
+            </TouchableOpacity>
           </ImageBackground>
         </View>
       )}
-    </Context.Consumer>
+    </IotdContext.Consumer>
 
 
   );

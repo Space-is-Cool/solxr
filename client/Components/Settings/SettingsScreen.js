@@ -57,7 +57,7 @@ const SettingsScreen = ({navigation, route}) => {
   const saveToServer = async () => {
     const storedUser = await AsyncStorage.getItem('user');
     const user = JSON.parse(storedUser);
-    axios.put('http://ec2-52-15-187-36.us-east-2.compute.amazonaws.com:3001/users/update', user)
+    axios.put('http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/update', user)
       .then(() => console.log('success!!!'))
       .catch(err => console.log('fail', err));
   };

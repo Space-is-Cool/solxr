@@ -33,7 +33,7 @@ router.post('/login', (req, res) =>{
       const { dataValues: {hash, id, ...thisUser}} = user[0];
       const valid = await bcrypt.compare(passwordAttempt, hash);
       if (valid) {
-        Iotd.findAll({
+        Iotd.findAll({ 
           where: {
             user_id: id
           }, attributes: ['date', 'id', 'url']
@@ -50,10 +50,12 @@ router.post('/login', (req, res) =>{
 });
 
 router.put('/iotd', (req, res) => {
-  const { image: {url, date}, user: {id} } = req.body;
+  const { image: {url, explanation, title }, user: {id} } = req.body;
   Iotd.findAll({
     where: {
-      date: date,
+      url: url,
+      title: title,
+      explanation: explanation,
       user_id: id
     }
   }).then(likedImage => {

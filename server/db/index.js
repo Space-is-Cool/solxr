@@ -12,7 +12,7 @@ db.authenticate()
   .then(()=>{ console.log('server connected'); })
   .catch((err)=>{ console.log(err); });
 
-const User = db.define('user', {
+const Users = db.define('user', {
   username: Sequelize.STRING,
   email: Sequelize.STRING,
   hash: Sequelize.STRING,
@@ -26,6 +26,8 @@ const Iotd = db.define('users_iotd', {
   user_id: Sequelize.INTEGER,
   date: Sequelize.STRING,
   url: Sequelize.STRING,
+  title: Sequelize.STRING,
+  explanation: Sequelize.STRING
 });
 
 const ImageFeed = db.define('image_feed', {
@@ -46,7 +48,7 @@ ImageFeed.sync();
 Emoji.sync();
 
 module.exports.db = db;
-module.exports.User = User;
+module.exports.User = Users;
 module.exports.Iotd = Iotd;
 module.exports.ImageFeed = ImageFeed;
 module.exports.Emoji = Emoji;

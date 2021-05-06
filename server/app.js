@@ -7,6 +7,9 @@ const indexRouter = require('./routes/server');
 const usersRouter = require('./routes/users');
 const nasaRouter = require('./routes/nasa');
 
+import Users from './db/indexjs';
+import Iotd from './db/indexjs'
+
 const app = express();
 
 // view engine setup
@@ -27,6 +30,54 @@ app.use('/nasa', nasaRouter);
 // app.use(function(req, res, next) {
 //   next(createError(404));
 // });
+
+
+app.get('/users', (req, res) => {
+  Users.find()
+    .then((data) => res.status(200).json(data))
+    .catch();
+});
+
+app.get('/user', (req, res) => {
+  Users.findOne({ userId: req.cookies.user_id }).then((data) => {
+    res.json(data);
+  });
+});
+
+app.get('/iotd', (req, res) => {
+  Iotd.findOne({ user_id: req.cookies.user_id }).then((data) => {
+    res.json(data);
+  });
+});
+
+// app.put('/iotd', (req, res) => {
+//   const { user_id } = req.params;
+//   Users.findOne({ id: req.cookies.userId }).then((data) => {
+//     Users.findById(data.id)
+//       .then((user) => {
+//         if (!user.favoriteIotds.includes(id)) {
+//           userInfo.favoriteIotds = [...user.favoriteIotds, id];
+//           Users.updateOne(
+//             { _id: user._id },
+//             { favoriteIotds: [...user.favoriteIotds, id] },
+//           )
+//             .then(() => {
+//               Iotd.findOne({ userId })
+//                 .then((record) => {
+//                   Iotd.updateOne(
+//                     { userId: req.params.userId }
+//                   ).catch((err) => console.log(err));
+//                 })
+//                 .catch((err) => console.log(err));
+//             })
+//             .catch((err) => console.log(err));
+//         }
+//       })
+//       .then(() => res.status(200).send())
+//       .catch(() => res.status(500).send());
+//   });
+// });
+
 
 // error handler
 app.use(function(err, req, res, next) {
