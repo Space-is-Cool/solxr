@@ -1,11 +1,95 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView, Text, ImageBackground, StyleSheet } from 'react-native';
+import Swiper from 'react-native-swiper/src';
 
+import favData from './favData.js';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#072852'
+  },
+  image: {
+    flex: 3,
+    resizeMode: 'cover',
+    justifyContent: 'center'
+  },
+  text: {
+    color: 'white',
+    fontSize: 42,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#000000a0'
+  },
+  header: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 20,
+    fontWeight: 'bold',
+    backgroundColor: '#072852'
+  },
+  headerTwo: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 25,
+    fontStyle: 'italic',
+    backgroundColor: '#072852'
+  },
+  headerThree: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 14,
+    backgroundColor: '#072852'
+  },
+  textTwo: {
+    fontSize: 17,
+    color: 'white',
+    padding: 10,
+    backgroundColor: '#072852'
+  },
+});
+
+
+const list = () => {
+  return favData.map((fav) => {
+
+    return (
+      <View style={styles.container} key={fav.id}>
+        {fav.image &&
+      (<ImageBackground
+        style={styles.image}
+        source={{uri: fav.image}}
+      />)
+        }
+
+        <Swiper horizontal={false}>
+          <View>
+            <Text></Text>
+            <Text style={styles.headerTwo}>{fav.title}</Text>
+            <Text></Text>
+            <Text></Text>
+            <Text style={styles.headerThree}>Swipe for more info</Text>
+          </View>
+          <ScrollView>
+            <Text></Text>
+            <Text style={styles.textTwo}>
+              {fav.description}
+            </Text>
+            <Text></Text>
+          </ScrollView>
+        </Swiper>
+      </View>
+    );
+  });
+};
 const FavoritesScreen = ({navigation, route}) => {
   return (
-    <View>
-      <Text>Favorites Screen</Text>
-    </View>
+    <Swiper>
+      {list()}
+    </Swiper>
   );
 };
 

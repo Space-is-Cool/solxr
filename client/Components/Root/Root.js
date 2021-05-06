@@ -14,6 +14,7 @@ const AppNavigation = createStackNavigator();
 const RootNavigator = () => {
 
   const [IoTD, setIoTD] = useState(null);
+  const [font, setFont] = useState();
 
   useEffect(() => {
     getNasa();

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, {useState, useEffect} from 'react';
 import {Text, Button, View, TextInput, StyleSheet} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -14,7 +15,7 @@ const LoginModal = ({ navigation }) => {
   const [signedIn, setSignedIn] = useState(false);
 
   const onSignIn = () => {
-    axios.post('http://ec2-52-15-187-36.us-east-2.compute.amazonaws.com:3001/users/login',
+    axios.post('http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/login',
       {username, password})
       .then(({data}) => {
         if (data === 'invalid password') {
@@ -33,7 +34,7 @@ const LoginModal = ({ navigation }) => {
   };
 
   const onSignUp = () => {
-    axios.post('http://ec2-52-15-187-36.us-east-2.compute.amazonaws.com:3001/users/create',
+    axios.post('http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/create',
       {username, password})
       .then(onSignIn)
       .catch(err => console.log(err));
