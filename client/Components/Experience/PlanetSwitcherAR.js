@@ -10,7 +10,8 @@ import {
   ViroAnimations,
   ViroSphere,
   ViroARSceneNavigator,
-  ViroARPlaneSelector
+  ViroARPlaneSelector,
+  ViroImage
 } from 'react-viro';
 
 
@@ -19,28 +20,58 @@ const PlanetSelector = ({navigation, route}) => {
   const PlanetSwitcher = () => {
 
     const bodies = [
-      {position: 0, name: 'sun', radius: 1},
-      {position: 1, name: 'mercury', radius: 0.45},
-      {position: 2, name: 'venus', radius: 0.48},
-      {position: 3, name: 'earth', radius: 0.5},
-      {position: 4, name: 'moon', radius: 0.25},
-      {position: 5, name: 'mars', radius: 0.387},
-      {position: 6, name: 'jupiter', radius: 1.6},
-      {position: 7, name: 'saturn', radius: 1.4},
-      {position: 8, name: 'uranus', radius: 0.862},
-      {position: 9, name: 'neptune', radius: 0.8},
+      {rings: false, position: 0, name: 'sun', radius: 0.1},
+      {rings: false, position: 1, name: 'mercury', radius: 0.45},
+      {rings: false, position: 2, name: 'venus', radius: 0.48},
+      {rings: false, position: 3, name: 'earth', radius: 0.5},
+      {rings: false, position: 4, name: 'moon', radius: 0.25},
+      {rings: false, position: 5, name: 'mars', radius: 0.387},
+      {rings: false, position: 6, name: 'jupiter', radius: 1.6},
+      // {rings: false, position: 7, name: 'saturn', radius: 1.4},
+      {rings: true, position: 7, name: 'saturn', radius: 0.4},
+      {rings: false, position: 8, name: 'uranus', radius: 0.862},
+      {rings: false, position: 9, name: 'neptune', radius: 0.8},
     ];
 
-    const [planet, setPlanet] = useState({position: 0, name: 'sun', radius: 1});
+    const [planet, setPlanet] = useState({position: 0, name: 'mars', radius: 0.387});
+    const [orbitX, setOrbitX] = useState(0);
+    const [orbitZ, setOrbitZ] = useState(0);
+
 
 
     const changePlanet = () => {
-      console.log('change the planet', planet);
       
       setPlanet(planet.position === 9
         ? bodies[0]
         : bodies[planet.position + 1]);
     };
+
+    const xValues = [0];
+    const zValues = [0];
+
+    const circle = (radius, steps) => {
+      for (let i = 0; i < steps; i++) {
+        xValues[i] = (radius * Math.cos(2 * Math.PI * i / steps));
+        zValues[i] = (radius * Math.sin(2 * Math.PI * i / steps));
+      }
+    };
+    circle(1, 2000);
+    console.log(xValues);
+    let index = 0;
+
+
+    const animate = () => {
+      index += 1;
+      setOrbitX(xValues[index]);
+      setOrbitZ(zValues[index]);
+      if (index === 1999) {
+        index = 0;
+      }
+    };
+
+
+
+
   
     return (
       <ViroARScene
@@ -61,10 +92,29 @@ const PlanetSelector = ({navigation, route}) => {
             widthSegmentCount={50}
             radius={planet.radius * 1}
             animation={{name: 'loopRotate', run: true, loop: true}} 
-            position={[0, 2, 0]}
+            position={[orbitX * 3, 1, orbitZ * 3]}
             materials={planet.name}
-            onClick={changePlanet}
+            onClick={() => setInterval(animate, 10)}
           />
+          <ViroImage
+            height={2}
+            width={2}
+            visible = {planet.rings}
+            position={[0, 2, 0]}
+            rotation={[90, 0, 0]}
+            // rotationPivot={[0, 90, 0]}
+            source={require('./assets/saturn_rings_black2.png')}
+          />
+          <ViroImage
+            height={2}
+            width={2}
+            visible = {planet.rings}
+            position={[0, 2, 0]}
+            rotation={[270, 0, 0]}
+            // rotationPivot={[0, 90, 0]}
+            source={require('./assets/saturn_rings_black2.png')}
+          />
+
         </ViroARPlaneSelector>
 
       </ViroARScene>

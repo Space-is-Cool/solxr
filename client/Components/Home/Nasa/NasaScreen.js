@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: '2%',
     backgroundColor: 'rgba(7, 40, 82, 0.4)'
-
   },
   headerTwo: {
     textAlign: 'center',
@@ -68,7 +67,6 @@ const NasaScreen = ({navigation, route}) => {
           <ImageBackground
             style={styles.image}
             source={{uri: url}}>
-            <Text style={styles.header}>Welcome to SolXR!</Text>
             <Swiper
               horizontal={false}
               loop={false}
@@ -96,5 +94,4 @@ const NasaScreen = ({navigation, route}) => {
 };
 
 export default NasaScreen;
-
 
