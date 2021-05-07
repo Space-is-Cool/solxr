@@ -91,7 +91,7 @@ const saveToFave = async (title, explanation, url) => {
   
   const config = {
     method: 'put',
-    url: 'http://localhost:3001/users/iotd',
+    url: 'http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/iotd',
     headers: { 
       'Content-Type': 'application/json'
     },
