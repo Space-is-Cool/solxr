@@ -50,27 +50,40 @@ router.post('/login', (req, res) =>{
 });
 
 router.put('/iotd', (req, res) => {
-  const { image: {url, explanation, title }, user: {id} } = req.body;
+  const { url, title, explanation, user_id } = req.body;
   Iotd.findAll({
     where: {
-      url: url,
-      title: title,
-      explanation: explanation,
-      user_id: id
+      url,
+      user_id
     }
   }).then(likedImage => {
     if (likedImage.length) {
       Iotd.destroy({
         where: {
-          date: date,
-          user_id: id
+          url,
+          user_id
         }
-      }).then(() => res.send('destroyed'));
+      }).then(() => res.send(`Deleted ${title} from your favorites.`));
     } else {
-      Iotd.create({url, date, user_id: id}).then(() => res.sendStatus(201));
+      Iotd.create({url, title, explanation, user_id }).then(() => res.status(201).send(`Added ${title} to your favorites.`));
     }
   });
 });
+
+router.get('/iotd', (req, res)=>{
+  const { user_id } = req.body;
+  Iotd.findAll({
+    where: {
+      user_id
+    }
+  })
+  .then(picArr => {
+    res.send(picArr);
+  })
+  .catch(err=>{
+    res.send(err);
+  });
+})
 
 router.put('/update', (req, res) => {
   const {accessibility, email, music, subscribed, theme, id} = req.body;

@@ -4,6 +4,9 @@ import React, {useEffect, useState} from 'react';
 import { View, ScrollView, Text, ImageBackground, Image, StyleSheet, LayoutAnimation, Platform, UIManager, TouchableOpacity } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import axios from 'axios';
 import Swiper from 'react-native-swiper/src';
 import {IotdContext} from '../../Root/Context';
@@ -75,12 +78,31 @@ const styles = StyleSheet.create({
   },
 });
 
-const saveToFave = (title, explanation, url) => {
-
+const saveToFave = async (title, explanation, url) => {
+  const storedUser = await AsyncStorage.getItem('user');
+  const user = JSON.parse(storedUser);
   // axios call to backend, with an updated stringified array of this user's favorites
+  const data = JSON.stringify({
+    "url": url,
+    "explanation": explanation,
+    "title": title,
+    "user_id": user.id
+  });
+  
+  const config = {
+    method: 'put',
+    url: 'http://localhost:3001/users/iotd',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  
+  axios(config)
+  .then(function (response) {
+   alert(response.data);
+  })
 
-  //
-  alert(`Saved ${title} to your favorites.`);
 };
 
 const NasaScreen = ({navigation, route}) => {

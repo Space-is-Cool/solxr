@@ -7,9 +7,6 @@ const indexRouter = require('./routes/server');
 const usersRouter = require('./routes/users');
 const nasaRouter = require('./routes/nasa');
 
-import Users from './db/indexjs';
-import Iotd from './db/indexjs'
-
 const app = express();
 
 // view engine setup
@@ -32,23 +29,23 @@ app.use('/nasa', nasaRouter);
 // });
 
 
-app.get('/users', (req, res) => {
-  Users.find()
-    .then((data) => res.status(200).json(data))
-    .catch();
-});
+// app.get('/users', (req, res) => {
+//   Users.find()
+//     .then((data) => res.status(200).json(data))
+//     .catch();
+// });
 
-app.get('/user', (req, res) => {
-  Users.findOne({ userId: req.cookies.user_id }).then((data) => {
-    res.json(data);
-  });
-});
+// app.get('/user', (req, res) => {
+//   Users.findOne({ userId: req.cookies.user_id }).then((data) => {
+//     res.json(data);
+//   });
+// });
 
-app.get('/iotd', (req, res) => {
-  Iotd.findOne({ user_id: req.cookies.user_id }).then((data) => {
-    res.json(data);
-  });
-});
+// app.get('/iotd', (req, res) => {
+//   Iotd.findOne({ user_id: req.cookies.user_id }).then((data) => {
+//     res.json(data);
+//   });
+// });
 
 // app.put('/iotd', (req, res) => {
 //   const { user_id } = req.params;

@@ -4,27 +4,39 @@ import React, { useState } from 'react';
 import { View, ScrollView, Text, ImageBackground, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper/src';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 import favData from './favData.js';
 
-// const [realData, setRealData] = useState([]);
 
 const list = () => {
-  // axios.post('http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/login',
-  // {username, password})
-  // .then(({data}) => {
-  //     setFavData(data);
-  //   }
-  // })
-  // .catch();
-  const data = favData || realData;
-  return data.map((fav) => {
+  const idFecth = async () => {
+    const storedUser = await AsyncStorage.getItem('user');
+    const user = JSON.parse(storedUser);
+    const data = JSON.stringify({
+      "user_id": user.id
+    });
+    userId = data;
     
+    axios({
+      method: 'get',
+      url: 'http://localhost:3001/users/iotd/',
+      data: userId
+    })
+    .then(function (response) {
+      realData = JSON.stringify(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  return favData.map((fav) => {
     return (
       <View style={styles.container} key={fav.id}>
-        {fav.image &&
+        {fav.url &&
       (<ImageBackground
         style={styles.image}
-        source={{uri: fav.image}}
+        source={{uri: fav.url}}
         />)
       }
 
@@ -39,7 +51,7 @@ const list = () => {
           <ScrollView>
             <Text></Text>
             <Text style={styles.textTwo}>
-              {fav.description}
+              {fav.explanation}
             </Text>
             <Text></Text>
           </ScrollView>

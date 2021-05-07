@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Switch } from 'react-native';
 import AwesomeButton from 'react-native-really-awesome-button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+import Sound from 'react-native-sound';
 
 
 const SettingsScreen = ({navigation, route}) => {
@@ -27,6 +28,19 @@ const SettingsScreen = ({navigation, route}) => {
       console.log('error', e);
     }
   };
+
+  const sound1 = new Sound(require('./assets/SolXrTheme.wav'),
+  (error, sound) => {
+    if (error) {
+      alert('error' + error.message);
+      return;
+    }
+    sound1.play(() => {
+      sound1.release();
+    });
+    sound1.setNumberOfLoops(-1);
+    sound1.setVolume(0.2);
+  });
 
 
   const modUser = async (prop) => {
