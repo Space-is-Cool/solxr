@@ -1,3 +1,5 @@
+/* eslint-disable no-dupe-else-if */
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -5,12 +7,11 @@ import {
   View,
   Image,
   ImageBackground,
-  ScrollView,
-  SafeAreaView,
+
 } from 'react-native';
-import { WebView } from "react-native-webview";
+import { WebView } from 'react-native-webview';
+import data from './data/techData.js';
 import Timeline from 'react-native-timeline-flatlist';
-import TechData from './data/techData.js'
 ///cahnged
 export default class TechTimeLine extends Component {
   constructor() {
@@ -19,24 +20,26 @@ export default class TechTimeLine extends Component {
     this.renderSelected = this.renderSelected.bind(this);
     this.renderDetail = this.renderDetail.bind(this);
 
-    this.data = TechData;
+    this.data = data;
     this.state = {selected: null};
   }
 
   onEventPress(data) {
     this.setState({selected: data});
   }
-//this.state.selected.title
-  renderSelected(rowData) {
-    if (this.state.selected) { return  <WebView  mediaPlaybackRequiresUserAction={true}
-    style={styles.containerVideo}
-    source={{uri: this.state.selected.uri }} /> } else if (this.state.selected){
-      return <Text></Text>;
+  //this.state.selected.title
+  renderSelected() {
+    if (this.state.selected) {
+      return <WebView mediaPlaybackRequiresUserAction={true}
+        style={styles.containerVideo}
+        source={{uri: this.state.selected.uri }} />; 
+    } else if (this.state.selected) {
+      return <Text>hello</Text>;
     }
 
   }
 
-  renderDetail(rowData, sectionID, rowID) {
+  renderDetail(rowData) {
     const title = <Text style={[styles.title]}>{rowData.title}</Text>;
     let desc = null;
     if (rowData.description && rowData.imageUrl) {
@@ -61,27 +64,27 @@ export default class TechTimeLine extends Component {
     return (
       <ImageBackground style= { styles.backgroundImage } source={image}>
         {/* <SafeAreaView> */}
-          {/* <ScrollView > */}
-            <View style={styles.container}>
-              {this.renderSelected()}
-              <Timeline
-                style={styles.list}
-                data={this.data}
-                circleSize={20}
-                circleColor='rgba(0,0,0,0)'
-                lineColor='rgb(45,156,219)'
-                timeContainerStyle={{minWidth: 52, marginTop: -5}}
-                timeStyle={{textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13}}
-                descriptionStyle={{color: 'gray'}}
-                options={{
-                  style: {paddingTop: 5}
-                }}
-                innerCircle={'icon'}
-                onEventPress={this.onEventPress}
-                renderDetail={this.renderDetail}
-              />
-            </View>
-          {/* </ScrollView> */}
+        {/* <ScrollView > */}
+        <View style={styles.container}>
+          {this.renderSelected()}
+          <Timeline
+            style={styles.list}
+            data={this.data}
+            circleSize={20}
+            circleColor='rgba(0,0,0,0)'
+            lineColor='rgb(45,156,219)'
+            timeContainerStyle={{minWidth: 52, marginTop: -5}}
+            timeStyle={{textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13}}
+            descriptionStyle={{color: 'gray'}}
+            options={{
+              style: {paddingTop: 5}
+            }}
+            innerCircle={'icon'}
+            onEventPress={this.onEventPress}
+            renderDetail={this.renderDetail}
+          />
+        </View>
+        {/* </ScrollView> */}
         {/* </SafeAreaView> */}
       </ImageBackground>
     );

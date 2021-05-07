@@ -2799,4 +2799,4 @@ export default [
     description: 'The open star cluster M41 (NGC 2287  mag 4.6) in Canis Major is well placed in the sky. https://in-the-sky.org/news.php?id=20220102_17_100',
     url: 'https://in-the-sky.org/news.php?id=20220102_17_100'
   }
-] 
+];
