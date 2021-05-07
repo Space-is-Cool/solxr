@@ -3,14 +3,10 @@
 import React, {useEffect, useState} from 'react';
 import { View, ScrollView, Text, ImageBackground, Image, StyleSheet, LayoutAnimation, Platform, UIManager, TouchableOpacity } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import axios from 'axios';
 import Swiper from 'react-native-swiper/src';
 import {IotdContext} from '../../Root/Context';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -41,7 +37,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: '2%',
     backgroundColor: 'rgba(7, 40, 82, 0.4)'
-
   },
   headerTwo: {
     textAlign: 'center',
@@ -57,7 +52,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     backgroundColor: 'rgba(7, 40, 82, 0.4)',
     paddingBottom: '2%',
-
   },
   textTwo: {
     fontSize: 17,
@@ -77,7 +71,6 @@ const styles = StyleSheet.create({
     height: 35,
   },
 });
-
 const saveToFave = async (title, explanation, url) => {
   const storedUser = await AsyncStorage.getItem('user');
   const user = JSON.parse(storedUser);
@@ -88,7 +81,6 @@ const saveToFave = async (title, explanation, url) => {
     'title': title,
     'user_id': user.id
   });
-  
   const config = {
     method: 'put',
     url: 'http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/iotd',
@@ -97,16 +89,12 @@ const saveToFave = async (title, explanation, url) => {
     },
     data: data
   };
-  
   axios(config)
     .then(function (response) {
       alert(response.data);
     });
-
 };
-
 const NasaScreen = ({navigation, route}) => {
-
   return (
     <IotdContext.Consumer>
       {({url, title, explanation}) => (
@@ -114,7 +102,6 @@ const NasaScreen = ({navigation, route}) => {
           <ImageBackground
             style={styles.image}
             source={{uri: url}}>
-            <Text style={styles.header}>Welcome to SolXR!</Text>
             <Swiper
               horizontal={false}
               loop={false}
@@ -142,11 +129,6 @@ const NasaScreen = ({navigation, route}) => {
         </View>
       )}
     </IotdContext.Consumer>
-
-
   );
 };
-
 export default NasaScreen;
-
-
