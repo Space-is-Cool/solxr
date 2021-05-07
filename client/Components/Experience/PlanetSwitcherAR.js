@@ -11,7 +11,9 @@ import {
   ViroSphere,
   ViroARSceneNavigator,
   ViroARPlaneSelector,
-  ViroImage
+  ViroImage,
+  ViroNode,
+  ViroSpatialSound
 } from 'react-viro';
 
 
@@ -20,24 +22,19 @@ const PlanetSelector = ({navigation, route}) => {
   const PlanetSwitcher = () => {
 
     const bodies = [
-      {rings: false, position: 0, name: 'sun', radius: 0.1},
-      {rings: false, position: 1, name: 'mercury', radius: 0.45},
-      {rings: false, position: 2, name: 'venus', radius: 0.48},
-      {rings: false, position: 3, name: 'earth', radius: 0.5},
-      {rings: false, position: 4, name: 'moon', radius: 0.25},
-      {rings: false, position: 5, name: 'mars', radius: 0.387},
-      {rings: false, position: 6, name: 'jupiter', radius: 1.6},
-      // {rings: false, position: 7, name: 'saturn', radius: 1.4},
-      {rings: true, position: 7, name: 'saturn', radius: 0.4},
-      {rings: false, position: 8, name: 'uranus', radius: 0.862},
-      {rings: false, position: 9, name: 'neptune', radius: 0.8},
+      {rings: false, position: 0, name: 'sun', radius: 25/*109.2*/},
+      {rings: false, position: 1, name: 'mercury', radius: 10.97},
+      {rings: false, position: 2, name: 'venus', radius: 0.9499},
+      {rings: false, position: 3, name: 'earth', radius: 1},
+      {rings: false, position: 4, name: 'moon', radius: 0.2727},
+      {rings: false, position: 5, name: 'mars', radius: 0.3829},
+      {rings: false, position: 6, name: 'jupiter', radius: 10.97},
+      {rings: true, position: 7, name: 'saturn', radius: 9.140},
+      {rings: false, position: 8, name: 'uranus', radius: 3.981},
+      {rings: false, position: 9, name: 'neptune', radius: 3.865},
     ];
 
-    const [planet, setPlanet] = useState({position: 0, name: 'mars', radius: 0.387});
-    const [orbitX, setOrbitX] = useState(0);
-    const [orbitZ, setOrbitZ] = useState(0);
-
-
+    const [planet, setPlanet] = useState(bodies[0]);
 
     const changePlanet = () => {
       
@@ -46,72 +43,75 @@ const PlanetSelector = ({navigation, route}) => {
         : bodies[planet.position + 1]);
     };
 
-    const xValues = [0];
-    const zValues = [0];
+    //****orbit functionality******
+    // const [orbitX, setOrbitX] = useState(0);
+    // const [orbitZ, setOrbitZ] = useState(0);
+    // const xValues = [0];
+    // const zValues = [0];
 
-    const circle = (radius, steps) => {
-      for (let i = 0; i < steps; i++) {
-        xValues[i] = (radius * Math.cos(2 * Math.PI * i / steps));
-        zValues[i] = (radius * Math.sin(2 * Math.PI * i / steps));
-      }
-    };
-    circle(1, 2000);
-    console.log(xValues);
-    let index = 0;
-
-
-    const animate = () => {
-      index += 1;
-      setOrbitX(xValues[index]);
-      setOrbitZ(zValues[index]);
-      if (index === 1999) {
-        index = 0;
-      }
-    };
+    // const circle = (radius, steps) => {
+    //   for (let i = 0; i < steps; i++) {
+    //     xValues[i] = (radius * Math.cos(2 * Math.PI * i / steps));
+    //     zValues[i] = (radius * Math.sin(2 * Math.PI * i / steps));
+    //   }
+    // };
+    // circle(1, 2000);
+    // console.log(xValues);
+    // let index = 0;
 
 
+    // const animate = () => {
+    //   index += 1;
+    //   setOrbitX(xValues[index]);
+    //   setOrbitZ(zValues[index]);
+    //   if (index === 1999) {
+    //     index = 0;
+    //   }
+    // };
 
-
-  
     return (
-      <ViroARScene
-        onClick={(p, s) => console.log('click click clickx', p[0], s)}
-        onSwipe={((p, s) => console.log(p, s))}
-      >
+      <ViroARScene>
         <ViroAmbientLight color="#ffffff" intensity={200}/>
         <ViroSpotLight innerAngle={5} outerAngle={90} direction={[0, -1, -.2]}
           position={[0, 3, 1]} color="#ffffff" castsShadow={true} />
         <ViroAmbientLight color={'#aaaaaa'} />
         <ViroSpotLight innerAngle={5} outerAngle={90} direction={[0, -1, -.2]} position={[0, 3, 1]} color="#ffffff" castsShadow={true} />
-        <ViroARPlaneSelector
-          onSwipe={() => console.log('the swipe the swipe')}
-        >
-          <ViroSphere
-            onSwipe={value => console.log('theres been a swipe!!!!', value)}
-            heightSegmentCount={50}
-            widthSegmentCount={50}
-            radius={planet.radius * 1}
-            animation={{name: 'loopRotate', run: true, loop: true}} 
-            position={[orbitX * 3, 1, orbitZ * 3]}
-            materials={planet.name}
-            onClick={() => setInterval(animate, 10)}
-          />
+        <ViroARPlaneSelector>
+          <ViroNode>
+            <ViroSphere
+              // onSwipe={() => setInterval(animate, 10)}
+              heightSegmentCount={50}
+              widthSegmentCount={50}
+              radius={planet.radius / 50 + 0.4}
+              animation={{name: 'loopRotate', run: true, loop: true}} 
+              // position={[orbitX * 3, 1, orbitZ * 3]}
+              position={[0, 1, 0]}
+              materials={planet.name}
+              onClick={changePlanet}
+            />
+            <ViroSpatialSound rolloffModel="linear"
+              paused={false} muted={false}
+              minDistance={0} maxDistance={8}
+              position={[0, 0, 0]}
+              source={require('./assets/planeLoop.mp3')}
+              loop={true}
+              volume={1.0} />
+          </ViroNode>
+
           <ViroImage
             height={2}
             width={2}
             visible = {planet.rings}
-            position={[0, 2, 0]}
+            position={[0, 1, 0]}
             rotation={[90, 0, 0]}
-            // rotationPivot={[0, 90, 0]}
             source={require('./assets/saturn_rings_black2.png')}
           />
           <ViroImage
             height={2}
             width={2}
             visible = {planet.rings}
-            position={[0, 2, 0]}
+            position={[0, 1, 0]}
             rotation={[270, 0, 0]}
-            // rotationPivot={[0, 90, 0]}
             source={require('./assets/saturn_rings_black2.png')}
           />
 
@@ -123,43 +123,33 @@ const PlanetSelector = ({navigation, route}) => {
 
   ViroMaterials.createMaterials({
     sun: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_sun.jpeg')
     },
     mercury: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_mercury.jpeg')
     },
     venus: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/8k_venus.jpeg')
     },
     earth: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_earth.jpeg')
     },
     moon: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_moon.jpeg')
     },
     mars: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/8k_mars.jpeg')
     },
     jupiter: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_jupiter.jpeg')
     },
     saturn: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_saturn.jpeg')
     },
     uranus: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_uranus.jpeg')
     },
     neptune: { shininess: 2.0,
-      // lightingModel: "Constant",
       diffuseTexture: require('./assets/2k_neptune.jpeg')
     }
   });

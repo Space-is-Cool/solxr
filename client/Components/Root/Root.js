@@ -43,7 +43,6 @@ const RootNavigator = () => {
         </NavigationContainer>
       }
     </IotdContext.Provider>
-
   );
 };
 export default RootNavigator;

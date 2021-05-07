@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Switch } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import AwesomeButton from 'react-native-really-awesome-button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+import { Switch } from 'react-native-switch';
 
 
 const SettingsScreen = ({navigation, route}) => {
@@ -67,34 +68,41 @@ const SettingsScreen = ({navigation, route}) => {
       <Text style={styles.value}>Settings</Text>
       <Text style={styles.value}>Readable Font</Text>
       <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.accessibility
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
+        style={styles.switch}
+        circleActiveColor={'#9ee7ff'}
+        circleInActiveColor={'#f4f3f4'}
+        backgroundActive={'rgb(7, 40, 82)'}
+        backgroundInactive={'rgb(7, 40, 82)'}
+        switchLeftPx={5}
+        switchRightPx={5} 
         onValueChange={() => modUser('accessibility')}
         value={toggle.accessibility}
       />
       <Text style={styles.value}>Music</Text>
       <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.music
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
+        style={styles.switch}
+        circleActiveColor={'#9ee7ff'}
+        circleInActiveColor={'#f4f3f4'}
+        backgroundActive={'rgb(7, 40, 82)'}
+        backgroundInactive={'rgb(7, 40, 82)'}
+        switchLeftPx={5}
+        switchRightPx={5} 
         onValueChange={() => modUser('music')}
         value={toggle.music}
       />
       <Text style={styles.value}>NASA Theme</Text>
       <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.theme
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
+        style={styles.switch}
+        circleActiveColor={'#9ee7ff'}
+        circleInActiveColor={'#f4f3f4'}
+        backgroundActive={'rgb(7, 40, 82)'}
+        backgroundInactive={'rgb(7, 40, 82)'}
+        switchLeftPx={5}
+        switchRightPx={5} 
         onValueChange={() => modUser('theme')}
         value={toggle.theme}
       />
+
       <AwesomeButton
         style={styles.button}
         // progress
@@ -124,10 +132,13 @@ const styles = StyleSheet.create({
   },
   value: {
     fontSize: 24,
-    marginVertical: 12
+    marginVertical: 18
   },
   button: {
-    marginTop: '20%'
+    marginTop: '20%',
+  },
+  switch: {
+    marginBottom: '30%',
   }
 });
 
