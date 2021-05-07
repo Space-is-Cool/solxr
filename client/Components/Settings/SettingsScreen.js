@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Switch } from 'react-native';
 import AwesomeButton from 'react-native-really-awesome-button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+import {FontContext} from '../Root/Context.js';
 
 
 const SettingsScreen = ({navigation, route}) => {
