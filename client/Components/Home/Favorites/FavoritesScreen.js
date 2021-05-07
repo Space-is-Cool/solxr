@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Text, ImageBackground, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper/src';
 
@@ -8,29 +8,26 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import favData from './favData.js';
 
+const FavoritesScreen = ({navigation, route}) => {
+const [realData, setRealData] = useState([]);
 
-const list = () => {
-  const idFecth = async () => {
+  useEffect(() => {
+    dataFetch();
+  }, []);
+
+const dataFetch = async () => {
     const storedUser = await AsyncStorage.getItem('user');
     const user = JSON.parse(storedUser);
-    const data = JSON.stringify({
-      "user_id": user.id
+    axios.get(`http://localhost:3001/users/iotd/?user_id=3`)
+    .then(({data}) => {
+      setRealData(data)
     });
-    userId = data;
-    
-    axios({
-      method: 'get',
-      url: 'http://localhost:3001/users/iotd/',
-      data: userId
-    })
-    .then(function (response) {
-      realData = JSON.stringify(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-  return favData.map((fav) => {
+};
+
+const list = () => {
+  if(realData.length){
+  return realData.map((fav) => {
+    console.log('FAVE', fav);
     return (
       <View style={styles.container} key={fav.id}>
         {fav.url &&
@@ -38,7 +35,7 @@ const list = () => {
         style={styles.image}
         source={{uri: fav.url}}
         />)
-      }
+        }
 
         <Swiper horizontal={false}>
           <View>
@@ -59,13 +56,15 @@ const list = () => {
       </View>
     );
   });
+}
 };
 
-const FavoritesScreen = ({navigation, route}) => {
   return (
+    <View>
     <Swiper>
-      {list()}
+      {realData.length && list()}
     </Swiper>
+    </View>
   );
 };
 

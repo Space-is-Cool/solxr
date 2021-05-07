@@ -71,7 +71,8 @@ router.put('/iotd', (req, res) => {
 });
 
 router.get('/iotd', (req, res)=>{
-  const { user_id } = req.body;
+  console.log(`here's the data from params: ${req.query.user_id}`)
+  const { user_id } = req.query;
   Iotd.findAll({
     where: {
       user_id
