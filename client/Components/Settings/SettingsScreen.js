@@ -11,7 +11,7 @@ import Sound from 'react-native-sound';
 const SettingsScreen = ({navigation, route}) => {
   const [toggle, setToggle] = useState({
     accessibility: false,
-    music: false,
+    music: true,
     theme: false
   });
 
@@ -29,18 +29,22 @@ const SettingsScreen = ({navigation, route}) => {
     }
   };
 
-  const sound1 = new Sound(require('./assets/SolXrTheme.wav'),
-  (error, sound) => {
-    if (error) {
-      alert('error' + error.message);
-      return;
-    }
-    sound1.play(() => {
-      sound1.release();
-    });
-    sound1.setNumberOfLoops(-1);
-    sound1.setVolume(0.2);
-  });
+  // const sound1 = new Sound(require('./assets/SolXRloop.wav'),
+  //   (error, sound) => {
+  //     if (error) {
+  //       alert('error' + error.message);
+  //       return;
+  //     }
+  //     if (toggle.music === true) {
+  //       sound1.play(() => {
+  //         sound1.release();
+  //       });
+  //       sound1.setNumberOfLoops(-1);
+  //       sound1.setVolume(0.5);
+  //     } else if (toggle.music === false) {
+  //       sound1.stop();
+  //     }
+  //   });
 
 
   const modUser = async (prop) => {

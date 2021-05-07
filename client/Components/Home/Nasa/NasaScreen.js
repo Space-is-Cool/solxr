@@ -83,10 +83,10 @@ const saveToFave = async (title, explanation, url) => {
   const user = JSON.parse(storedUser);
   // axios call to backend, with an updated stringified array of this user's favorites
   const data = JSON.stringify({
-    "url": url,
-    "explanation": explanation,
-    "title": title,
-    "user_id": user.id
+    'url': url,
+    'explanation': explanation,
+    'title': title,
+    'user_id': user.id
   });
   
   const config = {
@@ -95,13 +95,13 @@ const saveToFave = async (title, explanation, url) => {
     headers: { 
       'Content-Type': 'application/json'
     },
-    data : data
+    data: data
   };
   
   axios(config)
-  .then(function (response) {
-   alert(response.data);
-  })
+    .then(function (response) {
+      alert(response.data);
+    });
 
 };
 
