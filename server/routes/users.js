@@ -71,20 +71,19 @@ router.put('/iotd', (req, res) => {
 });
 
 router.get('/iotd', (req, res)=>{
-  console.log(`here's the data from params: ${req.query.user_id}`)
   const { user_id } = req.query;
   Iotd.findAll({
     where: {
       user_id
     }
   })
-  .then(picArr => {
-    res.send(picArr);
-  })
-  .catch(err=>{
-    res.send(err);
-  });
-})
+    .then(picArr => {
+      res.send(picArr);
+    })
+    .catch(err=>{
+      res.send(err);
+    });
+});
 
 router.put('/update', (req, res) => {
   const {accessibility, email, music, subscribed, theme, id} = req.body;

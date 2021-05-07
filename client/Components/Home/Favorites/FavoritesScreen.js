@@ -25,9 +25,7 @@ const FavoritesScreen = ({navigation, route}) => {
   };
 
   const list = () => {
-
     return realData.map((fav) => {
-      console.log('FAVE', fav);
       return (
         <View style={styles.container} key={fav.id}>
           <ImageBackground

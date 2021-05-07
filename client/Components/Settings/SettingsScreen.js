@@ -28,7 +28,7 @@ const SettingsScreen = ({navigation, route}) => {
       console.log('error', e);
     }
   };
-
+  // // TODO: Implement music fully based on music boolean
   // const sound1 = new Sound(require('./assets/SolXRloop.wav'),
   //   (error, sound) => {
   //     if (error) {
