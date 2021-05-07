@@ -18,7 +18,7 @@ const FavoritesScreen = ({navigation, route}) => {
   const dataFetch = async () => {
     const storedUser = await AsyncStorage.getItem('user');
     const user = JSON.parse(storedUser);
-    axios.get(`http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/?user_id=${user.id}`)
+    axios.get(`http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/iotd/?user_id=${user.id}`)
       .then(({data}) => {
         setRealData(data);
       });
