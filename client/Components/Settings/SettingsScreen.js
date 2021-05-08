@@ -1,12 +1,16 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Switch } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import AwesomeButton from 'react-native-really-awesome-button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { MusicContext, SoundOneContext } from '../Root/Context';
 import axios from 'axios';
 import Sound from 'react-native-sound';
+import LoginModal from '../Root/Login.js';
+import {sound1} from '../Root/soundOne.js';
 
+import { Switch } from 'react-native-switch';
 
 const SettingsScreen = ({navigation, route}) => {
   const [toggle, setToggle] = useState({
@@ -29,22 +33,14 @@ const SettingsScreen = ({navigation, route}) => {
     }
   };
   // // TODO: Implement music fully based on music boolean
-  // const sound1 = new Sound(require('./assets/SolXRloop.wav'),
-  //   (error, sound) => {
-  //     if (error) {
-  //       alert('error' + error.message);
-  //       return;
-  //     }
-  //     if (toggle.music === true) {
-  //       sound1.play(() => {
-  //         sound1.release();
-  //       });
-  //       sound1.setNumberOfLoops(-1);
-  //       sound1.setVolume(0.5);
-  //     } else if (toggle.music === false) {
-  //       sound1.stop();
-  //     }
-  //   });
+  const musicToggle = () => {
+    if (toggle.music === true) {
+      sound1.stop();
+    } else {
+      sound1.play();
+    }
+  
+  };
 
 
   const modUser = async (prop) => {
@@ -81,56 +77,65 @@ const SettingsScreen = ({navigation, route}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.value}>Settings</Text>
-      <Text style={styles.value}>Readable Font</Text>
-      <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.accessibility
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={() => modUser('accessibility')}
-        value={toggle.accessibility}
-      />
-      <Text style={styles.value}>Music</Text>
-      <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.music
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={() => modUser('music')}
-        value={toggle.music}
-      />
-      <Text style={styles.value}>NASA Theme</Text>
-      <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.theme
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={() => modUser('theme')}
-        value={toggle.theme}
-      />
-      <AwesomeButton
-        style={styles.button}
-        // progress
-        onPress={saveToServer}
-      >
+    <MusicContext.Consumer>{ ({ music, setMusic }) => (
+      <View style={styles.container}>
+        <Text style={styles.value}>Settings</Text>
+        <Text style={styles.value}>Readable Font</Text>
+        <Switch
+          style={styles.switch}
+          circleActiveColor={'#9ee7ff'}
+          circleInActiveColor={'#f4f3f4'}
+          backgroundActive={'rgb(7, 40, 82)'}
+          backgroundInactive={'rgb(7, 40, 82)'}
+          switchLeftPx={5}
+          switchRightPx={5} 
+          onValueChange={() => modUser('accessibility')}
+          value={toggle.accessibility}
+        />
+        <Text style={styles.value}>Music</Text>
+        <Switch
+          style={styles.switch}
+          circleActiveColor={'#9ee7ff'}
+          circleInActiveColor={'#f4f3f4'}
+          backgroundActive={'rgb(7, 40, 82)'}
+          backgroundInactive={'rgb(7, 40, 82)'}
+          switchLeftPx={5}
+          switchRightPx={5} 
+          onValueChange={() => { setMusic(!music); musicToggle(music); modUser('music'); }}
+          value={toggle.music}
+        />
+        <Text style={styles.value}>NASA Theme</Text>
+        <Switch
+          style={styles.switch}
+          circleActiveColor={'#9ee7ff'}
+          circleInActiveColor={'#f4f3f4'}
+          backgroundActive={'rgb(7, 40, 82)'}
+          backgroundInactive={'rgb(7, 40, 82)'}
+          switchLeftPx={5}
+          switchRightPx={5} 
+          onValueChange={() => modUser('theme')}
+          value={toggle.theme}
+        />
+        <AwesomeButton
+          style={styles.button}
+          // progress
+          onPress={saveToServer}
+        >
       Save Settings
-      </AwesomeButton>
-      <AwesomeButton
-        style={styles.button}
-        progress
-        onPress={() => {
-          clearStorage();
-          navigation.navigate('login');
-        }}
-      >
+        </AwesomeButton>
+        <AwesomeButton
+          style={styles.button}
+          progress
+          onPress={() => {
+            clearStorage();
+            navigation.navigate('login');
+          }}
+        >
       Log Out
-      </AwesomeButton>
-    </View>
+        </AwesomeButton>
+      </View>
+    )
+    }</MusicContext.Consumer>
   );
 };
 
