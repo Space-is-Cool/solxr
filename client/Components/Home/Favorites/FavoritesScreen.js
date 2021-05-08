@@ -7,24 +7,30 @@ import { useIsFocused } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import favData from './favData.js';
+
+
 const FavoritesScreen = ({navigation, route}) => {
   const [realData, setRealData] = useState(favData);
   const isFocused = useIsFocused();
+
   useEffect(() => {
     dataFetch();
   }, [isFocused]);
+
   const dataFetch = async () => {
     const storedUser = await AsyncStorage.getItem('user');
     const user = JSON.parse(storedUser);
     axios.get(`http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/iotd/?user_id=${user.id}`)
       .then(({data}) => {
         console.log('do i have any favorites', data);
-        data.length && setRealData(data);
+        data.length
+          ? setRealData(data)
+          : setRealData(favData);
       });
   };
+
   const list = () => {
     return realData.map((fav) => {
-      console.log('FAVE', fav);
       return (
         <View style={styles.container} key={fav.id}>
           <ImageBackground
@@ -52,13 +58,16 @@ const FavoritesScreen = ({navigation, route}) => {
       );
     });
   };
+
   return (
     <Swiper>
       {realData.length && list()}
     </Swiper>
   );
 };
+
 export default FavoritesScreen;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

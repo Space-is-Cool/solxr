@@ -1,8 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, {useState, useEffect} from 'react';
 import {Text, Button, View, TextInput, StyleSheet} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { useIsFocused } from '@react-navigation/native';
+import Sound from 'react-native-sound';
+import {sound1} from './soundOne.js';
+import { MusicContext } from '../Root/Context';
 
 
 const LoginModal = ({ navigation }) => {
@@ -60,6 +65,26 @@ const LoginModal = ({ navigation }) => {
     }
   };
 
+  // const sound1 = new Sound(require('./assets/SolXRloop.wav'),
+  //   (error, sound) => {
+  //     if (error) {
+  //       alert('error' + error.message);
+  //       return;
+  //     }
+  //   });
+    
+  const playMusic = async () => {
+    const storedUser = await AsyncStorage.getItem('user');
+    const { music } = JSON.parse(storedUser);
+    if (music === true) {
+      sound1.play(() => {
+        sound1.release();
+      });
+      sound1.setNumberOfLoops(-1);
+      sound1.setVolume(0.5);
+    }
+  };
+
   const isFocused = useIsFocused();
 
   useEffect(() => {
@@ -69,45 +94,47 @@ const LoginModal = ({ navigation }) => {
   }, [isFocused]);
 
   return (
-    
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {signedIn
-        ? 
-        <>
-          <Text style={{ fontSize: 30 }}>Hello {user && user.username}</Text>
-          <Text></Text>
-          <Text style={{ fontSize: 30 }}>Welcome to solxr</Text>
-          <Text></Text>
-          <Button onPress={() => navigation.navigate('index')} title="Enter" />
-        </>
-        : 
-        <>
-          <Text>{prompt}</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeUsername}
-            value={username}
-            defaultValue="password"
-          />
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangePassword}
-            value={password}
-            secureTextEntry={true}
-            defaultValue="password"
-          />
-          <Button
-            onPress={onSignIn}
-            title="Sign In"
-          />
-          <Text></Text>
-          <Button
-            onPress={onSignUp}
-            title="Sign Up"
-          />
-        </>
-      }
-    </View>
+    <MusicContext.Consumer>{ ({ music }) => (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        {signedIn
+          ? 
+          <>
+            <Text style={{ fontSize: 30 }}>Hello {user && user.username}</Text>
+            <Text></Text>
+            <Text style={{ fontSize: 30 }}>Welcome to solxr</Text>
+            <Text></Text>
+            <Button onPress={() => { navigation.navigate('index'); playMusic(music); }} title="Enter" />
+          </>
+          : 
+          <>
+            <Text>{prompt}</Text>
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeUsername}
+              value={username}
+              defaultValue="password"
+            />
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangePassword}
+              value={password}
+              secureTextEntry={true}
+              defaultValue="password"
+            />
+            <Button
+              onPress={onSignIn}
+              title="Sign In"
+            />
+            <Text></Text>
+            <Button
+              onPress={onSignUp}
+              title="Sign Up"
+            />
+          </>
+        }
+      </View>
+    )
+    }</MusicContext.Consumer>
   );
 };
 

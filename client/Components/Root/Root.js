@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {IotdContext} from './Context';
+import {IotdContext, MusicContext } from './Context';
 import axios from 'axios';
 import BottomTab from './RootBottomTab';
 import LoginModal from './Login';
@@ -14,6 +14,7 @@ const AppNavigation = createStackNavigator();
 const RootNavigator = () => {
 
   const [IoTD, setIoTD] = useState(null);
+  const [music, setMusic] = useState(true);
 
   useEffect(() => {
     getNasa();
@@ -27,8 +28,9 @@ const RootNavigator = () => {
   };
 
   return (
-    <IotdContext.Provider value={IoTD}>
-      {IoTD && 
+    <MusicContext.Provider value={{ music, setMusic }}>
+      <IotdContext.Provider value={IoTD}>
+        {IoTD && 
         <NavigationContainer>
           <AppNavigation.Navigator
             mode="modal"
@@ -41,8 +43,9 @@ const RootNavigator = () => {
             <AppNavigation.Screen name="login" component={LoginModal} />
           </AppNavigation.Navigator>
         </NavigationContainer>
-      }
-    </IotdContext.Provider>
+        }
+      </IotdContext.Provider>
+    </MusicContext.Provider>
 
   );
 };
