@@ -37,7 +37,7 @@ const LoginModal = ({ navigation }) => {
     axios.post('http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/create',
       {username, password})
       .then(onSignIn)
-      .catch(err => console.log(err));
+      .catch(err => console.warn(err));
   };
 
   const getUser = async () => {
