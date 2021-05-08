@@ -11,8 +11,6 @@ import Sound from 'react-native-sound';
 import LoginModal from '../Root/Login.js';
 import {sound1} from '../Root/soundOne.js';
 
-import { Switch } from 'react-native-switch';
-
 const SettingsScreen = ({navigation, route}) => {
   const [toggle, setToggle] = useState({
     accessibility: false,
