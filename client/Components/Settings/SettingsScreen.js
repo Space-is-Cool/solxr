@@ -80,57 +80,77 @@ const SettingsScreen = ({navigation, route}) => {
       .catch(err => console.log('fail', err));
   };
 
+  const accessibility = {
+    normal: {
+      fontFamily: 'Helvetica'
+    },
+    readable: {
+      fontSize: 30,
+      fontFamily: 'Times New Roman'
+    }
+  };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.value}>Settings</Text>
-      <Text style={styles.value}>Readable Font</Text>
-      <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.accessibility
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={() => modUser('accessibility')}
-        value={toggle.accessibility}
-      />
-      <Text style={styles.value}>Music</Text>
-      <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.music
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={() => modUser('music')}
-        value={toggle.music}
-      />
-      <Text style={styles.value}>NASA Theme</Text>
-      <Switch
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={toggle.theme
-          ? '#f5dd4b'
-          : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={() => modUser('theme')}
-        value={toggle.theme}
-      />
-      <AwesomeButton
-        style={styles.button}
-        // progress
-        onPress={saveToServer}
-      >
+    <FontContext.Consumer>
+      {({ Font, setFont }) => (
+        <View style={styles.container}>
+          <Text style={{...Font, ...styles.value}}>Settings</Text>
+          <Text style={{...Font, ...styles.value}}>Readable Font</Text>
+          <Switch
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={toggle.accessibility
+              ? '#f5dd4b'
+              : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={() => {
+              !toggle.accessibility
+                ? setFont(accessibility.readable)
+                : setFont(accessibility.normal);
+              modUser('accessibility');
+            }}
+            value={toggle.accessibility}
+          />
+          <Text style={{...Font, ...styles.value}}>Music</Text>
+          <Switch
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={toggle.music
+              ? '#f5dd4b'
+              : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={() => modUser('music')}
+            value={toggle.music}
+          />
+          <Text style={{...Font, ...styles.value}}>NASA Theme</Text>
+          <Switch
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={toggle.theme
+              ? '#f5dd4b'
+              : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={() => modUser('theme')}
+            value={toggle.theme}
+          />
+          <AwesomeButton
+            style={styles.button}
+            textFontFamily={Font.fontFamily}
+            // progress
+            onPress={saveToServer}
+          >
       Save Settings
-      </AwesomeButton>
-      <AwesomeButton
-        style={styles.button}
-        progress
-        onPress={() => {
-          clearStorage();
-          navigation.navigate('login');
-        }}
-      >
+          </AwesomeButton>
+          <AwesomeButton
+            style={styles.button}
+            progress
+            onPress={() => {
+              clearStorage();
+              navigation.navigate('login');
+            }}
+          >
       Log Out
-      </AwesomeButton>
-    </View>
+          </AwesomeButton>
+        </View>
+      )}
+    </FontContext.Consumer>
   );
 };
 
@@ -141,7 +161,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   value: {
-    fontSize: 24,
+    // fontSize: 24,
+    // fontFamily: 'Helvetica',
     marginVertical: 12
   },
   button: {
