@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#000000a0'
   },
+  //
   header: {
     textAlign: 'center',
     color: '#9ee7ff',
