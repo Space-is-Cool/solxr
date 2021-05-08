@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const { User, Iotd } = require ('../db');
-
 router.post('/create', async (req, res) => {
   const {username, password} = req.body;
   const salt = await bcrypt.genSalt();
@@ -21,7 +20,6 @@ router.post('/create', async (req, res) => {
     }
   });
 });
-
 router.post('/login', (req, res) =>{
   const {username, password: passwordAttempt} = req.body;
   User.findAll({
@@ -30,16 +28,10 @@ router.post('/login', (req, res) =>{
     }
   }).then(async user => {
     if (user.length) {
-      const { dataValues: {hash, id, ...thisUser}} = user[0];
+      const { dataValues: {hash, ...thisUser}} = user[0];
       const valid = await bcrypt.compare(passwordAttempt, hash);
       if (valid) {
-        Iotd.findAll({ 
-          where: {
-            user_id: id
-          }, attributes: ['date', 'id', 'url']
-        }).then(favoriteIotds => {
-          res.send({...thisUser, id, favoriteIotds});
-        });
+        res.send({...thisUser});
       } else {
         res.send('invalid password');
       }
@@ -48,9 +40,9 @@ router.post('/login', (req, res) =>{
     }
   });
 });
-
 router.put('/iotd', (req, res) => {
   const { url, title, explanation, user_id } = req.body;
+  console.log('heres those params', title, user_id);
   Iotd.findAll({
     where: {
       url,
@@ -69,23 +61,21 @@ router.put('/iotd', (req, res) => {
     }
   });
 });
-
 router.get('/iotd', (req, res)=>{
-  console.log(`here's the data from params: ${req.query.user_id}`)
+  console.log(`here's the data from params: ${req.query.user_id}`);
   const { user_id } = req.query;
   Iotd.findAll({
     where: {
       user_id
     }
   })
-  .then(picArr => {
-    res.send(picArr);
-  })
-  .catch(err=>{
-    res.send(err);
-  });
-})
-
+    .then(picArr => {
+      res.send(picArr);
+    })
+    .catch(err=>{
+      res.send(err);
+    });
+});
 router.put('/update', (req, res) => {
   const {accessibility, email, music, subscribed, theme, id} = req.body;
   User.update({accessibility, email, music, subscribed, theme},
@@ -94,5 +84,4 @@ router.put('/update', (req, res) => {
     }})
     .then(() => res.sendStatus(201));
 });
-
 module.exports = router;

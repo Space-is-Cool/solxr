@@ -11,10 +11,6 @@ router.get('/', (req, res) => {
     });
 });
 
-// console.log('whats the valu of router right here', router);
-// router.listen(8000, () => {
-// console.log('http://localhost:8000');
-// });
 module.exports = router;
 
 
