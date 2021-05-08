@@ -52,7 +52,7 @@ const FavoritesScreen = ({navigation, route}) => {
                 </Text>
                 <Text></Text>
               </ScrollView>
-            </Swiper> 
+            </Swiper>
           </ImageBackground>
         </View>
       );

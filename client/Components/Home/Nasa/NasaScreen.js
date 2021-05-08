@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#000000a0'
   },
+  //
   header: {
     textAlign: 'center',
     color: '#9ee7ff',
@@ -84,7 +85,7 @@ const saveToFave = async (title, explanation, url) => {
   const config = {
     method: 'put',
     url: 'http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/iotd',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json'
     },
     data: data
@@ -118,7 +119,7 @@ const NasaScreen = ({navigation, route}) => {
                 </Text>
                 <Text></Text>
               </ScrollView>
-            </Swiper> 
+            </Swiper>
             <TouchableOpacity style={styles.img} onPress={()=> saveToFave(title, explanation, url)}>
               <Image
                 style={styles.button}
