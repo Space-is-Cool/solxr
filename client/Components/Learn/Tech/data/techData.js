@@ -5,6 +5,7 @@ export default [
   {
     timeId: 0,
     isTech: true,
+    decade: '1950',
     time: '1957',
     title: 'Sputnik 1',
     description: ['Was the first artificial Earth satellite. The Soviet Union launched it into an elliptical low Earth orbit on 4 October 1957. It orbited for three weeks before its batteries died and then orbited silently for two months before it fell back into the atmosphere on the fourth of January, 1958.'],
@@ -101,7 +102,7 @@ export default [
     uri: 'https://www.youtube.com/embed/tiiP6vMWrkw'
   },
 
-  {   
+  {
     timeId: 9,
     istitle: true,
     time: '1968',
@@ -112,7 +113,7 @@ export default [
     uri: 'https://www.youtube.com/embed/phTNJro7tHw'
   },
 
-  {   
+  {
     timeId: 10,
     istitle: true,
     time: '1969',
@@ -123,7 +124,7 @@ export default [
     uri: 'https://www.youtube.com/embed/OCjhCL2iqlQ'
   },
 
-  {   
+  {
     timeId: 11,
     istitle: true,
     time: '1970',
@@ -132,9 +133,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/79/Soviet_moonrover.JPG',
     uri: 'https://www.youtube.com/embed/qELeRJesg_c'
-  },  
+  },
 
-  {   
+  {
     timeId: 12,
     istitle: true,
     time: '1971',
@@ -143,9 +144,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Mars3_iki.jpg/375px-Mars3_iki.jpg',
     uri: 'https://www.youtube.com/embed/SCqiG3xciC4'
-  },  
+  },
 
-  {   
+  {
     timeId: 13,
     istitle: true,
     time: '1972',
@@ -154,9 +155,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'http://www.nasa.gov/sites/default/files/thumbnails/image/pioneer10_art.jpg',
     uri: 'https://www.youtube.com/embed/P1iGf8_RPHc'
-  },  
+  },
 
-  {   
+  {
     timeId: 14,
     istitle: true,
     time: '1973',
@@ -165,9 +166,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Mariner_10_transparent.png/390px-Mariner_10_transparent.png',
     uri: 'https://www.youtube.com/embed/sVRhYL8UPPQ'
-  },  
+  },
 
-  {   
+  {
     timeId: 15,
     istitle: true,
     time: '1975',
@@ -176,9 +177,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/ESA_emblem_seal.png/195px-ESA_emblem_seal.png',
     uri: 'https://www.youtube.com/embed/5nBsKbq5NQk'
-  },  
+  },
 
-  {   
+  {
     timeId: 16,
     istitle: true,
     time: '1976',
@@ -187,9 +188,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Viking_Orbiter_releasing_the_lander.jpg/390px-Viking_Orbiter_releasing_the_lander.jpg',
     uri: 'https://www.youtube.com/embed/zeApJ2nuYmY'
-  },  
+  },
 
-  {   
+  {
     timeId: 17,
     istitle: true,
     time: '1979',
@@ -199,7 +200,7 @@ export default [
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/P11F81.jpg/180px-P11F81.jpg',
     uri: 'https://www.youtube.com/embed/_Kel1m3ivh0'
   },
-  {   
+  {
     timeId: 18,
     istitle: true,
     time: '1981',
@@ -208,9 +209,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Space_Shuttle_Columbia_launching.jpg/390px-Space_Shuttle_Columbia_launching.jpg',
     uri: 'https://www.youtube.com/embed/UDJFtQGRhIo'
-  },  
+  },
 
-  {   
+  {
     timeId: 19,
     istitle: true,
     time: '1982',
@@ -219,9 +220,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/1982_CPA_5278.jpg/210px-1982_CPA_5278.jpg',
     uri: 'https://www.youtube.com/embed/P3Ife6iBdsU'
-  },  
+  },
 
-  {   
+  {
     timeId: 20,
     istitle: true,
     time: '1983',
@@ -230,9 +231,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Pioneer_10_December_4_1973_Jupiter.png/300px-Pioneer_10_December_4_1973_Jupiter.png',
     uri: 'https://www.youtube.com/embed/Nhi_WPsAzag'
-  },  
+  },
 
-  {   
+  {
     timeId: 21,
     istitle: true,
     time: '1984',
@@ -241,9 +242,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://www.washingtonpost.com/resizer/Sc9OaoBqBxxy9wo9FPnsEC2Ya9k=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/OOCR2THIBUI6PJS5DLAP27YJPY.jpg',
     uri: 'https://www.youtube.com/embed/RvnC--JjDBw'
-  },  
+  },
 
-  {   
+  {
     timeId: 22,
     istitle: true,
     time: '1984',
@@ -252,9 +253,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://spacecentre.co.uk/wp-content/uploads/2018/03/soyuz-t-12-1_thumb.jpg',
     uri: 'https://www.youtube.com/embed/PR0Aj53QP_k'
-  },  
+  },
 
-  {   
+  {
     timeId: 23,
     istitle: true,
     time: '1985',
@@ -263,9 +264,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Vega_model_-_Udvar-Hazy_Center.JPG/360px-Vega_model_-_Udvar-Hazy_Center.JPG',
     uri: 'https://www.youtube.com/embed/75mRXZZmh6M'
-  },  
+  },
 
-  {   
+  {
     timeId: 24,
     istitle: true,
     time: '1986',
@@ -275,7 +276,7 @@ export default [
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/STS-51-L.jpg/1280px-STS-51-L.jpg',
     uri: 'https://www.youtube.com/embed/TJIXIhypGL0'
   },
-  {   
+  {
     timeId: 25,
     istitle: true,
     time: '1989',
@@ -286,7 +287,7 @@ export default [
     uri: 'https://www.youtube.com/embed/IKm6WYtvXyc'
   },
 
-  {   
+  {
     timeId: 26,
     istitle: true,
     time: '1990',
@@ -295,8 +296,8 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Voyager_probes_with_the_outer_worlds.jpg/183px-Voyager_probes_with_the_outer_worlds.jpg',
     uri: 'https://www.youtube.com/embed/yXjeztNJ5TI'
-  },  
-  {   
+  },
+  {
     timeId: 27,
     istitle: true,
     time: '1990',
@@ -305,9 +306,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HST-SM4.jpeg/450px-HST-SM4.jpeg',
     uri: 'https://www.youtube.com/embed/-nNiULl5_2k'
-  }, 
+  },
 
-  {   
+  {
     timeId: 28,
     istitle: true,
     time: '1992',
@@ -316,9 +317,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Aleksander_Wolszczan_%282007%29.jpg/330px-Aleksander_Wolszczan_%282007%29.jpg',
     uri: 'https://www.youtube.com/embed/sL2LVsYK0Cc'
-  },  
+  },
 
-  {   
+  {
     timeId: 29,
     istitle: true,
     time: '1995',
@@ -327,9 +328,9 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Artwork_Galileo-Io-Jupiter.JPG/390px-Artwork_Galileo-Io-Jupiter.JPG',
     uri: 'https://www.youtube.com/embed/tzKXqIZTmCw'
-  },  
+  },
 
-  {   
+  {
     timeId: 30,
     istitle: true,
     time: '1997',
@@ -338,7 +339,7 @@ export default [
     icon: require('../assets/doge.png'),
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Mars_Pathfinder_Lander_preparations.jpg/390px-Mars_Pathfinder_Lander_preparations.jpg',
     uri: 'https://www.youtube.com/embed/K64KoLV39KI'
-  },  
+  },
 
   {
     timeId: 31,

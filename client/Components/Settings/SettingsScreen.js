@@ -52,7 +52,7 @@ const SettingsScreen = ({navigation, route}) => {
       const storedUser = await AsyncStorage.getItem('user');
       const user = JSON.parse(storedUser);
       user[prop] = !user[prop];
-      await AsyncStorage.setItem('user', JSON.stringify(user));      
+      await AsyncStorage.setItem('user', JSON.stringify(user));
       setToggle(() => {
         const copy = Object.assign({}, toggle);
         copy[prop] = !copy[prop];
