@@ -28,7 +28,7 @@ const seedMysql = () => {
       Promise.all(
         [
           { username: 'Arin', email: 'adavisfilm@gmail.com', user_id: 69, accessibility: false, subscribed: false },
-          { username: 'Pluto', email: 'plutoisaplanet@gmail.com', user_id: 42, accessibility: false, subscribed: false },
+          { username: 'Pluto', email: 'bradleyblacksound@gmail.com', user_id: 42, accessibility: false, subscribed: false },
         ].map((txn) => User.create(txn))
       )
     )

@@ -13,7 +13,8 @@ import {
   ViroARPlaneSelector,
   ViroImage,
   ViroNode,
-  ViroSpatialSound
+  ViroSpatialSound,
+  ViroButton
 } from 'react-viro';
 
 
@@ -77,7 +78,26 @@ const PlanetSelector = ({navigation, route}) => {
         <ViroAmbientLight color={'#aaaaaa'} />
         <ViroSpotLight innerAngle={5} outerAngle={90} direction={[0, -1, -.2]} position={[0, 3, 1]} color="#ffffff" castsShadow={true} />
         <ViroARPlaneSelector>
-          <ViroNode>
+          {/* <ViroSpatialSound rolloffModel="linear"
+            paused={false}
+            muted={false}
+            minDistance={0}
+            maxDistance={2}
+            position={[0, 1, 0]}
+            source={require('./assets/audio/solxrA1.mp3')}
+            loop={true}
+            volume={1.0} /> */}
+          <ViroNode
+          
+          >
+            {/* <ViroButton
+              source={require('./assets/icon.png')}
+              gazeSource={require('./assets/icon.png')}
+              tapSource={require('./assets/icon.png')}
+              position={[0, -3, 0]}
+              height={1}
+              width={1}
+              onClick={changePlanet}/> */}
             <ViroSphere
               // onSwipe={() => setInterval(animate, 10)}
               heightSegmentCount={50}
@@ -88,27 +108,21 @@ const PlanetSelector = ({navigation, route}) => {
               position={[0, 1, 0]}
               materials={planet.name}
               onClick={changePlanet}
+              rotation={[45, 0, 0]}
             />
-            <ViroSpatialSound rolloffModel="linear"
-              paused={false} muted={false}
-              minDistance={0} maxDistance={8}
-              position={[0, 0, 0]}
-              source={require('./assets/planeLoop.mp3')}
-              loop={true}
-              volume={1.0} />
           </ViroNode>
 
           <ViroImage
-            height={2}
-            width={2}
+            height={2.4}
+            width={2.4}
             visible = {planet.rings}
             position={[0, 1, 0]}
             rotation={[90, 0, 0]}
             source={require('./assets/saturn_rings_black2.png')}
           />
           <ViroImage
-            height={2}
-            width={2}
+            height={2.4}
+            width={2.4}
             visible = {planet.rings}
             position={[0, 1, 0]}
             rotation={[270, 0, 0]}
@@ -156,6 +170,7 @@ const PlanetSelector = ({navigation, route}) => {
   
   ViroAnimations.registerAnimations({
     loopRotate: {properties: {rotateY: '+=45'}, duration: 6000},
+    // loopRotate: {properties: {rotateX: '+=90', rotateY: '+=90'}, duration: 2000},
   });
 
   return (

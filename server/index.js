@@ -8,13 +8,6 @@ emailBlast(process.env.GMAIL_ACC, process.env.GMAIL_PASS);
 
 
 
-
-// emailBlast;
-
-
-// const debug = require('debug')('react-backend:server');
-// const http = require('http');
-
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
