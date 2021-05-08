@@ -57,21 +57,13 @@ export default class TechTimeLine extends Component {
         {title2}
         {desc}
         <View style={styles.button}>
-          <View style={styles.buttonContainer}>
-            <AwesomeButton
+          <View>
+            <AwesomeButton height={20} width={90}
         style={styles.buttonContainer}
         onPress={() => {this.setState({selected: data})}}
             >
-              Video
+              Video 🚀
             </AwesomeButton>
-            </View>
-            <View style={styles.buttonContainer}>
-            <AwesomeButton
-                style={styles.buttonContainer}
-              onPress={() => {this.setState({selected: false})}}
-            >
-              Exit Video
-            </AwesomeButton >
             </View>
           </View>
       </View>
@@ -85,6 +77,11 @@ export default class TechTimeLine extends Component {
       {{opacity: 0.7}}>
         <View style={styles.container}>
           <Text style={styles.header}>1960s</Text>
+          {this.state.selected && <AwesomeButton height={20} width={70}
+              onPress={() => {this.setState({selected: false})}}
+            >
+              X
+            </AwesomeButton >}
           {this.renderSelected()}
           <Timeline
             style={styles.list}
@@ -99,7 +96,7 @@ export default class TechTimeLine extends Component {
               style: {paddingTop: 5}
             }}
             innerCircle={'icon'}
-            onEventPress={this.onEventPress}
+            // onEventPress={this.onEventPress}
             renderDetail={this.renderDetail}
           />
         </View>
@@ -131,7 +128,7 @@ const styles = StyleSheet.create({
   },
   list: {
     flex: 1,
-    marginTop: 90,
+    marginTop: 40,
   },
   title: {
     fontSize: 16,

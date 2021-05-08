@@ -24,8 +24,9 @@ const User = db.define('user', {
 
 const Iotd = db.define('users_iotd', {
   user_id: Sequelize.INTEGER,
-  date: Sequelize.STRING,
   url: Sequelize.STRING,
+  title: Sequelize.STRING,
+  explanation: Sequelize.TEXT
 });
 
 const ImageFeed = db.define('image_feed', {

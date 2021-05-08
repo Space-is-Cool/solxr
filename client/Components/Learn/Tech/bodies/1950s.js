@@ -6,7 +6,7 @@ import {
   Image,
   ImageBackground,
   Button,
-  Header
+  Alert
 
 } from 'react-native';
 import { WebView } from 'react-native-webview';
@@ -34,12 +34,12 @@ export default class TechTimeLine extends Component {
   }
 
   renderSelected() {
-
     if (this.state.selected) {
       return(
        <WebView mediaPlaybackRequiresUserAction={true}
        javaScriptEnabled={true}
-        style={styles.containerVideo}
+       height={20}
+        // style={styles.containerVideo}
         source={{uri: this.state.selected.uri }} />
 
       )
@@ -65,22 +65,13 @@ export default class TechTimeLine extends Component {
       <View style={{flex: 1}}>
         {title2}
         {desc}
-        <View style={styles.button}>
-          <View style={styles.buttonContainer}>
-            <AwesomeButton
-        style={styles.buttonContainer}
+        <View >
+          <View  style={styles.button}>
+            <AwesomeButton height={20} width={90}
         onPress={() => {this.setState({selected: data})}}
             >
-              Video
+              Video 🚀
             </AwesomeButton>
-            </View>
-            <View style={styles.buttonContainer}>
-            <AwesomeButton
-                style={styles.buttonContainer}
-              onPress={() => {this.setState({selected: false})}}
-            >
-              Exit Video
-            </AwesomeButton >
             </View>
           </View>
       </View>
@@ -93,10 +84,13 @@ export default class TechTimeLine extends Component {
     return (
       <ImageBackground style= { styles.backgroundImage } source={image} imageStyle=
       {{opacity: 0.7}}>
-        {/* <SafeAreaView> */}
-        {/* <ScrollView > */}
         <View style={styles.container}>
-          <Text style={styles.header}>1950s</Text>
+          <Text style={styles.header} >1950s</Text>
+          {this.state.selected && <AwesomeButton  height={20} width={70}
+              onPress={() => {this.setState({selected: false})}}
+            >
+              X
+            </AwesomeButton >}
           {this.renderSelected()}
           <Timeline
             style={styles.list}
@@ -143,7 +137,7 @@ const styles = StyleSheet.create({
   },
   list: {
     flex: 1,
-    marginTop: 90,
+    marginTop: 40,
   },
   title: {
     fontSize: 16,
