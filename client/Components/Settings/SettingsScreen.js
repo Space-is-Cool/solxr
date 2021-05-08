@@ -4,10 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import AwesomeButton from 'react-native-really-awesome-button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { MusicContext, SoundOneContext } from '../Root/Context';
 import axios from 'axios';
 import { Switch } from 'react-native-switch';
 import Sound from 'react-native-sound';
+import LoginModal from '../Root/Login.js';
+import {sound1} from '../Root/soundOne.js';
 
+import { Switch } from 'react-native-switch';
 
 const SettingsScreen = ({navigation, route}) => {
   const [toggle, setToggle] = useState({
@@ -29,23 +33,15 @@ const SettingsScreen = ({navigation, route}) => {
       console.log('error', e);
     }
   };
-
-  // const sound1 = new Sound(require('./assets/SolXRloop.wav'),
-  //   (error, sound) => {
-  //     if (error) {
-  //       alert('error' + error.message);
-  //       return;
-  //     }
-  //     if (toggle.music === true) {
-  //       sound1.play(() => {
-  //         sound1.release();
-  //       });
-  //       sound1.setNumberOfLoops(-1);
-  //       sound1.setVolume(0.5);
-  //     } else if (toggle.music === false) {
-  //       sound1.stop();
-  //     }
-  //   });
+  // // TODO: Implement music fully based on music boolean
+  const musicToggle = () => {
+    if (toggle.music === true) {
+      sound1.stop();
+    } else {
+      sound1.play();
+    }
+  
+  };
 
 
   const modUser = async (prop) => {
@@ -53,7 +49,7 @@ const SettingsScreen = ({navigation, route}) => {
       const storedUser = await AsyncStorage.getItem('user');
       const user = JSON.parse(storedUser);
       user[prop] = !user[prop];
-      await AsyncStorage.setItem('user', JSON.stringify(user));      
+      await AsyncStorage.setItem('user', JSON.stringify(user));
       setToggle(() => {
         const copy = Object.assign({}, toggle);
         copy[prop] = !copy[prop];
@@ -82,63 +78,65 @@ const SettingsScreen = ({navigation, route}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.value}>Settings</Text>
-      <Text style={styles.value}>Readable Font</Text>
-      <Switch
-        style={styles.switch}
-        circleActiveColor={'#9ee7ff'}
-        circleInActiveColor={'#f4f3f4'}
-        backgroundActive={'rgb(7, 40, 82)'}
-        backgroundInactive={'rgb(7, 40, 82)'}
-        switchLeftPx={5}
-        switchRightPx={5} 
-        onValueChange={() => modUser('accessibility')}
-        value={toggle.accessibility}
-      />
-      <Text style={styles.value}>Music</Text>
-      <Switch
-        style={styles.switch}
-        circleActiveColor={'#9ee7ff'}
-        circleInActiveColor={'#f4f3f4'}
-        backgroundActive={'rgb(7, 40, 82)'}
-        backgroundInactive={'rgb(7, 40, 82)'}
-        switchLeftPx={5}
-        switchRightPx={5} 
-        onValueChange={() => modUser('music')}
-        value={toggle.music}
-      />
-      <Text style={styles.value}>NASA Theme</Text>
-      <Switch
-        style={styles.switch}
-        circleActiveColor={'#9ee7ff'}
-        circleInActiveColor={'#f4f3f4'}
-        backgroundActive={'rgb(7, 40, 82)'}
-        backgroundInactive={'rgb(7, 40, 82)'}
-        switchLeftPx={5}
-        switchRightPx={5} 
-        onValueChange={() => modUser('theme')}
-        value={toggle.theme}
-      />
-
-      <AwesomeButton
-        style={styles.button}
-        // progress
-        onPress={saveToServer}
-      >
+    <MusicContext.Consumer>{ ({ music, setMusic }) => (
+      <View style={styles.container}>
+        <Text style={styles.value}>Settings</Text>
+        <Text style={styles.value}>Readable Font</Text>
+        <Switch
+          style={styles.switch}
+          circleActiveColor={'#9ee7ff'}
+          circleInActiveColor={'#f4f3f4'}
+          backgroundActive={'rgb(7, 40, 82)'}
+          backgroundInactive={'rgb(7, 40, 82)'}
+          switchLeftPx={5}
+          switchRightPx={5} 
+          onValueChange={() => modUser('accessibility')}
+          value={toggle.accessibility}
+        />
+        <Text style={styles.value}>Music</Text>
+        <Switch
+          style={styles.switch}
+          circleActiveColor={'#9ee7ff'}
+          circleInActiveColor={'#f4f3f4'}
+          backgroundActive={'rgb(7, 40, 82)'}
+          backgroundInactive={'rgb(7, 40, 82)'}
+          switchLeftPx={5}
+          switchRightPx={5} 
+          onValueChange={() => { setMusic(!music); musicToggle(music); modUser('music'); }}
+          value={toggle.music}
+        />
+        <Text style={styles.value}>NASA Theme</Text>
+        <Switch
+          style={styles.switch}
+          circleActiveColor={'#9ee7ff'}
+          circleInActiveColor={'#f4f3f4'}
+          backgroundActive={'rgb(7, 40, 82)'}
+          backgroundInactive={'rgb(7, 40, 82)'}
+          switchLeftPx={5}
+          switchRightPx={5} 
+          onValueChange={() => modUser('theme')}
+          value={toggle.theme}
+        />
+        <AwesomeButton
+          style={styles.button}
+          // progress
+          onPress={saveToServer}
+        >
       Save Settings
-      </AwesomeButton>
-      <AwesomeButton
-        style={styles.button}
-        progress
-        onPress={() => {
-          clearStorage();
-          navigation.navigate('login');
-        }}
-      >
+        </AwesomeButton>
+        <AwesomeButton
+          style={styles.button}
+          progress
+          onPress={() => {
+            clearStorage();
+            navigation.navigate('login');
+          }}
+        >
       Log Out
-      </AwesomeButton>
-    </View>
+        </AwesomeButton>
+      </View>
+    )
+    }</MusicContext.Consumer>
   );
 };
 

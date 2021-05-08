@@ -4,17 +4,16 @@ import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Text, ImageBackground, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper/src';
 import { useIsFocused } from '@react-navigation/native';
-
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import favData from './favData.js';
 
+
 const FavoritesScreen = ({navigation, route}) => {
   const [realData, setRealData] = useState(favData);
-
-
   const isFocused = useIsFocused();
+
+
 
   useEffect(() => {
     dataFetch();
@@ -26,14 +25,14 @@ const FavoritesScreen = ({navigation, route}) => {
     axios.get(`http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/iotd/?user_id=${user.id}`)
       .then(({data}) => {
         console.log('do i have any favorites', data);
-        data.length && setRealData(data);
+        data.length
+          ? setRealData(data)
+          : setRealData(favData);
       });
   };
 
   const list = () => {
-
     return realData.map((fav) => {
-      console.log('FAVE', fav);
       return (
         <View style={styles.container} key={fav.id}>
           <ImageBackground
@@ -55,7 +54,7 @@ const FavoritesScreen = ({navigation, route}) => {
                 </Text>
                 <Text></Text>
               </ScrollView>
-            </Swiper> 
+            </Swiper>
           </ImageBackground>
         </View>
       );
@@ -101,7 +100,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: '2%',
     backgroundColor: 'rgba(7, 40, 82, 0.4)'
-
   },
   headerTwo: {
     textAlign: 'center',
@@ -117,7 +115,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     backgroundColor: 'rgba(7, 40, 82, 0.4)',
     paddingBottom: '2%',
-
   },
   textTwo: {
     fontSize: 17,
