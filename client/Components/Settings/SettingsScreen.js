@@ -130,7 +130,7 @@ const SettingsScreen = ({navigation, route}) => {
           value={toggle.music}
         />
         <Text style={styles.value}>NASA Theme</Text>
-        <Switch
+        {/* <Switch
           style={styles.switch}
           circleActiveColor={'#9ee7ff'}
           circleInActiveColor={'#f4f3f4'}
@@ -140,7 +140,7 @@ const SettingsScreen = ({navigation, route}) => {
           switchRightPx={5} 
           onValueChange={() => modUser('theme')}
           value={toggle.theme}
-        />
+        /> */}
         <Text style={styles.value}>Sign up for Astral Emails:</Text>
         {toggle.email ?
           <AwesomeButton
