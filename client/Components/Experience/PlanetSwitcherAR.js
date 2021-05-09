@@ -24,7 +24,7 @@ const PlanetSelector = ({navigation, route}) => {
 
     const bodies = [
       {rings: false, position: 0, name: 'sun', radius: 25/*109.2*/},
-      {rings: false, position: 1, name: 'mercury', radius: 10.97},
+      {rings: false, position: 1, name: 'mercury', radius: 0.38},
       {rings: false, position: 2, name: 'venus', radius: 0.9499},
       {rings: false, position: 3, name: 'earth', radius: 1},
       {rings: false, position: 4, name: 'moon', radius: 0.2727},
@@ -70,8 +70,32 @@ const PlanetSelector = ({navigation, route}) => {
     //   }
     // };
 
+    const [scale, setScale] = useState(1);
+
+    const onPinch = (pinchState, scaleFactor, source) => {
+      if (scale <= 0.001 && scaleFactor < 1) {
+        setScale(0.1);
+      } else {
+        setScale(scaleFactor < 1
+          ? scale * 0.9
+          : scale * 1.1);
+      }
+    };
+    
+    const onSwipe = (state, source) => {
+      console.log('a swipe!!', state, source);
+    };
+
+    const onScroll = (scrollPos, source) => {
+      console.log('a scroll!!', scrollPos, source);
+    };
+
     return (
-      <ViroARScene>
+      <ViroARScene
+        onPinch={onPinch}
+
+
+      >
         <ViroAmbientLight color="#ffffff" intensity={200}/>
         <ViroSpotLight innerAngle={5} outerAngle={90} direction={[0, -1, -.2]}
           position={[0, 3, 1]} color="#ffffff" castsShadow={true} />
@@ -87,9 +111,7 @@ const PlanetSelector = ({navigation, route}) => {
             source={require('./assets/audio/solxrA1.mp3')}
             loop={true}
             volume={1.0} /> */}
-          <ViroNode
-          
-          >
+          <ViroNode scale={[scale, scale, scale]}>
             {/* <ViroButton
               source={require('./assets/icon.png')}
               gazeSource={require('./assets/icon.png')}
@@ -99,38 +121,40 @@ const PlanetSelector = ({navigation, route}) => {
               width={1}
               onClick={changePlanet}/> */}
             <ViroSphere
+              onSwipe={onSwipe}
+              onScroll={onScroll}
               // onSwipe={() => setInterval(animate, 10)}
               heightSegmentCount={50}
               widthSegmentCount={50}
+              // radius={scale * planet.radius / 50 + 0.4}
               radius={planet.radius / 50 + 0.4}
               animation={{name: 'loopRotate', run: true, loop: true}} 
               // position={[orbitX * 3, 1, orbitZ * 3]}
-              position={[0, 1, 0]}
+              position={[0, 0, 0]}
               materials={planet.name}
               onClick={changePlanet}
-              rotation={[45, 0, 0]}
+              // rotation={[45, 0, 0]}
+              // onPinch={wow}
             />
           </ViroNode>
 
           <ViroImage
-            height={2.4}
-            width={2.4}
+            height={scale * 2.4}
+            width={scale * 2.4}
             visible = {planet.rings}
-            position={[0, 1, 0]}
+            position={[0, 0, 0]}
             rotation={[90, 0, 0]}
             source={require('./assets/saturn_rings_black2.png')}
           />
           <ViroImage
-            height={2.4}
-            width={2.4}
+            height={scale * 2.4}
+            width={scale * 2.4}
             visible = {planet.rings}
-            position={[0, 1, 0]}
+            position={[0, 0, 0]}
             rotation={[270, 0, 0]}
             source={require('./assets/saturn_rings_black2.png')}
           />
-
         </ViroARPlaneSelector>
-
       </ViroARScene>
     );
   };
@@ -170,7 +194,6 @@ const PlanetSelector = ({navigation, route}) => {
   
   ViroAnimations.registerAnimations({
     loopRotate: {properties: {rotateY: '+=45'}, duration: 6000},
-    // loopRotate: {properties: {rotateX: '+=90', rotateY: '+=90'}, duration: 2000},
   });
 
   return (
