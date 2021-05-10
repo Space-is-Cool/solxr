@@ -1,17 +1,18 @@
+/* eslint-disable no-dupe-else-if */
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
-  ImageBackground,
-  Button
-
+  ImageBackground
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 import data from '../data/techData.js';
 import Timeline from 'react-native-timeline-flatlist';
-import AwesomeButton from "react-native-really-awesome-button";
+import AwesomeButton from 'react-native-really-awesome-button';
+import { FontContext } from '../../../Root/Context';
 
 
 export default class TechTimeLine extends Component {
@@ -42,15 +43,25 @@ export default class TechTimeLine extends Component {
   }
 
   renderDetail(data) {
-    const { imageUrl, description, title } = data
-    const title2 = <Text style={[styles.title]}>{title}</Text>;
+    const { imageUrl, description, title } = data;
+    const title2 = (
+      <FontContext.Consumer>
+        {({ Font }) => (
+          <Text style={{...Font, ...styles.title}}>{title}</Text>
+        )}
+      </FontContext.Consumer>
+    );
     let desc = null;
     if (data) {
       desc = (
-        <View style={styles.descriptionContainer}>
-          <Image source={{uri: imageUrl}} style={styles.image}/>
-          <Text style={[styles.textDescription]}>{ description}</Text>
-        </View>
+        <FontContext.Consumer>
+          {({ Font }) => (
+            <View style={styles.descriptionContainer}>
+              <Image source={{uri: imageUrl}} style={styles.image}/>
+              <Text style={{...Font, ...styles.textDescription}}>{ description}</Text>
+            </View>
+          )}
+        </FontContext.Consumer>
       );
     }
 
@@ -61,13 +72,14 @@ export default class TechTimeLine extends Component {
         <View style={styles.button}>
           <View>
             <AwesomeButton height={20} width={90}
-        onPress={() => {this.setState({selected: data,})
-            }}
+              onPress={() => {
+                this.setState({selected: data, });
+              }}
             >
               Video 🚀
             </AwesomeButton>
-            </View>
           </View>
+        </View>
       </View>
     );
   }
@@ -75,34 +87,38 @@ export default class TechTimeLine extends Component {
   render() {
     const image = { uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnMn8OXLbXV-Bvi9fRvQhVVkH2VVzjctF7mw&usqp=CAU' };
     return (
-      <ImageBackground style= { styles.backgroundImage } source={image} imageStyle=
-      {{opacity: 0.6}}>
-        <View style={styles.container}>
-      <Text style={styles.header}>2000s</Text>
-      {this.state.selected && <AwesomeButton height={20} width={70}
-              onPress={() => {this.setState({selected: false})}}
-            >
+      <FontContext.Consumer>
+        {({ Font }) => (
+          <ImageBackground style= { styles.backgroundImage } source={image} imageStyle=
+            {{opacity: 0.6}}>
+            <View style={styles.container}>
+              <Text style={{...Font, ...styles.header}}>2000s</Text>
+              {this.state.selected && <AwesomeButton height={20} width={70}
+                onPress={() => { this.setState({selected: false}); }}
+              >
               X
-            </AwesomeButton >}
-          {this.renderSelected()}
-          <Timeline
-            style={styles.list}
-            data={this.data}
-            circleSize={20}
-            circleColor='rgba(0,0,0,0)'
-            lineColor='rgb(45,156,219)'
-            timeContainerStyle={{minWidth: 52, marginTop: -5}}
-            timeStyle={{textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13}}
-            descriptionStyle={{color: 'gray'}}
-            options={{
-              style: {paddingTop: 5}
-            }}
-            innerCircle={'icon'}
-            // onEventPress={this.onEventPress}
-            renderDetail={this.renderDetail}
-          />
-        </View>
-      </ImageBackground>
+              </AwesomeButton >}
+              {this.renderSelected()}
+              <Timeline
+                style={styles.list}
+                data={this.data}
+                circleSize={20}
+                circleColor='rgba(0,0,0,0)'
+                lineColor='rgb(45,156,219)'
+                timeContainerStyle={{minWidth: 52, marginTop: -5}}
+                timeStyle={{textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13}}
+                descriptionStyle={{color: 'gray'}}
+                options={{
+                  style: {paddingTop: 5}
+                }}
+                innerCircle={'icon'}
+                // onEventPress={this.onEventPress}
+                renderDetail={this.renderDetail}
+              />
+            </View>
+          </ImageBackground>
+        )}
+      </FontContext.Consumer>
     );
   }
 }
@@ -148,7 +164,7 @@ const styles = StyleSheet.create({
   },
   textDescription: {
     marginLeft: 10,
-    color: "#FFFFFF",
+    color: '#FFFFFF',
     fontWeight: 'bold',
   },
   backgroundImage: {

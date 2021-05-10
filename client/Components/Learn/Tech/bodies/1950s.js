@@ -1,20 +1,18 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
-  ImageBackground,
-  Button,
-  Alert
-
+  ImageBackground
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 import data from '../data/techData';
 import Timeline from 'react-native-timeline-flatlist';
-import AwesomeButton from "react-native-really-awesome-button";
-import AwesomeButtonRick from 'react-native-really-awesome-button/src/themes/rick';
-
+import AwesomeButton from 'react-native-really-awesome-button';
+import { FontContext } from '../../../Root/Context';
 
 export default class TechTimeLine extends Component {
   constructor() {
@@ -28,36 +26,45 @@ export default class TechTimeLine extends Component {
   }
 
   onEventPress(data) {
-    if(data){
+    if (data) {
       this.setState({selected: data});
     }
   }
 
   renderSelected() {
     if (this.state.selected) {
-      return(
-       <WebView mediaPlaybackRequiresUserAction={true}
-       javaScriptEnabled={true}
-       height={20}
-        // style={styles.containerVideo}
-        source={{uri: this.state.selected.uri }} />
+      return (
+        <WebView mediaPlaybackRequiresUserAction={true}
+          javaScriptEnabled={true}
+          height={20}
+          source={{uri: this.state.selected.uri }} />
 
-      )
+      );
     }
   }
 
 
   renderDetail( data ) {
-    const { imageUrl, description, title } = data
-    const title2 = <Text style={[styles.title]}>{title}</Text>;
+    const { imageUrl, description, title } = data;
+    const title2 = (
+      <FontContext.Consumer>
+        {({ Font }) => (
+          <Text style={{...Font, ...styles.title}}>{title}</Text>
+        )}
+      </FontContext.Consumer>
+    );
 
     let desc = null;
     if (data) {
       desc = (
-        <View style={styles.descriptionContainer}>
-          <Image source={{uri: imageUrl}} style={styles.image}/>
-          <Text style={[styles.textDescription]}>{ description}</Text>
-        </View>
+        <FontContext.Consumer>
+          {({ Font }) => (
+            <View style={styles.descriptionContainer}>
+              <Image source={{uri: imageUrl}} style={styles.image}/>
+              <Text style={{...Font, ...styles.textDescription}}>{ description}</Text>
+            </View>
+          )}
+        </FontContext.Consumer>
       );
     }
 
@@ -66,14 +73,14 @@ export default class TechTimeLine extends Component {
         {title2}
         {desc}
         <View >
-          <View  style={styles.button}>
+          <View style={styles.button}>
             <AwesomeButton height={20} width={90}
-        onPress={() => {this.setState({selected: data})}}
+              onPress={() => { this.setState({selected: data}); }}
             >
               Video 🚀
             </AwesomeButton>
-            </View>
           </View>
+        </View>
       </View>
     );
   }
@@ -82,34 +89,37 @@ export default class TechTimeLine extends Component {
   render() {
     const image = { uri: 'https://i.pinimg.com/originals/0b/06/39/0b06397a3199bee4a5922ee4488ebf5a.jpg' };
     return (
-      <ImageBackground style= { styles.backgroundImage } source={image} imageStyle=
-      {{opacity: 0.7}}>
-        <View style={styles.container}>
-          <Text style={styles.header} >1950s</Text>
-          {this.state.selected && <AwesomeButton  height={20} width={70}
-              onPress={() => {this.setState({selected: false})}}
-            >
+      <FontContext.Consumer>
+        {({ Font }) => (
+          <ImageBackground style= { styles.backgroundImage } source={image} imageStyle=
+            {{opacity: 0.7}}>
+            <View style={styles.container}>
+              <Text style={{...Font, ...styles.header}} >1950s</Text>
+              {this.state.selected && <AwesomeButton height={20} width={70}
+                onPress={() => { this.setState({selected: false}); }}
+              >
               X
-            </AwesomeButton >}
-          {this.renderSelected()}
-          <Timeline
-            style={styles.list}
-            data={this.data}
-            circleSize={20}
-            circleColor='rgba(0,0,0,0)'
-            lineColor='rgb(45,156,219)'
-            timeContainerStyle={{minWidth: 52, marginTop: -5}}
-            timeStyle={{textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13}}
-            descriptionStyle={{color: 'gray'}}
-            options={{
-              style: {paddingTop: 5}
-            }}
-            innerCircle={'icon'}
-            // onEventPress={this.onEventPress}
-            renderDetail={this.renderDetail}
-          />
-        </View>
-      </ImageBackground>
+              </AwesomeButton >}
+              {this.renderSelected()}
+              <Timeline
+                style={styles.list}
+                data={this.data}
+                circleSize={20}
+                circleColor='rgba(0,0,0,0)'
+                lineColor='rgb(45,156,219)'
+                timeContainerStyle={{minWidth: 52, marginTop: -5}}
+                timeStyle={{textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13}}
+                descriptionStyle={{color: 'gray'}}
+                options={{
+                  style: {paddingTop: 5}
+                }}
+                innerCircle={'icon'}
+                renderDetail={this.renderDetail}
+              />
+            </View>
+          </ImageBackground>
+        )}
+      </FontContext.Consumer>
     );
   }
 }
@@ -156,8 +166,7 @@ const styles = StyleSheet.create({
   },
   textDescription: {
     marginLeft: 10,
-    color: "#FFFFFF",
-    fontWeight: 'bold',
+    color: '#FFFFFF',
   },
   backgroundImage: {
     flex: 1,

@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-children-prop */
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {IotdContext, MusicContext } from './Context';
+import {IotdContext, MusicContext, FontContext } from './Context';
 import axios from 'axios';
 import BottomTab from './RootBottomTab';
 import LoginModal from './Login';
@@ -14,6 +15,10 @@ const AppNavigation = createStackNavigator();
 const RootNavigator = () => {
 
   const [IoTD, setIoTD] = useState(null);
+  const [Font, setFont] = useState({
+    fontSize: 24,
+    fontFamily: 'Titillium'
+  });
   const [music, setMusic] = useState(true);
 
   useEffect(() => {
@@ -27,10 +32,12 @@ const RootNavigator = () => {
       });
   };
 
+
   return (
-    <MusicContext.Provider value={{ music, setMusic }}>
-      <IotdContext.Provider value={IoTD}>
-        {IoTD && 
+    <FontContext.Provider value={{Font, setFont}}>
+      <MusicContext.Provider value={{ music, setMusic }}>
+        <IotdContext.Provider value={IoTD}>
+          {IoTD && 
         <NavigationContainer>
           <AppNavigation.Navigator
             mode="modal"
@@ -43,9 +50,10 @@ const RootNavigator = () => {
             <AppNavigation.Screen name="login" component={LoginModal} />
           </AppNavigation.Navigator>
         </NavigationContainer>
-        }
-      </IotdContext.Provider>
-    </MusicContext.Provider>
+          }
+        </IotdContext.Provider>
+      </MusicContext.Provider>
+    </FontContext.Provider>
 
   );
 };

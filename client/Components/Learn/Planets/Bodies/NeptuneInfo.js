@@ -50,7 +50,7 @@ class NeptuneInfo extends Component {
             The smallest of the Gas Giants
             </Text>
             <Text style={styles.textX}>
-            Most distant plant from the Sun
+            Most distant planet from the Sun
             </Text>
             <Text style={styles.textX}>
             Strongest winds
