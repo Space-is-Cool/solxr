@@ -20,7 +20,7 @@ import Swiper from 'react-native-swiper/src';
 
 const PlanetSelector = () => {
   return (
-    <Swiper 
+    <Swiper
       style={styles.main}
       loop={false}
     >
@@ -39,7 +39,7 @@ const PlanetSelector = () => {
 
       <NeptuneScreen/>
 
-    
+
 
     </Swiper>
   );
