@@ -38,7 +38,7 @@ const ExpScreen = ({navigation, route}) => {
               <ImageBackground
                 style={styles.image}
                 source={{uri: url}}>
-                <Text style={{...Font, ...styles.header}}>      Upcoming Astral Events!      </Text>
+                <Text style={{...Font, ...styles.header}}>Upcoming Astral Events!</Text>
                 <ScrollView
                   style={styles.scrollview}
                 >
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     color: '#9ee7ff',
     fontSize: 30,
     fontWeight: 'bold',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)'
   },
   headerTwo: {
     textAlign: 'center',

@@ -107,7 +107,7 @@ const SettingsScreen = ({navigation, route}) => {
       fontFamily: 'Titillium'
     },
     readable: {
-      fontSize: 30,
+      fontSize: 24,
       fontFamily: 'OpenDyslexic'
     }
   };
@@ -147,7 +147,7 @@ const SettingsScreen = ({navigation, route}) => {
               onValueChange={() => { setMusic(!music); musicToggle(music); modUser('music'); }}
               value={toggle.music}
             />
-            <Text style={{...Font, ...styles.value}}>NASA Theme</Text>
+            {/* <Text style={{...Font, ...styles.value}}>NASA Theme</Text>
             <Switch
               style={styles.switch}
               circleActiveColor={'#9ee7ff'}
@@ -158,9 +158,37 @@ const SettingsScreen = ({navigation, route}) => {
               switchRightPx={5} 
               onValueChange={() => modUser('theme')}
               value={toggle.theme}
-            />
+            /> */}
+            <Text style={{...Font, ...styles.value}}>Sign up for Astral Emails:</Text>
+            {toggle.email ?
+              <AwesomeButton
+                style={styles.button}
+                width={200}
+                height={50}
+                onPress={modEmail}>
+            Unsubscribe
+              </AwesomeButton> :
+              <>
+                <TextInput
+                  style={styles.input}
+                  onChangeText={setEmailInput}
+                  value={emailInput}/>
+                <AwesomeButton
+                  style={styles.button}
+                  width={200}
+                  height={50}
+                  backgroundColor={emailInput
+                    ? 'rgb(7, 40, 82)'
+                    : '#C0C0C0'}	
+                  onPress={modEmail}
+                >Submit
+                </AwesomeButton>
+              </>
+            }
             <AwesomeButton
               style={styles.button}
+              width={200}
+              height={50}
               // progress
               onPress={saveToServer}
             >
@@ -168,6 +196,8 @@ const SettingsScreen = ({navigation, route}) => {
             </AwesomeButton>
             <AwesomeButton
               style={styles.button}
+              width={200}
+              height={50}
               progress
               onPress={() => {
                 clearStorage();
