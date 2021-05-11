@@ -17,7 +17,7 @@ const RootNavigator = () => {
   const [IoTD, setIoTD] = useState(null);
   const [Font, setFont] = useState({
     fontSize: 24,
-    fontFamily: 'Titillium'
+    fontFamily: 'Avenir-Book'
   });
   const [music, setMusic] = useState(true);
 
