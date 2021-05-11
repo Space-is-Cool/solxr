@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, ImageBackground, Image } from 'react-native';
 import moment from 'moment';
-import {IotdContext} from '../Root/Context';
+import { IotdContext, FontContext } from '../Root/Context';
 
 import eventsData from './eventsData.js';
 
@@ -13,37 +13,45 @@ const list = () => {
     const now = moment();
     if (date > now) {
       return (
-        <View key={event.uid} style={styles.mainTwo}>
-          <Text></Text>
-          <Text style={styles.headerThree}>{event.summary}</Text>
-          <Text style={styles.textX}>{event.description.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '')}</Text>
-          <Text style={styles.text}>{moment(event.dtstamp).format('LLLL')}</Text>
-          <Text></Text>
-        </View>
+        <FontContext.Consumer>
+          {({ Font }) => (
+            <View key={event.uid} style={styles.mainTwo}>
+              <Text></Text>
+              <Text style={{...Font, ...styles.headerThree}}>{event.summary}</Text>
+              <Text style={{...Font, ...styles.textX}}>{event.description.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '')}</Text>
+              <Text style={{...Font, ...styles.text}}>{moment(event.dtstamp).format('LLLL')}</Text>
+              <Text></Text>
+            </View>
+          )}
+        </FontContext.Consumer>
       );
     }
   });
 };
 const ExpScreen = ({navigation, route}) => {
   return (
-    <IotdContext.Consumer>
-      {({url}) => {
-        return <View style={styles.container}>
-          <ImageBackground
-            style={styles.image}
-            source={{uri: url}}>
-            <Text style={styles.header}>      Upcoming Astral Events!      </Text>
-            <ScrollView
-              style={styles.scrollview}
-            >
-              {list()}
-              <Text></Text>
-            </ScrollView>
-          </ImageBackground>
-        </View>;
-      }
-      }
-    </IotdContext.Consumer>
+    <FontContext.Consumer>
+      {({ Font }) => (
+        <IotdContext.Consumer>
+          {({url}) => {
+            return <View style={styles.container}>
+              <ImageBackground
+                style={styles.image}
+                source={{uri: url}}>
+                <Text style={{...Font, ...styles.header}}>Upcoming Astral Events!</Text>
+                <ScrollView
+                  style={styles.scrollview}
+                >
+                  {list()}
+                  <Text></Text>
+                </ScrollView>
+              </ImageBackground>
+            </View>;
+          }
+          }
+        </IotdContext.Consumer>
+      )}
+    </FontContext.Consumer>
   );
 };
 
@@ -54,6 +62,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.7)'
   },
   header: {
+    textAlign: 'center',
     paddingTop: '10%',
     paddingBottom: '2%',
     color: '#9ee7ff',
@@ -78,6 +87,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    fontFamily: 'Baskerville'
   },
   text: {
     fontSize: 14,
