@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
-	<string/>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -42,7 +42,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Allow access to camera for AR</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>UIAccessibilityTraits</key>
 	<string>key</string>
 	<key>UIAppFonts</key>
@@ -63,26 +63,6 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>OpenDyslexic-Bold.otf</string>
-		<string>OpenDyslexic-BoldItalic.otf</string>
-		<string>OpenDyslexic-Italic.otf</string>
-		<string>OpenDyslexic-Regular.otf</string>
-		<string>Titillium-Black.otf</string>
-		<string>Titillium-Bold.otf</string>
-		<string>Titillium-BoldItalic.otf</string>
-		<string>Titillium-BoldUpright.otf</string>
-		<string>Titillium-Light.otf</string>
-		<string>Titillium-LightItalic.otf</string>
-		<string>Titillium-LightUpright.otf</string>
-		<string>Titillium-Regular.otf</string>
-		<string>Titillium-RegularItalic.otf</string>
-		<string>Titillium-RegularUpright.otf</string>
-		<string>Titillium-Semibold.otf</string>
-		<string>Titillium-SemiboldItalic.otf</string>
-		<string>Titillium-SemiboldUpright.otf</string>
-		<string>Titillium-Thin.otf</string>
-		<string>Titillium-ThinItalic.otf</string>
-		<string>Titillium-ThinUpright.otf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

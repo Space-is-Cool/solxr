@@ -103,12 +103,12 @@ const SettingsScreen = ({navigation, route}) => {
 
   const accessibility = {
     normal: {
-      fontSize: 24,
-      fontFamily: 'Titillium'
+      fontSize: 20,
+      fontFamily: 'Avenir-Book'
     },
     readable: {
       fontSize: 24,
-      fontFamily: 'OpenDyslexic'
+      fontFamily: 'Arial'
     }
   };
 
