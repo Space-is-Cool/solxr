@@ -9,6 +9,7 @@ import {
   LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
+import { FontContext } from '../../../Root/Context';
 
 
 class NeptuneInfo extends Component {
@@ -25,43 +26,45 @@ class NeptuneInfo extends Component {
 
   render() {
     return ( 
+      <FontContext.Consumer>
+      {({ Font }) => (
       <ScrollView>
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.neptune.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.neptune.AKA}</Text>
+      <Text style={{...Font, ...styles.header}}>{bodies.neptune.name}</Text>
+      <Text style={{...Font, ...styles.headerTwo}}>{bodies.neptune.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Latin: {bodies.neptune.latin}   Diameter: {bodies.neptune.diameter}   Moons: {bodies.neptune.moons.length} </Text>
+      <Text style={{...Font, ...styles.basicFacts}}>  Latin: {bodies.neptune.latin}   Diameter: {bodies.neptune.diameter}   Moons: {bodies.neptune.moons.length} </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={styles.headerThree}>More Info...</Text>
+            <Text style={{...Font, ...styles.headerThree}}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
             <Text></Text>
-          <Text style={styles.headerThree}>Special Characteristics:</Text>
-            <Text style={styles.textX}>
+          <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             Neptune has thirteen young and faint rings that often go overlooked
             </Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Fun Facts:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             The smallest of the Gas Giants
             </Text>
-            <Text style={styles.textX}>
-            Most distant plant from the Sun
+            <Text style={{...Font, ...styles.textX}}>
+            Most distant planet from the Sun
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Strongest winds
             </Text>
             <Text></Text>
-            <Text style={styles.headerThree}>Discovered By:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.neptune.discoveredBy}
             </Text>
-            <Text style={styles.headerThree}>Name Origin:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.neptune.nameOrigin}
             </Text>
           </View>
@@ -71,6 +74,8 @@ class NeptuneInfo extends Component {
       </View>
       
       </ScrollView>
+      )}
+      </FontContext.Consumer>
     )
   }
 }
@@ -112,6 +117,7 @@ const styles = StyleSheet.create({
   },
   basicFacts: {
     color: '#9ee7ff',
+    fontSize: 14
   },
   image: {
     width: 35,

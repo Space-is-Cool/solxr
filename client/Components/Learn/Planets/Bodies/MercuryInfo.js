@@ -9,6 +9,7 @@ import {
   LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
+import { FontContext } from '../../../Root/Context';
 
 
 class MercuryInfo extends Component {
@@ -25,43 +26,45 @@ class MercuryInfo extends Component {
 
   render() {
     return ( 
+      <FontContext.Consumer>
+      {({ Font }) => (
       <ScrollView>
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.mercury.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.mercury.AKA}</Text>
+      <Text style={{...Font, ...styles.header}}>{bodies.mercury.name}</Text>
+      <Text style={{...Font, ...styles.headerTwo}}>{bodies.mercury.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Latin: {bodies.mercury.latin}    Diameter: {bodies.mercury.diameter}       Moons: 0  </Text>
+      <Text style={{...Font, ...styles.basicFacts}}>  Latin: {bodies.mercury.latin}    Diameter: {bodies.mercury.diameter}       Moons: 0  </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={styles.headerThree}>More Info...</Text>
+            <Text style={{...Font, ...styles.headerThree}}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
             <Text></Text>
-          <Text style={styles.headerThree}>Special Characteristics:</Text>
-            <Text style={styles.text}>
+          <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+            <Text style={{...Font, ...styles.text}}>
             Caloris Basin, a crater that spans 1550 km. That's over half the total diameter of the planet!
             </Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Fun Facts:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+            <Text style={{...Font, ...styles.textX}}>
              Closest planet to the sun
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Shortest year
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Smallest planet
             </Text>
             <Text></Text>
-            <Text style={styles.headerThree}>Discovered By:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.mercury.discoveredBy}
             </Text>
-            <Text style={styles.headerThree}>Name Origin:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.mercury.nameOrigin}
             </Text>
           </View>
@@ -71,6 +74,8 @@ class MercuryInfo extends Component {
       </View>
       
       </ScrollView>
+     )}
+     </FontContext.Consumer>
     )
   }
 }
@@ -112,6 +117,7 @@ const styles = StyleSheet.create({
   },
   basicFacts: {
     color: '#9ee7ff',
+    fontSize: 14
   },
   image: {
     width: 35,

@@ -9,6 +9,7 @@ import {
   LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
+import { FontContext } from '../../../Root/Context'; 
 
 class VenusInfo extends Component {
   constructor() {
@@ -24,47 +25,49 @@ class VenusInfo extends Component {
 
   render() {
     return ( 
+      <FontContext.Consumer>
+      {({ Font }) => (
       <ScrollView>
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.venus.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.venus.AKA}</Text>
+      <Text style={{...Font, ...styles.header}}>{bodies.venus.name}</Text>
+      <Text style={{...Font, ...styles.headerTwo}}>{bodies.venus.AKA}</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Latin: {bodies.venus.latin}    Diameter: {bodies.venus.diameter}       Moons: 0  </Text>
+      <Text style={{...Font, ...styles.basicFacts}}>  Latin: {bodies.venus.latin}    Diameter: {bodies.venus.diameter}       Moons: 0  </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={styles.headerThree}>More Info...</Text>
+            <Text style={{...Font, ...styles.headerThree}}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
           <Text></Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Special Characteristics:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             Extremely high pressure atmosphere (92 times that of Earth!)
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Maat Mons: A massive shield volcano. It is the second-highest mountain and the highest volcano on the planet
             </Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Fun Facts:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             Second most spherical object in the solar system, just after the Sun
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Only planet that rotates clockwise
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Orbital path is almost a perfect circle
             </Text>
             <Text></Text>
-            <Text style={styles.headerThree}>Discovered By:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.venus.discoveredBy}
             </Text>
-            <Text style={styles.headerThree}>Name Origin:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.venus.nameOrigin}
             </Text>
           </View>
@@ -74,6 +77,8 @@ class VenusInfo extends Component {
       </View>
       
       </ScrollView>
+              )}
+              </FontContext.Consumer>
     )
   }
 }
@@ -115,6 +120,7 @@ const styles = StyleSheet.create({
   },
   basicFacts: {
     color: '#9ee7ff',
+    fontSize: 14
   },
   image: {
     width: 35,

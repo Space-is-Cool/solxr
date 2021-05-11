@@ -13,6 +13,8 @@ const FavoritesScreen = ({navigation, route}) => {
   const [realData, setRealData] = useState(favData);
   const isFocused = useIsFocused();
 
+
+
   useEffect(() => {
     dataFetch();
   }, [isFocused]);
@@ -22,7 +24,6 @@ const FavoritesScreen = ({navigation, route}) => {
     const user = JSON.parse(storedUser);
     axios.get(`http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/iotd/?user_id=${user.id}`)
       .then(({data}) => {
-        console.log('do i have any favorites', data);
         data.length
           ? setRealData(data)
           : setRealData(favData);

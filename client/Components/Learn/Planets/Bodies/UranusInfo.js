@@ -9,7 +9,7 @@ import {
   LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
-
+import { FontContext } from '../../../Root/Context';
 
 class UranusInfo extends Component {
   constructor() {
@@ -25,46 +25,48 @@ class UranusInfo extends Component {
 
   render() {
     return ( 
+      <FontContext.Consumer>
+      {({ Font }) => (
       <ScrollView>
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.uranus.name}</Text>
-      <Text style={styles.headerTwo}>the Sideways Planet</Text>
+      <Text style={{...Font, ...styles.header}}>{bodies.uranus.name}</Text>
+      <Text style={{...Font, ...styles.headerTwo}}>the Sideways Planet</Text>
       <Text/>
-      <Text style={styles.basicFacts}>  Latin: {bodies.uranus.latin}    Diameter: {bodies.uranus.diameter}       Moons: {bodies.uranus.moons.length} </Text>
+      <Text style={{...Font, ...styles.basicFacts}}>  Latin: {bodies.uranus.latin}    Diameter: {bodies.uranus.diameter}       Moons: {bodies.uranus.moons.length} </Text>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={styles.headerThree}>More Info...</Text>
+            <Text style={{...Font, ...styles.headerThree}}>More Info...</Text>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
             <Text></Text>
-          <Text style={styles.headerThree}>Special Characteristics:</Text>
-            <Text style={styles.textX}>
+          <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             It's turned over on its side!
             </Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Fun Facts:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             Coldest surface temperature
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Most dramatic axial tilt
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             The only planet other than Earth not named after a Roman God
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Funniest name
             </Text>
             <Text></Text>
-            <Text style={styles.headerThree}>Discovered By:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.uranus.discoveredBy}
             </Text>
-            <Text style={styles.headerThree}>Name Origin:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.uranus.nameOrigin}
             </Text>
           </View>
@@ -74,6 +76,8 @@ class UranusInfo extends Component {
       </View>
       
       </ScrollView>
+        )}
+        </FontContext.Consumer>
     )
   }
 }
@@ -115,6 +119,7 @@ const styles = StyleSheet.create({
   },
   basicFacts: {
     color: '#9ee7ff',
+    fontSize: 14
   },
   image: {
     width: 35,

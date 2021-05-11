@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -6,6 +7,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/server');
 const usersRouter = require('./routes/users');
 const nasaRouter = require('./routes/nasa');
+
 
 const app = express();
 

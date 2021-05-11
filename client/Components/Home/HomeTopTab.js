@@ -13,7 +13,7 @@ const AppTopNavigator = createMaterialTopTabNavigator();
 
 const HomeTopTab = () => (
   <AppTopNavigator.Navigator
-    initialRouteName="NASA"
+    initialRouteName="IMAGE OF THE DAY"
     tabBarOptions={{
       style: { backgroundColor: '#072852' },
       labelStyle: { fontSize: 14, fontWeight: 'bold' },
@@ -23,7 +23,7 @@ const HomeTopTab = () => (
       tabStyle: { height: 100, justifyContent: 'flex-end' }
     }}
   >
-    <AppTopNavigator.Screen component={NasaScreen} name="HELLO" />
+    <AppTopNavigator.Screen component={NasaScreen} name="IMAGE OF THE DAY" />
     {/* <AppTopNavigator.Screen component={CommunityScreen} name="COMMUNITY" /> */}
     <AppTopNavigator.Screen component={FavoritesScreen} name="FAVORITES" />
   </AppTopNavigator.Navigator>
