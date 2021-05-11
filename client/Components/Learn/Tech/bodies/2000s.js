@@ -165,7 +165,6 @@ const styles = StyleSheet.create({
   textDescription: {
     marginLeft: 10,
     color: '#FFFFFF',
-    fontWeight: 'bold',
   },
   backgroundImage: {
     flex: 1,
