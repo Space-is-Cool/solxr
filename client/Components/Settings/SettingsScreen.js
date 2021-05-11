@@ -108,7 +108,7 @@ const SettingsScreen = ({navigation, route}) => {
     },
     readable: {
       fontSize: 24,
-      fontFamily: 'Arial'
+      fontFamily: 'Arial' 
     }
   };
 
