@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 import { FontContext } from '../../../Root/Context';
+import TypeWriter from 'react-native-typewriter'
 
 // const funFacts = bodies.moon.discoveredBy.map((fact)=>{
 //   <Text>{fact}</Text>
@@ -36,18 +37,19 @@ class MoonInfo extends Component {
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={{...Font, ...styles.header}}>The Moon</Text>
-      <Text style={{...Font, ...styles.headerTwo}}>Luna</Text>
-      <Text/>
-      <Text style={{...Font, ...styles.basicFacts}}>  Latin: {bodies.moon.latin}    Diameter: {bodies.moon.diameter}       Moon: Yes  </Text>
+      {this.props.reload === 5 &&  <TypeWriter style={{...Font, ...styles.header}} typing={1} minDelay={-50}>{bodies.moon.name}</TypeWriter>}
+      {this.props.reload === 5 &&  <TypeWriter style={{...Font, ...styles.headerTwo}} typing={1} minDelay={-50}>Luna</TypeWriter>}
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
-          <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={{...Font, ...styles.headerThree}}>More Info...</Text>
-          </TouchableOpacity>
+          {this.props.reload === 5 && <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
+          <TypeWriter style={{...Font, ...styles.headerThree}} typing={1} minDelay={-50}>More Info...</TypeWriter>
+          </TouchableOpacity>}
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
           <Text></Text>
-            <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+          <Text></Text>
+      <TypeWriter style={{...Font, ...styles.basicFacts}} typing={1} minDelay={-100000}>  Latin: {bodies.moon.latin}    Diameter: {bodies.moon.diameter}       Moon: Yes  </TypeWriter>
+      <Text></Text>
+      <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
             <Text style={{...Font, ...styles.textX}}>
             Moonquakes: A phenomonon that is exactly what it sounds like, caused by the Earth's gravitational pull
             </Text>
@@ -153,10 +155,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
 
-  btnTextHolder: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.5)'
-  },
+
 
   Btn: {
     padding: 10,
