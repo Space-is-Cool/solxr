@@ -10,19 +10,24 @@ import {
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
 import { FontContext } from '../../../Root/Context';
+import TypeWriter from 'react-native-typewriter'
 
 
 class SunInfo extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.state = { expanded: false }
+    this.state = { expanded: false, reload: true }
   }
 
   changeLayout = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     this.setState({ expanded: !this.state.expanded });
   }
+
+  componentWillReceiveProps(props) {
+    this.setState({ reload: props.reload });
+}
 
   render() {
     return ( 
@@ -31,18 +36,23 @@ class SunInfo extends Component {
       <ScrollView>
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={{...Font, ...styles.header}}>{bodies.sun.name}</Text>
-      <Text style={{...Font, ...styles.headerTwo}}>{bodies.sun.AKA}</Text>
-      <Text/>
-      <Text style={{...Font, ...styles.basicFacts}}>  Diameter: 1.4 million km     Gravity: {bodies.sun.gravity}</Text>
+      {/* <Text style={{...Font, ...styles.header}}>{bodies.sun.name}</Text> */}
+      <TypeWriter style={{...Font, ...styles.header}} typing={1} minDelay={-50}>{bodies.sun.name}</TypeWriter>
+      <TypeWriter style={{...Font, ...styles.headerTwo}} typing={1} minDelay={-50}>{bodies.sun.AKA}</TypeWriter>
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={{...Font, ...styles.headerThree}}>More Info...</Text>
+            <TypeWriter style={{...Font, ...styles.headerThree}} typing={1} minDelay={-50}>More Info...</TypeWriter>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
           <Text></Text>
-            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+          <Text></Text>
+
+      <TypeWriter style={{...Font, ...styles.basicFacts}} typing={1} minDelay={-100000}>  Diameter: 1.4 million km               Gravity: {bodies.sun.gravity}</TypeWriter>
+         <Text></Text>
+        <Text></Text>
+          {/* <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text> */}
+          <TypeWriter style={{...Font, ...styles.headerThree}} typing={1} minDelay={-500}>Fun Facts:</TypeWriter>
             <Text style={{...Font, ...styles.textX}}>
             Travels through the Galaxy at roughly 220 km per second
             </Text>

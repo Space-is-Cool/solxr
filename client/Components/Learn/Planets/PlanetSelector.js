@@ -19,13 +19,20 @@ import Swiper from 'react-native-swiper/src';
 
 
 const PlanetSelector = () => {
+
+  const [reload, setReload] = useState(false);
+
   return (
     <Swiper
       style={styles.main}
       loop={false}
+      onIndexChanged={()=>{
+        setReload(true);
+      }}
+      showsPagination={false}
     >
       <Test/>
-      <SunScreen/>
+      <SunScreen reload={reload}/>
       <MercuryScreen/>
       <VenusScreen/>
       <EarthScreen/>

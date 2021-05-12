@@ -22,21 +22,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#000000a0'
   },
-  info:{
+  info: {
     paddingLeft: 34
   }
 });
 
-const SunScreen = ({navigation, route}) => {
-
+const SunScreen = ({ reload }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.image}
         source={require('../assets/sun.png')}
       />
-      <ScrollView style={styles.info}>
-      <SunInfo/>
+      <ScrollView style={styles.info} loadMinimal={true} loadMinimalSize={0}>
+        <SunInfo reload={reload}/>
       </ScrollView>
     </View>
   );
