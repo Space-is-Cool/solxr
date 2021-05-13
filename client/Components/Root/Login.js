@@ -3,6 +3,7 @@
 import React, {useState, useEffect} from 'react';
 import {Text, Button, View, TextInput, StyleSheet} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as AppleAuthentication from 'expo-apple-authentication';
 import axios from 'axios';
 import { useIsFocused } from '@react-navigation/native';
 import Sound from 'react-native-sound';
@@ -104,6 +105,34 @@ const LoginModal = ({ navigation }) => {
             <Text style={{ fontSize: 30 }}>Welcome to solxr</Text>
             <Text></Text>
             <Button onPress={() => { navigation.navigate('index'); playMusic(music); }} title="Enter" />
+            <Text></Text>
+            <AppleAuthentication.AppleAuthenticationButton
+              buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
+              buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}
+              cornerRadius={5}
+              style={{ width: 200, height: 44 }}
+              onPress={async () => {
+                try {
+                  const credential = await AppleAuthentication.signInAsync({
+                    requestedScopes: [
+                      AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+                      AppleAuthentication.AppleAuthenticationScope.EMAIL,
+                    ],
+                  });
+                  console.log('whats the value of credneitallll', credential);
+                  // signed in
+                } catch (e) {
+                  if (e.code === 'ERR_CANCELED') {
+                    console.log('whats e here', e);
+                    // handle that the user canceled the sign-in flow
+                  } else {
+                    console.log('was there an other error?', e);
+                    // handle other errors
+                  }
+                }
+              }}
+            />
+
           </>
           : 
           <>
