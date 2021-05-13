@@ -1,5 +1,5 @@
 export default [
-  {
+  [{
     uid: '20210101_17_100@in-the-sky.org',
     dtstamp: '20210101T235946Z',
     dtstart: '20210101T235946Z',
@@ -278,8 +278,9 @@ export default [
     summary: 'IC2395 is well placed',
     description: 'The open star cluster IC 2395 (mag 4.6) in Vela is well placed in the sky. https://in-the-sky.org/news.php?id=20210131_17_101',
     url: 'https://in-the-sky.org/news.php?id=20210131_17_101'
-  },
-  {
+  }],
+
+  [{
     uid: '20210202_14_100@in-the-sky.org',
     dtstamp: '20210202T213447Z',
     dtstart: '20210202T213447Z',
@@ -398,8 +399,8 @@ export default [
     summary: 'IC2581 is well placed',
     description: 'The open star cluster IC 2581 (mag 4.3) in Carina is well placed in the sky. https://in-the-sky.org/news.php?id=20210227_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210227_17_100'
-  },
-  {
+  }],
+  [{
     uid: '20210302_19_100@in-the-sky.org',
     dtstamp: '20210302T120000Z',
     dtstart: '20210302T120000Z',
@@ -606,8 +607,8 @@ export default [
     summary: 'Conjunction of Mercury and Neptune',
     description: 'Mercury and Neptune share the same right ascension, at a separation of 1° 23°39 . https://in-the-sky.org/news.php?id=20210329_20_100',
     url: 'https://in-the-sky.org/news.php?id=20210329_20_100'
-  },
-  {
+  }],
+  [{
     uid: '20210401_17_100@in-the-sky.org',
     dtstamp: '20210401T235856Z',
     dtstart: '20210401T235856Z',
@@ -838,8 +839,8 @@ export default [
     summary: 'Uranus at solar conjunction',
     description: 'Uranus is unobservable as it passes around the far side of the Sun. https://in-the-sky.org/news.php?id=20210430_12_100',
     url: 'https://in-the-sky.org/news.php?id=20210430_12_100'
-  },
-  {
+  }],
+  [{
     uid: '20210503_20_100@in-the-sky.org',
     dtstamp: '20210503T165859Z',
     dtstart: '20210503T165859Z',
@@ -1030,8 +1031,8 @@ export default [
     summary: 'Close approach of the Moon and Saturn',
     description: 'The Moon and Saturn pass within 4° 03°39  of each other. https://in-the-sky.org/news.php?id=20210531_15_100',
     url: 'https://in-the-sky.org/news.php?id=20210531_15_100'
-  },
-  {
+  }],
+  [{
     uid: '20210601_20_100@in-the-sky.org',
     dtstamp: '20210601T090027Z',
     dtstart: '20210601T090027Z',
@@ -1326,8 +1327,8 @@ export default [
     summary: 'NGC 6633 is well placed',
     description: 'The open star cluster NGC 6633 (mag 4.6) in Ophiuchus is well placed in the sky. https://in-the-sky.org/news.php?id=20210628_17_100',
     url: 'https://in-the-sky.org/news.php?id=20210628_17_100'
-  },
-  {
+  }],
+  [{
     uid: '20210701_08_100@in-the-sky.org',
     dtstamp: '20210701T211116Z',
     dtstart: '20210701T211116Z',
@@ -1582,8 +1583,8 @@ export default [
     summary: 'Moon at Last Quarter',
     description: 'The Moon rises in the east at around midnight and appears high in the sky at sunrise. https://in-the-sky.org/news.php?id=20210731_08_100',
     url: 'https://in-the-sky.org/news.php?id=20210731_08_100'
-  },
-  {
+  }],
+  [{
     uid: '20210801_11_100@in-the-sky.org',
     dtstamp: '20210801T141442Z',
     dtstart: '20210801T141442Z',
@@ -1766,8 +1767,8 @@ export default [
     summary: 'Moon at Last Quarter',
     description: 'The Moon rises in the east at around midnight and appears high in the sky at sunrise. https://in-the-sky.org/news.php?id=20210830_08_101',
     url: 'https://in-the-sky.org/news.php?id=20210830_08_101'
-  },
-  {
+  }],
+  [{
     uid: '20210901_10_100@in-the-sky.org',
     dtstamp: '20210901T024950Z',
     dtstart: '20210901T024950Z',
@@ -1966,8 +1967,8 @@ export default [
     summary: '136472 Makemake at solar conjunction',
     description: '136472 Makemake is unobservable as it passes around the far side of the Sun. https://in-the-sky.org/news.php?id=20210930_13_100',
     url: 'https://in-the-sky.org/news.php?id=20210930_13_100'
-  },
-  {
+  }],
+  [{
     uid: '20211001_17_100@in-the-sky.org',
     dtstamp: '20211001T235750Z',
     dtstart: '20211001T235750Z',
@@ -2302,8 +2303,8 @@ export default [
     summary: 'Fornax is well placed',
     description: 'The Fornax dwarf spheroidal galaxy (mag 9.0) is well placed in the sky. https://in-the-sky.org/news.php?id=20211031_17_100',
     url: 'https://in-the-sky.org/news.php?id=20211031_17_100'
-  },
-  {
+  }],
+  [{
     uid: '20211103_19_100@in-the-sky.org',
     dtstamp: '20211103T120000Z',
     dtstart: '20211103T120000Z',
@@ -2494,8 +2495,8 @@ export default [
     summary: 'Mercury at superior solar conjunction',
     description: 'Mercury passes around the far side of the Sun. https://in-the-sky.org/news.php?id=20211129_11_100',
     url: 'https://in-the-sky.org/news.php?id=20211129_11_100'
-  },
-  {
+  }],
+  [{
     uid: '20211201_12_100@in-the-sky.org',
     dtstamp: '20211201T131030Z',
     dtstart: '20211201T131030Z',
@@ -2782,21 +2783,5 @@ export default [
     summary: 'Conjunction of the Moon and Mars',
     description: 'The Moon and Mars share the same right ascension, at a separation of 0° 56°39 . https://in-the-sky.org/news.php?id=20211231_20_100',
     url: 'https://in-the-sky.org/news.php?id=20211231_20_100'
-  },
-  {
-    uid: '20220102_08_100@in-the-sky.org',
-    dtstamp: '20220102T183436Z',
-    dtstart: '20220102T183436Z',
-    summary: 'New Moon',
-    description: 'The Moon disappears into the Sun\'s glare. https://in-the-sky.org/news.php?id=20220102_08_100',
-    url: 'https://in-the-sky.org/news.php?id=20220102_08_100'
-  },
-  {
-    uid: '20220102_17_100@in-the-sky.org',
-    dtstamp: '20220102T235650Z',
-    dtstart: '20220102T235650Z',
-    summary: 'M41 is well placed',
-    description: 'The open star cluster M41 (NGC 2287  mag 4.6) in Canis Major is well placed in the sky. https://in-the-sky.org/news.php?id=20220102_17_100',
-    url: 'https://in-the-sky.org/news.php?id=20220102_17_100'
-  }
+  }]
 ];
