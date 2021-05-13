@@ -32,7 +32,7 @@ export default class Test extends Component {
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
           <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-          <TypeWriter style={{...Font, ...styles.btnText }} typing={1} minDelay={5} onTyped={()=> { this.props.playPing(); console.log('hello from on typed')}}>Tap here to start your journey.</TypeWriter>
+          <TypeWriter style={{...Font, ...styles.btnText }} typing={1} minDelay={5}>Tap here to start your journey.</TypeWriter>
           </TouchableOpacity>
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
             <Text style={{...Font, ...styles.text}}>

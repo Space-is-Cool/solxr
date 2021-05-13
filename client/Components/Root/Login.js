@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useIsFocused } from '@react-navigation/native';
 import Sound from 'react-native-sound';
 import {sound1} from './soundOne.js';
+import {sound2} from './soundTwo';
 import { MusicContext } from '../Root/Context';
 
 
@@ -67,13 +68,19 @@ const LoginModal = ({ navigation }) => {
     
   const playMusic = async () => {
     const storedUser = await AsyncStorage.getItem('user');
-    const { music } = JSON.parse(storedUser);
-    if (music === true) {
+    const { music, theme} = JSON.parse(storedUser);
+    if (music === true && theme === false) {
       sound1.play(() => {
         sound1.release();
       });
       sound1.setNumberOfLoops(-1);
       sound1.setVolume(0.5);
+    } else if (music === true && theme === true) {
+      sound2.play(() => {
+        sound2.release();
+      });
+      sound2.setNumberOfLoops(-1);
+      sound2.setVolume(0.5);
     }
   };
 

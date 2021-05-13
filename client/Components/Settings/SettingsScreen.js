@@ -20,9 +20,11 @@ const SettingsScreen = ({navigation, route}) => {
     email: false,
   });
   const [emailInput, setEmailInput] = useState('');
+
   useEffect(() => {
     getUser();
   }, []);
+
   const getUser = async () => {
     try {
       const storedUser = await AsyncStorage.getItem('user');
@@ -38,13 +40,42 @@ const SettingsScreen = ({navigation, route}) => {
       sound1.stop();
       sound2.stop();
     } else {
-      if (chooseMusic === false) {
-        sound1.play();
+      if (chooseMusic === true) {
+        sound1.play(() => {
+          sound1.release();
+        });
+        sound1.setNumberOfLoops(-1);
+        sound1.setVolume(0.5);
       } else {
-        sound2.play();
+        sound2.play(() => {
+          sound2.release();
+        });
+        sound2.setNumberOfLoops(-1);
+        sound2.setVolume(1);
       }
     }
   };
+
+  const CurrentlyPlaying = (chooseMusic) => {
+    if (toggle.music === true && chooseMusic === true) {
+      sound1.stop();
+      sound2.stop();
+      sound1.play(() => {
+        sound1.release();
+      });
+      sound1.setNumberOfLoops(-1);
+      sound1.setVolume(0.5);
+    } else if (toggle.music === true && chooseMusic === false) {
+      sound1.stop();
+      sound2.stop();
+      sound2.play(() => {
+        sound2.release();
+      });
+      sound2.setNumberOfLoops(-1);
+      sound2.setVolume(1);
+    }
+  };
+
   const modUser = async (prop) => {
     try {
       const storedUser = await AsyncStorage.getItem('user');
@@ -60,6 +91,7 @@ const SettingsScreen = ({navigation, route}) => {
       console.log('there was an error', e);
     }
   };
+
   const modEmail = async () => {
     try {
       const storedUser = await AsyncStorage.getItem('user');
@@ -129,33 +161,37 @@ const SettingsScreen = ({navigation, route}) => {
                 value={toggle.accessibility}
               />
               <Text style={{...Font, ...styles.value}}>Music</Text>
-              <AwesomeButton
-                style={styles.buttonThree}
-                width={100}
-                height={50}
-                backgroundColor={chooseMusic
-                  ? 'rgb(7, 40, 82)'
-                  : '#C0C0C0'}	
-                onPress={()=>{
-                  setChooseMusic(!chooseMusic);
-                  console.log(chooseMusic);
-                }}
-              >Ambient
-              </AwesomeButton>
-              <Text></Text>
-              <AwesomeButton
-                style={styles.buttonTwo}
-                width={100}
-                height={50}
-                backgroundColor={chooseMusic
-                  ? '#C0C0C0'
-                  : 'rgb(7, 40, 82)'}	
-                onPress={()=>{
-                  setChooseMusic(!chooseMusic);
-                  console.log(chooseMusic);
-                }}
-              >Original Theme
-              </AwesomeButton>
+              <View style={styles.buttonTwo}>
+                <AwesomeButton
+                  style={styles.buttonThree}
+                  width={100}
+                  height={50}
+                  backgroundColor={toggle.theme
+                    ? 'rgb(7, 40, 82)'
+                    : '#C0C0C0'}	
+                  onPress={()=>{
+                    setChooseMusic(false);
+                    CurrentlyPlaying(false);
+                    modUser('theme');
+                  }}
+                >Ambient
+                </AwesomeButton>
+                <Text></Text>
+                <AwesomeButton
+                  style={styles.buttonTwo}
+                  width={100}
+                  height={50}
+                  backgroundColor={toggle.theme
+                    ? '#C0C0C0'
+                    : 'rgb(7, 40, 82)'}
+                  onPress={()=>{
+                    setChooseMusic(true);
+                    CurrentlyPlaying(true);
+                    modUser('theme');
+                  }}
+                >Original Theme
+                </AwesomeButton>
+              </View>
               <Text></Text>
               <Switch
                 style={styles.switch}
@@ -211,7 +247,10 @@ const SettingsScreen = ({navigation, route}) => {
                 width={200}
                 height={50}
                 // progress
-                onPress={saveToServer}
+                onPress={()=> {
+                  saveToServer();
+           
+                }}
               >
       Save Settings
               </AwesomeButton>
@@ -252,7 +291,7 @@ const styles = StyleSheet.create({
     marginBottom: '10%',
   },
   buttonTwo: {
-
+    flexDirection: 'row'
   },
   buttonThree: {
  
