@@ -16,7 +16,8 @@ const SettingsScreen = ({navigation, route}) => {
     accessibility: false,
     music: true,
     theme: false,
-    email: false
+    email: false,
+    musicChoice: false
   });
   const [emailInput, setEmailInput] = useState('');
   useEffect(() => {
@@ -31,7 +32,7 @@ const SettingsScreen = ({navigation, route}) => {
       console.log('error', e);
     }
   };
-  // // TODO: Implement music fully based on music boolean
+
   const musicToggle = () => {
     if (toggle.music === true) {
       sound1.stop();
@@ -79,13 +80,6 @@ const SettingsScreen = ({navigation, route}) => {
     }
     console.log('Done.');
   };
-  // const saveEmail = async () => {
-  //   const storedUser = await AsyncStorage.getItem('user');
-  //   const user = JSON.parse(storedUser);
-  //   axios.put('http://ec2-3-134-108-148.us-east-2.compute.amazonaws.com:3001/users/update', user)
-  //     .then(() => console.log('success!!!'))
-  //     .catch(err => console.log('fail', err));
-  // };
   const saveToServer = async () => {
     const storedUser = await AsyncStorage.getItem('user');
     const user = JSON.parse(storedUser);
@@ -129,6 +123,26 @@ const SettingsScreen = ({navigation, route}) => {
               value={toggle.accessibility}
             />
             <Text style={{...Font, ...styles.value}}>Music</Text>
+            <AwesomeButton
+              style={styles.buttonThree}
+              width={100}
+              height={50}
+              backgroundColor={toggle.musicChoice
+                ? 'rgb(7, 40, 82)'
+                : '#C0C0C0'}	
+              onPress={()=> toggle.musicChoice = !toggle.musicChoice}
+            >Ambient
+            </AwesomeButton>
+            <AwesomeButton
+              style={styles.buttonTwo}
+              width={100}
+              height={50}
+              backgroundColor={toggle.musicChoice
+                ? '#C0C0C0'
+                : 'rgb(7, 40, 82)'}	
+              onPress={()=> toggle.musicChoice = !toggle.musicChoice}
+            >Original Theme
+            </AwesomeButton>
             <Switch
               style={styles.switch}
               circleActiveColor={'#9ee7ff'}
@@ -218,6 +232,12 @@ const styles = StyleSheet.create({
     marginVertical: 12
   },
   button: {
+    marginBottom: '10%',
+  },
+  buttonTwo: {
+    marginBottom: '10%',
+  },
+  buttonThree: {
     marginBottom: '10%',
   },
   switch: {

@@ -64,14 +64,6 @@ const LoginModal = ({ navigation }) => {
       console.log('there was an error', e);
     }
   };
-
-  // const sound1 = new Sound(require('./assets/SolXRloop.wav'),
-  //   (error, sound) => {
-  //     if (error) {
-  //       alert('error' + error.message);
-  //       return;
-  //     }
-  //   });
     
   const playMusic = async () => {
     const storedUser = await AsyncStorage.getItem('user');

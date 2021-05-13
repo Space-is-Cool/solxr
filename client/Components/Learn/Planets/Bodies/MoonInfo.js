@@ -12,11 +12,6 @@ import bodies from '../data/bodiesData.js';
 import { FontContext } from '../../../Root/Context';
 import TypeWriter from 'react-native-typewriter'
 
-// const funFacts = bodies.moon.discoveredBy.map((fact)=>{
-//   <Text>{fact}</Text>
-// })
-
-
 class MoonInfo extends Component {
   constructor() {
     super();
@@ -37,7 +32,7 @@ class MoonInfo extends Component {
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      {this.props.reload === 5 &&  <TypeWriter style={{...Font, ...styles.header}} typing={1} minDelay={-50}>{bodies.moon.name}</TypeWriter>}
+      {this.props.reload === 5 &&  <TypeWriter style={{...Font, ...styles.header}} typing={1} minDelay={-50}>The Moon</TypeWriter>}
       {this.props.reload === 5 &&  <TypeWriter style={{...Font, ...styles.headerTwo}} typing={1} minDelay={-50}>Luna</TypeWriter>}
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>

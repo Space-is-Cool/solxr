@@ -15,12 +15,30 @@ import NeptuneScreen from './Bodies/NeptuneScreen';
 import Test from './Bodies/test.js';
 
 import Swiper from 'react-native-swiper/src';
+import Sound from 'react-native-sound';
 
 
 
 const PlanetSelector = () => {
 
   const [reload, setReload] = useState(0);
+
+  const ping = new Sound(require('./assets/ping.wav'),
+    (error, sound) => {
+      if (error) {
+        alert('error' + error.message);
+        return;
+      }
+    });
+
+  const playPing = () => {
+    ping.play(() => {
+      ping.release();
+    });
+    ping.setVolume(0.5);
+    
+  };
+
 
   return (
     <Swiper
@@ -31,7 +49,7 @@ const PlanetSelector = () => {
       }}
       showsPagination={false}
     >
-      <Test/>
+      <Test playPing={playPing}/>
       <SunScreen reload={reload} setReload={setReload}/>
       <MercuryScreen reload={reload} setReload={setReload}/>
       <VenusScreen reload={reload} setReload={setReload}/>
