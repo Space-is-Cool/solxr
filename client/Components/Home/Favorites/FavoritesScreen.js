@@ -7,6 +7,7 @@ import { useIsFocused } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import favData from './favData.js';
+import { FontContext } from '../../Root/Context';
 
 
 const FavoritesScreen = ({navigation, route}) => {
@@ -33,29 +34,33 @@ const FavoritesScreen = ({navigation, route}) => {
   const list = () => {
     return realData.map((fav) => {
       return (
-        <View style={styles.container} key={fav.id}>
-          <ImageBackground
-            style={styles.image}
-            source={{uri: fav.url}}>
-            <Swiper
-              horizontal={false}
-              loop={false}
-              showsPagination={false}
-            >
-              <View>
-                <Text style={styles.headerTwo}>{fav.title}</Text>
-                <Text style={styles.headerThree}>Swipe up for more info</Text>
-              </View>
-              <ScrollView>
-                <Text></Text>
-                <Text style={styles.textTwo}>
-                  {fav.explanation}
-                </Text>
-                <Text></Text>
-              </ScrollView>
-            </Swiper>
-          </ImageBackground>
-        </View>
+        <FontContext.Consumer key={fav.id}>
+          {({ Font }) => (
+            <View style={styles.container} key={fav.id}>
+              <ImageBackground
+                style={styles.image}
+                source={{uri: fav.url}}>
+                <Swiper
+                  horizontal={false}
+                  loop={false}
+                  showsPagination={false}
+                >
+                  <View>
+                    <Text style={{...Font, ...styles.headerTwo}}>{fav.title}</Text>
+                    <Text style={{...Font, ...styles.headerThree}}>Swipe up for more info</Text>
+                  </View>
+                  <ScrollView>
+                    <Text></Text>
+                    <Text style={{...Font, ...styles.textTwo}}>
+                      {fav.explanation}
+                    </Text>
+                    <Text></Text>
+                  </ScrollView>
+                </Swiper>
+              </ImageBackground>
+            </View>
+          )}
+        </FontContext.Consumer>
       );
     });
   };

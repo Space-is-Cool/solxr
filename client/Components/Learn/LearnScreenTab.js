@@ -22,7 +22,7 @@ const LearnTab = () => (
     initialRouteName="NASA"
     tabBarOptions={{
       style: { backgroundColor: '#072852' },
-      labelStyle: { fontSize: 14, fontWeight: 'bold' },
+      // labelStyle: { fontSize: 14, fontWeight: 'bold' },
       activeTintColor: '#9ee7ff',
       indicatorStyle: { height: 3, backgroundColor: '#9ee7ff', paddingBottom: 6 },
       inactiveTintColor: '#9ee7ff',

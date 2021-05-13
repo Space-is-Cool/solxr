@@ -6,7 +6,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import Swiper from 'react-native-swiper/src';
-import {IotdContext} from '../../Root/Context';
+import {IotdContext, FontContext} from '../../Root/Context';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -97,39 +97,43 @@ const saveToFave = async (title, explanation, url) => {
 };
 const NasaScreen = ({navigation, route}) => {
   return (
-    <IotdContext.Consumer>
-      {({url, title, explanation}) => (
-        <View style={styles.container}>
-          <ImageBackground
-            style={styles.image}
-            source={{uri: url}}>
-            <Swiper
-              horizontal={false}
-              loop={false}
-              showsPagination={false}
-            >
-              <View>
-                <Text style={styles.headerTwo}>{title}</Text>
-                <Text style={styles.headerThree}>Swipe up for more info</Text>
-              </View>
-              <ScrollView>
-                <Text></Text>
-                <Text style={styles.textTwo}>
-                  {explanation}
-                </Text>
-                <Text></Text>
-              </ScrollView>
-            </Swiper>
-            <TouchableOpacity style={styles.img} onPress={()=> saveToFave(title, explanation, url)}>
-              <Image
-                style={styles.button}
-                source={require('./assets/star.png')}
-              />
-            </TouchableOpacity>
-          </ImageBackground>
-        </View>
+    <FontContext.Consumer>
+      {({ Font }) => (
+        <IotdContext.Consumer>
+          {({url, title, explanation}) => (
+            <View style={styles.container}>
+              <ImageBackground
+                style={styles.image}
+                source={{uri: url}}>
+                <Swiper
+                  horizontal={false}
+                  loop={false}
+                  showsPagination={false}
+                >
+                  <View>
+                    <Text style={{...Font, ...styles.headerTwo}}>{title}</Text>
+                    <Text style={{...Font, ...styles.headerThree}}>Swipe up for more info</Text>
+                  </View>
+                  <ScrollView>
+                    <Text></Text>
+                    <Text style={{...Font, ...styles.textTwo}}>
+                      {explanation}
+                    </Text>
+                    <Text></Text>
+                  </ScrollView>
+                </Swiper>
+                <TouchableOpacity style={styles.img} onPress={()=> saveToFave(title, explanation, url)}>
+                  <Image
+                    style={styles.button}
+                    source={require('./assets/star.png')}
+                  />
+                </TouchableOpacity>
+              </ImageBackground>
+            </View>
+          )}
+        </IotdContext.Consumer>
       )}
-    </IotdContext.Consumer>
+    </FontContext.Consumer>
   );
 };
 export default NasaScreen;

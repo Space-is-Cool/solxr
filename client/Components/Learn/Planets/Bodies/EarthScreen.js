@@ -8,10 +8,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
-    justifyContent: 'center',
+    // justifyContent: 'center',
     width: 415,
     height: 415,
   },
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000a0'
   },
   info: {
-    paddingLeft: 34
+    //justifyContent: 'center'
   }
 });
 
