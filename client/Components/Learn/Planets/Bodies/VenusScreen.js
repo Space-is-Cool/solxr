@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    alignItems: 'center'
   },
   image: {
     justifyContent: 'center',
@@ -21,13 +22,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
-  },
-  info:{
-    paddingLeft: 34
   }
 });
 
-const VenusScreen = ({navigation, route}) => {
+const VenusScreen = ({reload, setReload}) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -35,7 +33,7 @@ const VenusScreen = ({navigation, route}) => {
         source={require('../assets/venus.png')}
       />
       <ScrollView style={styles.info}>
-      <VenusInfo/>
+        <VenusInfo reload={reload} setReload={setReload}/>
       </ScrollView>
     </View>
   );

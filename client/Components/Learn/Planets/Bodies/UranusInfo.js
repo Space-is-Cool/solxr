@@ -9,6 +9,8 @@ import {
   LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
+import { FontContext } from '../../../Root/Context';
+import TypeWriter from 'react-native-typewriter'
 
 
 class UranusInfo extends Component {
@@ -25,46 +27,49 @@ class UranusInfo extends Component {
 
   render() {
     return ( 
+      <FontContext.Consumer>
+      {({ Font }) => (
       <ScrollView>
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.uranus.name}</Text>
-      <Text style={styles.headerTwo}>the Sideways Planet</Text>
-      <Text/>
-      <Text style={styles.basicFacts}>  Latin: {bodies.uranus.latin}    Diameter: {bodies.uranus.diameter}       Moons: {bodies.uranus.moons.length} </Text>
+      {this.props.reload === 9 &&  <TypeWriter style={{...Font, ...styles.header}} typing={1} minDelay={-50}>{bodies.uranus.name}</TypeWriter>}
+      {this.props.reload === 9 &&  <TypeWriter style={{...Font, ...styles.headerTwo}} typing={1} minDelay={-50}>The Sidways planet</TypeWriter>}
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
-          <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={styles.headerThree}>More Info...</Text>
-          </TouchableOpacity>
+        {this.props.reload === 9 && <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
+          <TypeWriter style={{...Font, ...styles.headerThree}} typing={1} minDelay={-50}>More Info...</TypeWriter>
+          </TouchableOpacity>}
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
+          <Text></Text>
+          <Text></Text>
+          <TypeWriter style={{...Font, ...styles.basicFacts}} typing={1} minDelay={-100000}>  Latin: {bodies.uranus.latin}    Diameter: {bodies.uranus.diameter}       Moons: 27 </TypeWriter>
             <Text></Text>
-          <Text style={styles.headerThree}>Special Characteristics:</Text>
-            <Text style={styles.textX}>
+          <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             It's turned over on its side!
             </Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Fun Facts:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             Coldest surface temperature
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Most dramatic axial tilt
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             The only planet other than Earth not named after a Roman God
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Funniest name
             </Text>
             <Text></Text>
-            <Text style={styles.headerThree}>Discovered By:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.uranus.discoveredBy}
             </Text>
-            <Text style={styles.headerThree}>Name Origin:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.uranus.nameOrigin}
             </Text>
           </View>
@@ -74,6 +79,8 @@ class UranusInfo extends Component {
       </View>
       
       </ScrollView>
+        )}
+        </FontContext.Consumer>
     )
   }
 }
@@ -115,6 +122,7 @@ const styles = StyleSheet.create({
   },
   basicFacts: {
     color: '#9ee7ff',
+    fontSize: 14
   },
   image: {
     width: 35,
@@ -144,11 +152,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     fontSize: 20
-  },
-
-  btnTextHolder: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.5)'
   },
 
   Btn: {

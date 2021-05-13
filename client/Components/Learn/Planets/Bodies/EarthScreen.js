@@ -8,7 +8,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   image: {
     justifyContent: 'center',
@@ -21,13 +23,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
-  },
-  info: {
-    paddingLeft: 34
   }
 });
 
-const EarthScreen = ({navigation, route}) => {
+const EarthScreen = ({reload, setReload}) => {
 
   return (
     <View style={styles.container}>
@@ -36,7 +35,7 @@ const EarthScreen = ({navigation, route}) => {
         source={require('../assets/earth.jpg')}
       />
       <ScrollView style={styles.info}>
-        <EarthInfo/>
+        <EarthInfo reload={reload} setReload={setReload}/>
       </ScrollView>
     </View>
   );

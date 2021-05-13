@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    alignItems: 'center'
   },
   image: {
     justifyContent: 'center',
@@ -21,13 +22,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
-  },
-  info:{
-    paddingLeft: 34
   }
 });
 
-const UranusScreen = ({navigation, route}) => {
+const UranusScreen = ({reload, setReload}) => {
 
   return (
     <View style={styles.container}>
@@ -36,7 +34,7 @@ const UranusScreen = ({navigation, route}) => {
         source={require('../assets/uranus.jpg')}
       />
       <ScrollView style={styles.info}>
-      <UranusInfo/>
+        <UranusInfo reload={reload} setReload={setReload}/>
       </ScrollView>
     </View>
   );
