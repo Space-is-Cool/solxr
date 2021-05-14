@@ -66,7 +66,10 @@ const FavoritesScreen = ({navigation, route}) => {
   };
 
   return (
-    <Swiper>
+    <Swiper
+      showsPagination={false}
+      loop={false}
+    >
       {realData.length && list()}
     </Swiper>
   );

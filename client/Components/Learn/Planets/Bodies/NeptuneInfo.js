@@ -9,6 +9,8 @@ import {
   LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
+import { FontContext } from '../../../Root/Context';
+import TypeWriter from 'react-native-typewriter'
 
 
 class NeptuneInfo extends Component {
@@ -25,43 +27,46 @@ class NeptuneInfo extends Component {
 
   render() {
     return ( 
+      <FontContext.Consumer>
+      {({ Font }) => (
       <ScrollView>
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.neptune.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.neptune.AKA}</Text>
-      <Text/>
-      <Text style={styles.basicFacts}>  Latin: {bodies.neptune.latin}   Diameter: {bodies.neptune.diameter}   Moons: {bodies.neptune.moons.length} </Text>
-      <View style={styles.container}>
+      {this.props.reload === 10 &&  <TypeWriter style={{...Font, ...styles.header}} typing={1} minDelay={-50}>{bodies.neptune.name}</TypeWriter>}
+      {this.props.reload === 10 &&  <TypeWriter style={{...Font, ...styles.headerTwo}} typing={1} minDelay={-50}>{bodies.neptune.AKA}</TypeWriter>}
+        <View style={styles.container}>
         <View style={styles.btnTextHolder}>
-          <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={styles.headerThree}>More Info...</Text>
-          </TouchableOpacity>
+        {this.props.reload === 10 && <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
+          <TypeWriter style={{...Font, ...styles.headerThree}} typing={1} minDelay={-50}>More Info...</TypeWriter>
+          </TouchableOpacity>}
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
-            <Text></Text>
-          <Text style={styles.headerThree}>Special Characteristics:</Text>
-            <Text style={styles.textX}>
+          <Text></Text>
+          <Text></Text>
+          <TypeWriter style={{...Font, ...styles.basicFacts}} typing={1} minDelay={-100000}>   Latin: {bodies.neptune.latin}  Diameter: {bodies.neptune.diameter}  Moons: 14</TypeWriter>
+          <Text></Text>
+          <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             Neptune has thirteen young and faint rings that often go overlooked
             </Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Fun Facts:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+            <Text style={{...Font, ...styles.textX}}>
             The smallest of the Gas Giants
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Most distant planet from the Sun
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Strongest winds
             </Text>
             <Text></Text>
-            <Text style={styles.headerThree}>Discovered By:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.neptune.discoveredBy}
             </Text>
-            <Text style={styles.headerThree}>Name Origin:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.neptune.nameOrigin}
             </Text>
           </View>
@@ -71,6 +76,8 @@ class NeptuneInfo extends Component {
       </View>
       
       </ScrollView>
+      )}
+      </FontContext.Consumer>
     )
   }
 }
@@ -112,6 +119,7 @@ const styles = StyleSheet.create({
   },
   basicFacts: {
     color: '#9ee7ff',
+    fontSize: 14
   },
   image: {
     width: 35,
@@ -141,11 +149,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     fontSize: 20
-  },
-
-  btnTextHolder: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.5)'
   },
 
   Btn: {

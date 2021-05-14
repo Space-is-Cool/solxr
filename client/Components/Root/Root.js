@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {IotdContext, MusicContext, FontContext } from './Context';
+import {IotdContext, MusicContext, FontContext, MusicChoiceContext } from './Context';
 import axios from 'axios';
 import BottomTab from './RootBottomTab';
 import LoginModal from './Login';
@@ -20,6 +20,7 @@ const RootNavigator = () => {
     fontFamily: 'Avenir-Book'
   });
   const [music, setMusic] = useState(true);
+  const [chooseMusic, setChooseMusic] = useState(false);
 
   useEffect(() => {
     getNasa();
@@ -36,8 +37,9 @@ const RootNavigator = () => {
   return (
     <FontContext.Provider value={{Font, setFont}}>
       <MusicContext.Provider value={{ music, setMusic }}>
-        <IotdContext.Provider value={IoTD}>
-          {IoTD && 
+        <MusicChoiceContext.Provider value={{ chooseMusic, setChooseMusic }}>
+          <IotdContext.Provider value={IoTD}>
+            {IoTD && 
         <NavigationContainer>
           <AppNavigation.Navigator
             mode="modal"
@@ -50,8 +52,9 @@ const RootNavigator = () => {
             <AppNavigation.Screen name="login" component={LoginModal} />
           </AppNavigation.Navigator>
         </NavigationContainer>
-          }
-        </IotdContext.Provider>
+            }
+          </IotdContext.Provider>
+        </MusicChoiceContext.Provider>
       </MusicContext.Provider>
     </FontContext.Provider>
 

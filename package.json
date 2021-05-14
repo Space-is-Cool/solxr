@@ -23,17 +23,18 @@
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "expo": "~41.0.1",
+    "expo-apple-authentication": "^3.1.0",
     "expo-cli": "^4.4.3",
     "expo-splash-screen": "~0.10.2",
     "expo-status-bar": "~1.0.4",
     "expo-updates": "~0.5.4",
     "express": "^4.17.1",
     "moment": "^2.29.1",
-    "passport-google-oauth": "^2.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-google-login": "^5.2.2",
     "react-native": "~0.63.4",
+    "react-native-animated-typewriter": "^1.0.6",
     "react-native-cli": "^2.0.1",
     "react-native-dropdown-picker": "^4.0.9",
     "react-native-elements": "^3.4.1",
@@ -53,6 +54,7 @@
     "react-native-switch": "^2.0.0",
     "react-native-tab-view": "2.11.0",
     "react-native-timeline-flatlist": "^0.7.3",
+    "react-native-typewriter": "^0.7.0",
     "react-native-unimodules": "~0.13.3",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12",
@@ -65,8 +67,7 @@
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-standard-config": "^2.4.1",
-    "passport": "^0.4.1"
+    "eslint-standard-config": "^2.4.1"
   },
   "private": true
 }
