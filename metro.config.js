@@ -8,7 +8,7 @@ module.exports = (async () => {
   } = await getDefaultConfig();
   return {
     resolver: {
-      assetExts: [...assetExts, 'obj', 'mtl', 'JPG', 'jpeg', 'vrx', 'fbx', 'gltf', 'glb', 'hdr'],
+      assetExts: [...assetExts, 'obj', 'mtl', 'JPG', 'jpeg', 'vrx', 'fbx', 'gltf', 'glb', 'hdr', 'tiff'],
     },
   };
 })();
