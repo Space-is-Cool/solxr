@@ -54,13 +54,10 @@ class EarthInfo extends Component {
            Only planet known to have produced Totino™ brand Pizza Rolls
             </Text>
             <Text></Text>
-            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
-            <Text style={{...Font, ...styles.text}}>
-              {bodies.earth.discoveredBy}
-            </Text>
+          
             <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
             <Text style={{...Font, ...styles.text}}>
-              {bodies.earth.nameOrigin}
+              {bodies.earth.nameOrigin}.
             </Text>
           </View>
         </View>
