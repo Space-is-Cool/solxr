@@ -10,12 +10,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'black',
-    paddingTop: 20
+    paddingTop: 30,
+    alignItems: 'center'
   },
   image: {
-    maxWidth: 375,
-    height: 375,
-
+    justifyContent: 'center',
+    width: 340,
+    height: 340,
   },
   text: {
     color: 'white',
@@ -24,12 +25,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#000000a0'
   },
-  info:{
-    paddingLeft: 34
-  }
 });
 
-const MercuryScreen = ({navigation, route}) => {
+const MercuryScreen = ({reload, setReload}) => {
 
   return (
     <View style={styles.container}>
@@ -38,7 +36,7 @@ const MercuryScreen = ({navigation, route}) => {
         source={require('../assets/mercury.png')}
       />
       <ScrollView style={styles.info}>
-      <MercuryInfo/>
+        <MercuryInfo reload={reload} setReload={setReload}/>
       </ScrollView>
 
     </View>

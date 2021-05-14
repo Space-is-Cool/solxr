@@ -3,12 +3,16 @@
 import React, {useState} from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
 import JupiterInfo from './JupiterInfo.js';
+import EarthInfo from './EarthInfo.js';
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   image: {
     justifyContent: 'center',
@@ -21,13 +25,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0'
-  },
-  info: {
-    paddingLeft: 34
   }
 });
 
-const JupiterScreen = ({navigation, route}) => {
+const JupiterScreen = ({reload, setReload}) => {
 
   return (
     <View style={styles.container}>
@@ -36,7 +37,7 @@ const JupiterScreen = ({navigation, route}) => {
         source={require('../assets/jupiter.jpg')}
       />
       <ScrollView style={styles.info}>
-        <JupiterInfo/>
+        <JupiterInfo reload={reload} setReload={setReload} />
       </ScrollView>
     </View>
   );

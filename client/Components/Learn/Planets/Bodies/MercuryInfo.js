@@ -9,6 +9,8 @@ import {
   LayoutAnimation, Platform, UIManager, TouchableOpacity
 } from 'react-native';
 import bodies from '../data/bodiesData.js';
+import { FontContext } from '../../../Root/Context';
+import TypeWriter from 'react-native-typewriter'
 
 
 class MercuryInfo extends Component {
@@ -25,43 +27,48 @@ class MercuryInfo extends Component {
 
   render() {
     return ( 
+      <FontContext.Consumer key={this.props.reload}>
+      {({ Font }) => (
       <ScrollView>
       {/* <View style={styles.line}/> */}
       <View style={styles.main}>
       <View style={styles.hud}>
-      <Text style={styles.header}>{bodies.mercury.name}</Text>
-      <Text style={styles.headerTwo}>{bodies.mercury.AKA}</Text>
-      <Text/>
-      <Text style={styles.basicFacts}>  Latin: {bodies.mercury.latin}    Diameter: {bodies.mercury.diameter}       Moons: 0  </Text>
+      {this.props.reload === 2 && <TypeWriter style={{...Font, ...styles.header}} typing={1} minDelay={-50}>{bodies.mercury.name}</TypeWriter>}
+      { this.props.reload === 2 && <TypeWriter style={{...Font, ...styles.headerTwo}} typing={1} minDelay={-50}>{bodies.mercury.AKA}</TypeWriter>}
+    
       <View style={styles.container}>
         <View style={styles.btnTextHolder}>
-          <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
-            <Text style={styles.headerThree}>More Info...</Text>
-          </TouchableOpacity>
+        {this.props.reload === 2 && <TouchableOpacity activeOpacity={0.8} onPress={this.changeLayout} style={styles.Btn}>
+          <TypeWriter style={{...Font, ...styles.headerThree}} typing={1} minDelay={-50}>More Info...</TypeWriter>
+          </TouchableOpacity>}
           <View style={{ height: this.state.expanded ? null : 0, overflow: 'hidden' }}>
             <Text></Text>
-          <Text style={styles.headerThree}>Special Characteristics:</Text>
-            <Text style={styles.text}>
+            <Text></Text>
+            {<TypeWriter style={{...Font, ...styles.basicFacts}} typing={1} minDelay={-100000}> Latin: {bodies.mercury.latin}   Diameter: {bodies.mercury.diameter}    Moons: 0</TypeWriter>}
+
+            <Text></Text>
+          <Text style={{...Font, ...styles.headerThree}}>Special Characteristics:</Text>
+            <Text style={{...Font, ...styles.text}}>
             Caloris Basin, a crater that spans 1550 km. That's over half the total diameter of the planet!
             </Text>
           <Text></Text>
-            <Text style={styles.headerThree}>Fun Facts:</Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.headerThree}}>Fun Facts:</Text>
+            <Text style={{...Font, ...styles.textX}}>
              Closest planet to the sun
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Shortest year
             </Text>
-            <Text style={styles.textX}>
+            <Text style={{...Font, ...styles.textX}}>
             Smallest planet
             </Text>
             <Text></Text>
-            <Text style={styles.headerThree}>Discovered By:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Discovered By:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.mercury.discoveredBy}
             </Text>
-            <Text style={styles.headerThree}>Name Origin:</Text>
-            <Text style={styles.text}>
+            <Text style={{...Font, ...styles.headerThree}}>Name Origin:</Text>
+            <Text style={{...Font, ...styles.text}}>
               {bodies.mercury.nameOrigin}
             </Text>
           </View>
@@ -71,6 +78,8 @@ class MercuryInfo extends Component {
       </View>
       
       </ScrollView>
+     )}
+     </FontContext.Consumer>
     )
   }
 }
@@ -112,6 +121,7 @@ const styles = StyleSheet.create({
   },
   basicFacts: {
     color: '#9ee7ff',
+    fontSize: 14
   },
   image: {
     width: 35,
@@ -141,11 +151,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     fontSize: 20
-  },
-
-  btnTextHolder: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.5)'
   },
 
   Btn: {
