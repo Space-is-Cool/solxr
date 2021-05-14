@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   image: {
-    justifyContent: 'center',
+    // justifyContent: 'center',
     width: 415,
     height: 415,
   },
