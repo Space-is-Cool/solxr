@@ -1,11 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, {useState, useEffect, createContext} from 'react';
 import { Button, View, Text, ActivityIndicator, StyleSheet, Pressable } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useIsFocused } from '@react-navigation/native';
-import IconA from 'react-native-vector-icons/Ionicons';
-
+import { FontContext } from '../Root/Context';
 import PlanetSwitcher from './PlanetSwitcherAR';
 import LookUpAR from './LookUpAR';
+import PortalAR from './PortalAR';
+import IconA from 'react-native-vector-icons/Ionicons';
 import LUInfoModal from './LUInfoModal';
 import PCInfoModal from './PCInfoModal';
 
@@ -21,53 +24,67 @@ const SplashAR = ({ navigation }) => {
   }, [isFocused]);
 
   return (
-    <>
-      <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={styles.h1}>Choose Your AR Experience</Text>
-        <Text >press the info button to learn about each feature</Text>
-        <Text></Text>
-        <View style={styles.exp}>
-          <Button
-            onPress={() => {
-              setRendering(true);
-              setTimeout(() => navigation.navigate('PlanetSwitcher'), 10);
-            }} title="Planet Clicker"
-          />
-          <IconA
-            name="information-circle-outline"
-            size={30}
-            style={{marginLeft: '4%'}}
-            onPress={() => navigation.navigate('PCInfoModal')}
-          />
-        </View>
-        <Text></Text>
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-          <Button
-            style={styles.button}
-            onPress={() => {
-              setRendering(true);
-              setTimeout(() => navigation.navigate('LookUp'), 10);
-            }}
-            title="Look Up"
-          />
-          <IconA
-            name="information-circle-outline"
-            size={30}
-            style={{marginLeft: '4%'}}
-            onPress={() => navigation.navigate('LUInfoModal')}
-          />
-        </View>
-      </View>
-      <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
-        {rendering && (
-          <>
-            <Text>AR Launching: Please standby</Text>
+    
+    <FontContext.Consumer>
+      {({ Font }) => (
+        <>
+          <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={styles.h1}>Choose Your AR Experience</Text>
+            <Text >press the info button to learn about each feature</Text>
             <Text></Text>
-            <ActivityIndicator size="large" color={'#9ee7ff'}/>
-          </>
-        )}
-      </View>
-    </>
+            <View style={styles.exp}>
+              <Button
+                onPress={() => {
+                  setRendering(true);
+                  setTimeout(() => navigation.navigate('PlanetSwitcher'), 10);
+                }} title="Planet Clicker"
+              />
+              <IconA
+                name="information-circle-outline"
+                size={30}
+                style={{marginLeft: '4%'}}
+                onPress={() => navigation.navigate('PCInfoModal')}
+              />
+            </View>
+            <Text></Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+              <Button
+                style={styles.button}
+                onPress={() => {
+                  setRendering(true);
+                  setTimeout(() => navigation.navigate('LookUp'), 10);
+                }}
+                title="Look Up"
+              />
+              <IconA
+                name="information-circle-outline"
+                size={30}
+                style={{marginLeft: '4%'}}
+                onPress={() => navigation.navigate('LUInfoModal')}
+              />
+            </View>
+            <Text></Text>
+            <Button
+              onPress={() => {
+                setRendering(true);
+                setTimeout(() => navigation.navigate('Portal'), 10);
+              }}
+              title="Portal"
+            />
+          </View>
+          <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
+            {rendering && (
+              <>
+                <Text style={{...Font}}>AR Launching: Please standby</Text>
+                <Text></Text>
+                <ActivityIndicator size="large" color={'#9ee7ff'}/>
+              </>
+            
+            )}
+          </View>
+        </>
+      )}
+    </FontContext.Consumer>
   );
 };
 
@@ -85,6 +102,7 @@ const ARExperiences = ({navigation}) => {
       <ARStack.Screen name='LUInfoModal' component={LUInfoModal} />
       <ARStack.Screen name='PlanetSwitcher' component={PlanetSwitcher} />
       <ARStack.Screen name='LookUp' component={LookUpAR} />
+      <ARStack.Screen name='Portal' component={PortalAR} />
     </ARStack.Navigator>
 
   );
