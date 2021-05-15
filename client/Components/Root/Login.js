@@ -27,6 +27,12 @@ const LoginModal = ({ navigation }) => {
         if (data === 'invalid password') {
           setPrompt(data);
         } else {
+          if (data.music === null) {
+            data.music = true;
+          }
+          if (data.theme === null) {
+            data.theme = true;
+          }
           setSignedIn(true);
           setUser(data);
           storeUser(data);
