@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, useState, View, TouchableOpacity, Image, StyleSheet} from 'react';
 
 // import {StyleSheet} from 'react-native';
 
@@ -19,16 +19,36 @@ import {
   ViroPortal,
   ViroPortalScene,
   Viro3DObject,
+  ViroSpatialSound,
+  ViroSound,
 } from 'react-viro';
 // import Vectors from './Vectors';
 // const createReactClass = require('create-react-class');
 
 const Portal = ({navigation, route}) => {
 
+  const [musicControl, setMusicControl] = useState(false);
+  // const [playPause, setPlayPause] = useState('./assets/controls/play.png');
+
+  // const switcher = () => {
+  //   setMusicControl(!musicControl);
+  //   if (musicControl === true) {
+  //     setPlayPause('./assets/controls/pause.png');
+  //   } else if (musicControl === false) {
+  //     setPlayPause('./assets/controls/play.png');
+  //   }
+  // };
+  
   const Galaxy = () => {
 
     return (
-      <ViroARScene>
+      <ViroARScene onAnchorFound={()=> setMusicControl(true)}>
+        <ViroSound rolloffModel="linear"
+          paused={musicControl}
+          muted={false}
+          source={require('./assets/music/AR-shared-space.wav')}
+          loop={true}
+          volume={1.0} />
         <ViroAmbientLight color="#ffffff" intensity={200} />
         <ViroPortalScene passable={true} dragType="FixedDistance" onDrag={() => {}}>
           {/* front view */}
@@ -39,6 +59,24 @@ const Portal = ({navigation, route}) => {
                 require('./assets/portal_ship_specular.png')]}
               type="VRX"/>
           </ViroPortal>
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={2}
+            position={[0, 0, -1.5]}
+            source={require('./assets/music/AR-desertOne-mono.wav')}
+            loop={true}
+            volume={1.0} />
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={1}
+            position={[0, 0, -2]}
+            source={require('./assets/music/AR-desertTwo-mono.wav')}
+            loop={true}
+            volume={1.0} />
           <Viro360Image source={require('./assets/atacoma_desert4k.tiff')} />
         </ViroPortalScene>
         <ViroPortalScene passable={true} dragType="FixedDistance" onDrag={() => {}}>
@@ -50,6 +88,24 @@ const Portal = ({navigation, route}) => {
                 require('./assets/portal_ship_specular.png')]}
               type="VRX"/>
           </ViroPortal>
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={2}
+            position={[0, 0, 1.5]}
+            source={require('./assets/music/AR-galaxyOne-mono.wav')}
+            loop={true}
+            volume={1.0} />
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={1}
+            position={[0, 0, 2]}
+            source={require('./assets/music/AR-galaxyTwo-mono.wav')}
+            loop={true}
+            volume={1.0} />
           <Viro360Image source={require('./assets/milky_way.jpeg')} />
         </ViroPortalScene>
         <ViroPortalScene passable={true} dragType="FixedDistance" onDrag={() => {}}>
@@ -61,6 +117,24 @@ const Portal = ({navigation, route}) => {
                 require('./assets/portal_ship_specular.png')]}
               type="VRX"/>
           </ViroPortal>
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={2}
+            position={[1.5, 0, 0]}
+            source={require('./assets/music/AR-shipOne-mono.wav')}
+            loop={true}
+            volume={1.0} />
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={1}
+            position={[2, 0, 0]}
+            source={require('./assets/music/AR-shipTwo-mono.wav')}
+            loop={true}
+            volume={1.0} />
           <Viro360Image source={require('./assets/space_shuttle360.png')} />
         </ViroPortalScene>
         <ViroPortalScene passable={true} dragType="FixedDistance" onDrag={() => {}}>
@@ -72,22 +146,37 @@ const Portal = ({navigation, route}) => {
                 require('./assets/portal_ship_specular.png')]}
               type="VRX"/>
           </ViroPortal>
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={2}
+            position={[-1.5, 0, 0]}
+            source={require('./assets/music/AR-earthOne-mono.wav')}
+            loop={true}
+            volume={1.0} />
+          <ViroSpatialSound rolloffModel="linear"
+            paused={musicControl}
+            muted={false}
+            minDistance={0}
+            maxDistance={1}
+            position={[-2, 0, 0]}
+            source={require('./assets/music/AR-earthTwo-mono.wav')}
+            loop={true}
+            volume={1.0} />
           <Viro360Image source={require('./assets/earth_moon.jpeg')} />
         </ViroPortalScene>
+        {/* <View>
+          <TouchableOpacity style={styles.img} onPress={()=> switcher()}>
+            <Image
+              style={styles.button}
+              source={require('./assets/controls/play.png')}
+            />
+          </TouchableOpacity>
+        </View> */}
       </ViroARScene>
     );
   };
-
-  // ViroMaterials.createMaterials({
-  //   heart: {
-  //     lightingModel: 'Blinn',
-  //     diffuseTexture: require('./assets/Heart_D3.jpeg'),
-  //     specularTexture: require('./assets/Heart_S2.jpeg'),
-  //     writesToDepthBuffer: true,
-  //     readsFromDepthBuffer: true,
-  //     // opacity: [0, 0, 0]
-  //   },
-  // });
 
   return (
     <>
@@ -98,5 +187,16 @@ const Portal = ({navigation, route}) => {
 
 };
   
+// const styles = StyleSheet.create({
+//   img: {
+//     position: 'absolute',
+//     right: 10,
+//     bottom: 10
+//   },
+//   button: {
+//     width: 35,
+//     height: 35,
+//   }
+// });
 
 module.exports = Portal;
