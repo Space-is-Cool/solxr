@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "annular-solar-eclipse (1).jpeg",
+      "filename" : "1024.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "annular-solar-eclipse (1)-1.jpeg",
+      "filename" : "1024-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "annular-solar-eclipse (1)-2.jpeg",
+      "filename" : "1024-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
