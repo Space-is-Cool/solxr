@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ImageBackground } from 'react-native';
 import AwesomeButton from 'react-native-really-awesome-button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { MusicContext, FontContext, MusicChoiceContext} from '../Root/Context';
@@ -141,72 +141,75 @@ const SettingsScreen = ({navigation, route}) => {
       {({ Font, setFont }) => (
         <MusicContext.Consumer>{ ({ music, setMusic }) => (
           <MusicChoiceContext.Consumer>{ ({ chooseMusic, setChooseMusic }) => (
-            <View style={styles.container}>
-              <Text style={{...Font, ...styles.value}}>Settings</Text>
-              <Text style={{...Font, ...styles.value}}>Readable Font</Text>
-              <Switch
-                style={styles.switch}
-                circleActiveColor={'#9ee7ff'}
-                circleInActiveColor={'#f4f3f4'}
-                backgroundActive={'rgb(7, 40, 82)'}
-                backgroundInactive={'rgb(7, 40, 82)'}
-                switchLeftPx={5}
-                switchRightPx={5} 
-                onValueChange={() => {
-                  modUser('accessibility');
-                  toggle.accessibility
-                    ? setFont(accessibility.normal)
-                    : setFont(accessibility.readable); 
-                }}
-                value={toggle.accessibility}
-              />
-              <Text style={{...Font, ...styles.value}}>Music</Text>
-              { toggle.music && <View style={styles.buttonTwo}>
-                <AwesomeButton
-                  style={styles.buttonThree}
-                  width={100}
-                  height={50}
-                  backgroundColor={toggle.theme
-                    ? 'rgb(7, 40, 82)'
-                    : '#C0C0C0'}	
-                  onPress={()=>{
-                    setChooseMusic(false);
-                    CurrentlyPlaying(false);
-                    modUser('theme');
-                    setToggle(toggle.theme = false);
+            <ImageBackground
+              style={styles.image}
+              source={require('./assets/starfield.png')}>
+              <View style={styles.container}>
+                <Text style={{...Font, ...styles.header}}>Settings</Text>
+                <Text style={{...Font, ...styles.value}}>Readable Font</Text>
+                <Switch
+                  style={styles.switch}
+                  circleActiveColor={'#9ee7ff'}
+                  circleInActiveColor={'#f4f3f4'}
+                  backgroundActive={'rgb(7, 40, 82)'}
+                  backgroundInactive={'rgb(7, 40, 82)'}
+                  switchLeftPx={5}
+                  switchRightPx={5} 
+                  onValueChange={() => {
+                    modUser('accessibility');
+                    toggle.accessibility
+                      ? setFont(accessibility.normal)
+                      : setFont(accessibility.readable); 
                   }}
-                >Ambient
-                </AwesomeButton>
+                  value={toggle.accessibility}
+                />
+                <Text style={{...Font, ...styles.value}}>Music</Text>
+                { toggle.music && <View style={styles.buttonTwo}>
+                  <AwesomeButton
+                    style={styles.buttonThree}
+                    width={100}
+                    height={50}
+                    backgroundColor={toggle.theme
+                      ? 'rgb(7, 40, 82)'
+                      : '#C0C0C0'}	
+                    onPress={()=>{
+                      setChooseMusic(false);
+                      CurrentlyPlaying(false);
+                      modUser('theme');
+                      setToggle(toggle.theme = false);
+                    }}
+                  >Ambient
+                  </AwesomeButton>
+                  <Text></Text>
+                  <AwesomeButton
+                    style={styles.buttonTwo}
+                    width={100}
+                    height={50}
+                    backgroundColor={toggle.theme
+                      ? '#C0C0C0'
+                      : 'rgb(7, 40, 82)'}
+                    onPress={()=>{
+                      setChooseMusic(true);
+                      CurrentlyPlaying(true);
+                      modUser('theme');
+                      setToggle(toggle.theme = true);
+                    }}
+                  >Original Theme
+                  </AwesomeButton>
+                </View>}
                 <Text></Text>
-                <AwesomeButton
-                  style={styles.buttonTwo}
-                  width={100}
-                  height={50}
-                  backgroundColor={toggle.theme
-                    ? '#C0C0C0'
-                    : 'rgb(7, 40, 82)'}
-                  onPress={()=>{
-                    setChooseMusic(true);
-                    CurrentlyPlaying(true);
-                    modUser('theme');
-                    setToggle(toggle.theme = true);
-                  }}
-                >Original Theme
-                </AwesomeButton>
-              </View>}
-              <Text></Text>
-              <Switch
-                style={styles.switch}
-                circleActiveColor={'#9ee7ff'}
-                circleInActiveColor={'#f4f3f4'}
-                backgroundActive={'rgb(7, 40, 82)'}
-                backgroundInactive={'rgb(7, 40, 82)'}
-                switchLeftPx={5}
-                switchRightPx={5} 
-                onValueChange={() => { setMusic(!music); musicToggle(music, chooseMusic); modUser('music'); }}
-                value={toggle.music}
-              />
-              {/* <Text style={{...Font, ...styles.value}}>NASA Theme</Text>
+                <Switch
+                  style={styles.switch}
+                  circleActiveColor={'#9ee7ff'}
+                  circleInActiveColor={'#f4f3f4'}
+                  backgroundActive={'rgb(7, 40, 82)'}
+                  backgroundInactive={'rgb(7, 40, 82)'}
+                  switchLeftPx={5}
+                  switchRightPx={5} 
+                  onValueChange={() => { setMusic(!music); musicToggle(music, chooseMusic); modUser('music'); }}
+                  value={toggle.music}
+                />
+                {/* <Text style={{...Font, ...styles.value}}>NASA Theme</Text>
             <Switch
               style={styles.switch}
               circleActiveColor={'#9ee7ff'}
@@ -218,57 +221,58 @@ const SettingsScreen = ({navigation, route}) => {
               onValueChange={() => modUser('theme')}
               value={toggle.theme}
             /> */}
-              <Text style={{...Font, ...styles.value}}>Sign up for Astral Emails:</Text>
-              {toggle.email ?
-                <AwesomeButton
-                  style={styles.button}
-                  width={200}
-                  height={50}
-                  onPress={modEmail}>
-            Unsubscribe
-                </AwesomeButton> :
-                <>
-                  <TextInput
-                    style={styles.input}
-                    onChangeText={setEmailInput}
-                    value={emailInput}/>
+                <Text style={{...Font, ...styles.value}}>Sign up for Astral Emails:</Text>
+                {toggle.email ?
                   <AwesomeButton
                     style={styles.button}
                     width={200}
                     height={50}
-                    backgroundColor={emailInput
-                      ? 'rgb(7, 40, 82)'
-                      : '#C0C0C0'}	
-                    onPress={modEmail}
-                  >Submit
-                  </AwesomeButton>
-                </>
-              }
-              <AwesomeButton
-                style={styles.button}
-                width={200}
-                height={50}
-                // progress
-                onPress={()=> {
-                  saveToServer();
+                    onPress={modEmail}>
+            Unsubscribe
+                  </AwesomeButton> :
+                  <>
+                    <TextInput
+                      style={styles.input}
+                      onChangeText={setEmailInput}
+                      value={emailInput}/>
+                    <AwesomeButton
+                      style={styles.button}
+                      width={200}
+                      height={50}
+                      backgroundColor={emailInput
+                        ? 'rgb(7, 40, 82)'
+                        : '#C0C0C0'}	
+                      onPress={modEmail}
+                    >Submit
+                    </AwesomeButton>
+                  </>
+                }
+                <AwesomeButton
+                  style={styles.button}
+                  width={200}
+                  height={50}
+                  // progress
+                  onPress={()=> {
+                    saveToServer();
            
-                }}
-              >
+                  }}
+                >
       Save Settings
-              </AwesomeButton>
-              <AwesomeButton
-                style={styles.button}
-                width={200}
-                height={50}
-                progress
-                onPress={() => {
-                  clearStorage();
-                  navigation.navigate('login');
-                }}
-              >
+                </AwesomeButton>
+                <AwesomeButton
+                  style={styles.button}
+                  width={200}
+                  height={50}
+                  progress
+                  onPress={() => {
+                    clearStorage();
+                    navigation.navigate('login');
+                  }}
+                >
       Log Out
-              </AwesomeButton>
-            </View>
+                </AwesomeButton>
+              </View>
+            </ImageBackground>
           )
           }</MusicChoiceContext.Consumer>
         )
@@ -285,8 +289,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   value: {
-    // fontSize: 24,
-    // fontFamily: 'Helvetica',
+    color: '#9ee7ff',
+    textAlign: 'center',
     marginVertical: 12
   },
   button: {
@@ -295,18 +299,36 @@ const styles = StyleSheet.create({
   buttonTwo: {
     flexDirection: 'row'
   },
-  buttonThree: {
- 
-
-  },
   switch: {
     marginBottom: '30%',
   },
+  header: {
+    textAlign: 'center',
+    paddingTop: '10%',
+    paddingBottom: '2%',
+    color: '#9ee7ff',
+    fontSize: 26,
+    fontWeight: 'bold',
+    width: '100%'
+  },
   input: {
     height: 40,
-    width: '50%',
+    width: 175,
     margin: 12,
     borderWidth: 1,
+    backgroundColor: 'white',
+    borderColor: 'white'
+
+  },
+  text: {
+    fontSize: 30,
+    color: '#9ee7ff',
+    textAlign: 'center'
+  },
+  image: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%'
   }
 });
 export default SettingsScreen;

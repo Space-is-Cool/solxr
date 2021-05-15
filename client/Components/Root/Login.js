@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, {useState, useEffect} from 'react';
-import {Text, Button, View, TextInput, StyleSheet} from 'react-native';
+import {Text, Button, View, TextInput, StyleSheet, ImageBackground} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as AppleAuthentication from 'expo-apple-authentication';
 import axios from 'axios';
@@ -95,13 +95,15 @@ const LoginModal = ({ navigation }) => {
 
   return (
     <MusicContext.Consumer>{ ({ music }) => (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <ImageBackground
+        style={styles.image}
+        source={require('./assets/starfield.png')}>
         {signedIn
           ? 
           <>
-            <Text style={{ fontSize: 30 }}>Hello {user && user.username}</Text>
+            <Text style={styles.text}>Hello {user && user.username}</Text>
             <Text></Text>
-            <Text style={{ fontSize: 30 }}>Welcome to solxr</Text>
+            <Text style={styles.text}>Welcome to solxr</Text>
             <Text></Text>
             <Button onPress={() => { navigation.navigate('index'); playMusic(music); }} title="Enter" />
             <Text></Text>
@@ -135,7 +137,7 @@ const LoginModal = ({ navigation }) => {
           </>
           : 
           <>
-            <Text>{prompt}</Text>
+            <Text style={styles.text}>{prompt}</Text>
             <TextInput
               style={styles.input}
               onChangeText={onChangeUsername}
@@ -160,19 +162,53 @@ const LoginModal = ({ navigation }) => {
             />
           </>
         }
-      </View>
+      </ImageBackground>
     )
     }</MusicContext.Consumer>
   );
 };
 
 const styles = StyleSheet.create({
+  header: {
+    textAlign: 'center',
+    paddingTop: '10%',
+    paddingBottom: '2%',
+    color: '#9ee7ff',
+    fontSize: 26,
+    fontWeight: 'bold',
+
+    width: '100%'
+  },
   input: {
     height: 40,
     width: '50%',
     margin: 12,
     borderWidth: 1,
+    backgroundColor: 'white'
   },
+  // headerTwo: {
+  //   textAlign: 'center',
+  //   color: '#9ee7ff',
+  //   fontSize: 15,
+  //   fontStyle: 'italic'
+  // },
+  // headerThree: {
+  //   textAlign: 'center',
+  //   color: '#9ee7ff',
+  //   fontSize: 20,
+  //   fontWeight: '900',
+  //   paddingTop: 25
+  // },
+  text: {
+    fontSize: 30,
+    color: '#9ee7ff',
+    textAlign: 'center'
+  },
+  image: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%'
+  }
 });
 
 export default LoginModal;

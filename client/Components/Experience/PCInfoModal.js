@@ -1,23 +1,31 @@
 import React, {useState, useEffect, createContext} from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import { Button, View, Text, StyleSheet, ImageBackground} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const PCInfoModal = ({ navigation }) => (
   <>
-    <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={styles.h1}>Planet Clicker</Text>
-      <Text style={styles.h2}>Description:</Text>
-      <Text style={styles.p}>Cycle through the Sun, Moon, and 8 planets of the Solar System</Text>
-      <Text style={styles.h2}>Instructions:</Text>
-      <Text style={styles.p}>Allow Solxr access to your device camera       </Text>
-      <Text style={styles.p}>Point your camera towards a flat, rectangular surface on which to place the 3d models</Text>
-      <Text style={styles.p}>When presented with a gray rectangle on the surface, click it!</Text>
-      <Text style={styles.p}>Pinch any area of the screen not occupied by a solar body to zoom in and out</Text>
-      <Text style={styles.p}>Click each solar body to cycle through all 10  </Text>
-    </View>
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.navigate('SplashAR')} title= "Back to AR Menu" />
-    </View>
+    <ImageBackground
+      style={styles.image}
+      source={require('./assets/starfield.png')}>
+      <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={styles.header}>Planet Clicker</Text>
+        <Text></Text>
+        <Text style={styles.headerTwo}>Description:</Text>
+        <Text></Text>
+        <Text style={styles.text}>Cycle through the Sun, Moon, and 8 planets of the Solar System</Text>
+        <Text></Text>
+        <Text style={styles.headerTwo}>Instructions:</Text>
+        <Text></Text><Text style={styles.text}>Allow Solxr access to your device camera       </Text>
+        <Text></Text><Text style={styles.text}>Point your camera towards a flat, rectangular surface on which to place the 3d models</Text>
+        <Text></Text><Text style={styles.text}>When presented with a gray rectangle on the surface, click it!</Text>
+        <Text></Text>
+        <Text style={styles.text}>Pinch any area of the screen not occupied by a solar body to zoom in and out</Text>
+        <Text></Text><Text style={styles.text}>Click each solar body to cycle through all 10  </Text>
+      </View>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button onPress={() => navigation.navigate('SplashAR')} title= "Back to AR Menu" />
+      </View>
+    </ImageBackground>
   </>
 );
 
@@ -27,20 +35,53 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  h1: {
+  value: {
+    color: '#9ee7ff',
+    textAlign: 'center',
+    marginVertical: 12
+  },
+  button: {
+    marginBottom: '10%',
+  },
+  buttonTwo: {
+    flexDirection: 'row'
+  },
+  switch: {
+    marginBottom: '30%',
+  },
+  header: {
+    textAlign: 'center',
+    paddingTop: '10%',
+    paddingBottom: '2%',
+    color: '#9ee7ff',
     fontSize: 30,
-    marginVertical: 20
+    fontWeight: 'bold',
+    width: '100%'
   },
-  h2: {
-    fontSize: 20,
-    marginVertical: 20
+  headerTwo: {
+    textAlign: 'center',
+    color: '#9ee7ff',
+    fontSize: 25,
+    fontStyle: 'italic'
   },
-  p: {
-    fontSize: 16,
-    marginVertical: 12,
-    textAlign: 'left',
-    maxWidth: '80%',
-    alignItems: 'flex-start',
+  input: {
+    height: 40,
+    width: 175,
+    margin: 12,
+    borderWidth: 1,
+    backgroundColor: 'white',
+    borderColor: 'white'
+
+  },
+  text: {
+    fontSize: 15,
+    color: '#9ee7ff',
+    textAlign: 'center'
+  },
+  image: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%'
   }
 });
 
