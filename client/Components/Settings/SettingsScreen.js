@@ -161,7 +161,7 @@ const SettingsScreen = ({navigation, route}) => {
                 value={toggle.accessibility}
               />
               <Text style={{...Font, ...styles.value}}>Music</Text>
-              <View style={styles.buttonTwo}>
+              { toggle.music && <View style={styles.buttonTwo}>
                 <AwesomeButton
                   style={styles.buttonThree}
                   width={100}
@@ -173,6 +173,7 @@ const SettingsScreen = ({navigation, route}) => {
                     setChooseMusic(false);
                     CurrentlyPlaying(false);
                     modUser('theme');
+                    setToggle(toggle.theme = false);
                   }}
                 >Ambient
                 </AwesomeButton>
@@ -188,10 +189,11 @@ const SettingsScreen = ({navigation, route}) => {
                     setChooseMusic(true);
                     CurrentlyPlaying(true);
                     modUser('theme');
+                    setToggle(toggle.theme = true);
                   }}
                 >Original Theme
                 </AwesomeButton>
-              </View>
+              </View>}
               <Text></Text>
               <Switch
                 style={styles.switch}

@@ -78,16 +78,16 @@ const Portal = ({navigation, route}) => {
     );
   };
 
-  ViroMaterials.createMaterials({
-    heart: {
-      lightingModel: 'Blinn',
-      diffuseTexture: require('./assets/Heart_D3.jpeg'),
-      specularTexture: require('./assets/Heart_S2.jpeg'),
-      writesToDepthBuffer: true,
-      readsFromDepthBuffer: true,
-      // opacity: [0, 0, 0]
-    },
-  });
+  // ViroMaterials.createMaterials({
+  //   heart: {
+  //     lightingModel: 'Blinn',
+  //     diffuseTexture: require('./assets/Heart_D3.jpeg'),
+  //     specularTexture: require('./assets/Heart_S2.jpeg'),
+  //     writesToDepthBuffer: true,
+  //     readsFromDepthBuffer: true,
+  //     // opacity: [0, 0, 0]
+  //   },
+  // });
 
   return (
     <>
